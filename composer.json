@@ -1,0 +1,8 @@
+{
+  "require": {
+    "frozzare/wp-autoload": "^2.0",
+    "jwatkins/wp-development": "dev-master",
+    "jwatkins/wp-components": "dev-master"
+  },
+  "minimum-stability": "dev"
+}

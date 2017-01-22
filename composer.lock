@@ -1,0 +1,129 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "f951144049c257b891d28e4da0a4d01f",
+    "content-hash": "34c9242306ba6417766604f1a5943c9f",
+    "packages": [
+        {
+            "name": "frozzare/wp-autoload",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/frozzare/wp-autoload.git",
+                "reference": "081d479868d3da9376d0ede7bb94f51d7a915c4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/frozzare/wp-autoload/zipball/081d479868d3da9376d0ede7bb94f51d7a915c4d",
+                "reference": "081d479868d3da9376d0ede7bb94f51d7a915c4d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fredrik Forsmo",
+                    "email": "fredrik.forsmo@gmail.com"
+                }
+            ],
+            "description": "Simple autoloader that will autoload classes or traits with namespace prefix",
+            "keywords": [
+                "autoload",
+                "namespace",
+                "wordpress"
+            ],
+            "time": "2016-05-01 15:41:07"
+        },
+        {
+            "name": "jwatkins/wp-components",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ColbyCommunications/wp-components.git",
+                "reference": "108a190ef938dd1885f7d46dd4a6fdbae0721839"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ColbyCommunications/wp-components/zipball/108a190ef938dd1885f7d46dd4a6fdbae0721839",
+                "reference": "108a190ef938dd1885f7d46dd4a6fdbae0721839",
+                "shasum": ""
+            },
+            "require": {
+                "frozzare/wp-autoload": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "johnwatkins0",
+                    "email": "johnwatkins0@gmail.com"
+                }
+            ],
+            "description": "A collection of commonly used WordPress parts.",
+            "time": "2017-01-21 04:30:17"
+        },
+        {
+            "name": "jwatkins/wp-development",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ColbyCommunications/wp-development.git",
+                "reference": "69c4e834c6dc1c2fa0a0b568394c8af728167bb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ColbyCommunications/wp-development/zipball/69c4e834c6dc1c2fa0a0b568394c8af728167bb1",
+                "reference": "69c4e834c6dc1c2fa0a0b568394c8af728167bb1",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "development.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "johnwatkins0",
+                    "email": "johnwatkins0@gmail.com"
+                }
+            ],
+            "description": "Development functions for WordPress.",
+            "time": "2017-01-12 01:06:57"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "jwatkins/wp-development": 20,
+        "jwatkins/wp-components": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
