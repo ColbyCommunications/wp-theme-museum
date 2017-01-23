@@ -1,14 +1,4 @@
 <?php
-/**
- * Plugin Name: Lunder Institute
- *
- * Description:
- * Version: 0.0.2
- * Author: Colby College
- * Text Domain: lunder-institute
- *
- * @package lunder-institute
- */
 
 global $lunder_institute;
 
