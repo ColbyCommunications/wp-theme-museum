@@ -3,7 +3,7 @@
  * Plugin Name: Lunder Institute
  *
  * Description:
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Colby College
  * Text Domain: lunder-institute
  *
