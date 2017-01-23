@@ -1,0 +1,29 @@
+.menu-icon-container {
+  display: block;
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  svg {
+    height: 40px;
+    width: 40px;
+  }
+
+  path {
+    transition: transform .2s;
+  }
+}
+
+.menu-icon-container.active {
+  path:first-of-type {
+    transform: rotate(45deg) translate3d(4pt, -3pt, 0);
+  }
+
+  path:last-of-type {
+    transform: rotate(-45deg) translate3d(-9pt, -1pt, 0);
+  }
+}

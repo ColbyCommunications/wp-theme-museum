@@ -1,0 +1,44 @@
+.site-menu {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: .375em;
+
+  .menu-item-has-children {
+    position: relative;
+  }
+
+  li {
+    display: inline-block;
+    padding-right: 1em;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    a {
+      color: $black;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  .sub-menu {
+    visibility: hidden;
+    position: absolute;
+    top: 1.5em;
+    background: white;
+    padding: .75em 1.5em;
+    padding-right: .375em;
+
+    @media screen and (max-width: 767px) {
+      visibility: visible;
+      position: static;
+      padding: 0 .75em .375em .75em;
+    }
+
+
+    &.visible {
+      visibility: visible;
+    }
+  }
+}

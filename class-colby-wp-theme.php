@@ -4,11 +4,19 @@ class Colby_Wp_Theme {
     public function __construct() {
         $this->theme = wp_get_theme();
 
-        $this->text_domain = $this->theme->get( 'Text Domain' );
+        $this->text_domain = $this->theme->get( 'TextDomain' );
         $this->version = $this->theme->get( 'Version' );
         $this->path = trailingslashit( get_stylesheet_directory() );
         $this->url = trailingslashit( get_template_directory_uri() );
         $this->assets_url = str_replace( ['http:', 'https:' ], '', $this->url ) . 'assets/';
+
+        add_theme_support( 'post-thumbnails' );
+
+        add_filter( 'user_can_richedit', function() {
+            return '1' !== get_post_meta( get_the_id(), 'no_visual_editor', true );
+        } );
+
+        register_nav_menus();
 
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
@@ -18,24 +26,24 @@ class Colby_Wp_Theme {
     public function enqueue_styles() {
         $styles = [
             [
-                $this->text_doman,
+                $this->text_domain,
                 get_stylesheet_uri(),
                 [],
                 $this->version,
             ]
         ];
 
-        $styles = apply_filters( 'colby_wp_theme_styles', $styles );
+        $styles = apply_filters( 'colby_wp_theme_styles', $styles ) ?: [];
 
         foreach ( $styles as $style ) {
-            call_user_func_array( 'wp_enqueue_script', $style );
+            call_user_func_array( 'wp_enqueue_style', $style );
         }
     }
 
     public function enqueue_scripts() {
         $scripts = [
             [
-                $this->text_doman,
+                $this->text_domain,
                 "{$this->assets_url}{$this->text_domain}.js",
                 [],
                 $this->version,
@@ -43,7 +51,7 @@ class Colby_Wp_Theme {
             ]
         ];
 
-        $scripts = apply_filters( 'colby_wp_theme_scripts', $scripts );
+        $scripts = apply_filters( 'colby_wp_theme_scripts', $scripts ) ?: [];
 
         foreach ( $scripts as $script ) {
             call_user_func_array( 'wp_enqueue_script', $script );

@@ -2,13 +2,31 @@
  * Theme Name: Lunder Institute
  * Author: John Watkins, Colby College Communications
  * Version: 0.0.1
- * TextDomain: lunder-institute
+ * Text Domain: lunder-institute
  */
 
-@import 'variables',
+
+
+@import 'this-variables',
         'open-sans',
         'bootstrap-basic',
         'bootstrap-extended',
         'skip-link',
-        'one-level-header',
+        'two-level-header',
         'simple-footer';
+
+@import 'lunder-logo',
+        'three-column-header',
+        'site-menu',
+        'colby-logo',
+        'colby-museum-logo',
+        'menu-icon',
+        'front-page-splash',
+        'front-page-gallery';
+
+body {
+  position: relative;
+  opacity: 0;
+  transition: opacity .5s;
+  overflow-x: hidden;
+}

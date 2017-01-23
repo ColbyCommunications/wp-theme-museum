@@ -1,5 +1,10 @@
 <?php
-Colby_College\Wp_Components\Wp_Parts::load( 'head.php' );
-Colby_College\Wp_Components\Wp_Parts::load( 'one-level-header.php' );
+get_header();
 
-Colby_College\Wp_Components\Wp_Parts::load( 'simple-footer.php' );
+while ( have_posts() ) {
+    the_post();
+    the_title();
+    the_content();
+}
+
+get_footer();

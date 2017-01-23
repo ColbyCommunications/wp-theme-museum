@@ -31,6 +31,7 @@
   "dependencies": {
     "colby-bootstrap": "0.0.38",
     "lodash": "^4.16.2",
+    "vanilla-lazyload": "^3.0.0",
     "whatwg-fetch": "^2.0.1"
   }
 }
