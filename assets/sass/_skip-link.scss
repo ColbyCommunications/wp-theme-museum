@@ -1,0 +1,15 @@
+.skip-link {
+  position: absolute;
+  top: 0;
+  z-index: 99999;
+  background: white;
+  top: -5em;
+
+  .admin-bar & {
+    top: -5em;
+  }
+
+  &:focus {
+    top: 2em;
+  }
+}

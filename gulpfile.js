@@ -72,6 +72,7 @@ gulp.task(
     gulp
       .src('assets/sass/main.scss')
       .pipe(sass({ outputStyle: 'compressed', includePaths: sassIncludePaths }))
+      .pipe(autoprefixer({ browsers: [ 'last 5 versions' ], cascade: false }))
       .pipe(rename(`style.css`))
       .pipe(gulp.dest(''))
 );
