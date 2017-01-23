@@ -67,7 +67,7 @@ var GalleryHandler = function () {
     _classCallCheck(this, GalleryHandler);
 
     this.gallery = document.querySelector('.front-page-gallery');
-    this.titles = document.querySelectorAll('.front-page-gallery__title');
+    this.titles = document.querySelectorAll('[class*=title-]');
     this.images = document.querySelectorAll('.front-page-gallery__images img');
 
     this.run = this.run.bind(this);
@@ -103,9 +103,11 @@ var GalleryHandler = function () {
       });
       this.images[this.activeIndex].classList.add('front-page-gallery__active-image');
 
-      [].forEach.call(this.titles, function (title) {
-        return title.classList.remove('front-page-gallery__active-title');
+      var wordsInTitle = document.querySelector('title-' + this.activeIndex);
+      [].forEach.call(wordsInTitle, function (title) {
+        return title.classList.add('front-page-gallery__active-title');
       });
+
       this.titles[this.activeIndex].classList.add('front-page-gallery__active-title');
     }
   }]);
@@ -136,6 +138,10 @@ window.addEventListener('load', function () {
     parentSelector: '.menu-item-has-children',
     submenuSelector: '.sub-menu'
   });
+});
+
+window.addEventListener('load', function () {
+  var text = document.querySelector('.front-page-gallery__titles');
 });
 
 },{"colby-bootstrap/js/menu-handler":2,"lodash/debounce":9,"vanilla-lazyload":15}],2:[function(require,module,exports){

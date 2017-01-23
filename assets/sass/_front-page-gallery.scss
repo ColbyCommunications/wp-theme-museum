@@ -42,25 +42,33 @@
   margin: 0 auto;
   padding: 3em 1.5em;
   padding-bottom: 4.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   > span {
     color: white;
     font-size: 4.2vw;
-    padding-right: 1em;
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 0;
+    padding: 0 .0625em;
+    display: flex;
+
+    &:last-of-type {
+      margin-right: auto;
+    }
 
     @media screen and (min-width: map-get($grid-breakpoints, 'lg')) {
       font-size: 3em;
     }
 
 
-    &:nth-of-type(even) {
+    &.title-1, &.title-3 {
       opacity: .5;
     }
 
-    &:nth-of-type(odd) {
+    &.title-2, &.title-4 {
       opacity: .8;
     }
 

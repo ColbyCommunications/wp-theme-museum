@@ -29,16 +29,20 @@ add_filter( 'post_gallery', function( $output, $atts ) {
 
         $title = '';
         foreach ( explode(' ', $gallery_post->post_content ) as $word ) {
-            $title .= "<span class=word-$wordcount>$word</span> ";
+            $wordlength = strlen( $word );
+            $split_word = str_split( $word );
+            $split_word = implode( '</span><span>', $split_word );
+
+            $title .= "<span class='title-$key word-$wordcount length-$wordlength'><span>$split_word</span></span> ";
             $wordcount++;
         }
 
         $gallery_active = $key === 0 ? ' front-page-gallery__active-title' : '';
 
         $titles .= "
-            <span class='front-page-gallery__title$gallery_active'>
-                $title
-            </span>";
+
+            $title
+        ";
     }
 
     return "
@@ -66,7 +70,11 @@ if ( has_shortcode( $post->post_content, 'gallery' ) ) {
 		$post->post_content );
 }
 
+
+
 get_header();
+
 echo $non_gallery_post_content;
 echo isset( $gallery ) ? do_shortcode( $gallery ) : '';
+
 get_footer();

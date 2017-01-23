@@ -42,7 +42,7 @@ function handleSplash() {
 class GalleryHandler {
   constructor() {
     this.gallery = document.querySelector('.front-page-gallery');
-    this.titles = document.querySelectorAll('.front-page-gallery__title');
+    this.titles = document.querySelectorAll('[class*=title-]');
     this.images = document.querySelectorAll('.front-page-gallery__images img');
 
     this.run = this.run.bind(this);
@@ -79,10 +79,12 @@ class GalleryHandler {
       'front-page-gallery__active-image'
     );
 
+    const wordsInTitle = document.querySelector(`title-${this.activeIndex}`);
     [].forEach.call(
-      this.titles,
-      title => title.classList.remove('front-page-gallery__active-title')
+      wordsInTitle,
+      title => title.classList.add('front-page-gallery__active-title')
     );
+
     this.titles[this.activeIndex].classList.add(
       'front-page-gallery__active-title'
     );
@@ -115,3 +117,7 @@ window.addEventListener(
       submenuSelector: '.sub-menu'
     })
 );
+
+window.addEventListener('load', () => {
+  const text = document.querySelector('.front-page-gallery__titles');
+});

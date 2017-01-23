@@ -1,7 +1,7 @@
 /*!
  * Theme Name: Lunder Institute
  * Author: John Watkins, Colby College Communications
- * Version: 0.0.2
+ * Version: 0.0.3
  * Text Domain: lunder-institute
  */
 /* cyrillic-ext */
@@ -4155,20 +4155,26 @@ input[type="button"].btn-block {
   max-width: 63em;
   margin: 0 auto;
   padding: 3em 1.5em;
-  padding-bottom: 4.5em; }
+  padding-bottom: 4.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
   .front-page-gallery__titles > span {
     color: white;
     font-size: 4.2vw;
-    padding-right: 1em;
     line-height: 1.2;
     text-transform: uppercase;
-    letter-spacing: 0; }
+    letter-spacing: 0;
+    padding: 0 .0625em;
+    display: flex; }
+    .front-page-gallery__titles > span:last-of-type {
+      margin-right: auto; }
     @media screen and (min-width: 72rem) {
       .front-page-gallery__titles > span {
         font-size: 3em; } }
-    .front-page-gallery__titles > span:nth-of-type(even) {
+    .front-page-gallery__titles > span.title-1, .front-page-gallery__titles > span.title-3 {
       opacity: .5; }
-    .front-page-gallery__titles > span:nth-of-type(odd) {
+    .front-page-gallery__titles > span.title-2, .front-page-gallery__titles > span.title-4 {
       opacity: .8; }
     .front-page-gallery__titles > span.front-page-gallery__active-title {
       opacity: 1;
