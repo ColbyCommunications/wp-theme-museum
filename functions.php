@@ -150,8 +150,20 @@ add_shortcode( 'lunder-logo-svg', function() {
 } );
 
 add_action( 'wp_head', function() {
+    global $is_gecko;
+
     echo '
 <script src="https://use.typekit.net/gty7fbd.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
     ';
+
+    if ( $is_gecko ) {
+    ?>
+<style>
+.front-page-gallery__images img {
+    left: 0;
+}
+</style>
+    <?php
+    }
 } );
