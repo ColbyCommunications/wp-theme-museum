@@ -149,10 +149,9 @@ add_shortcode( 'lunder-logo-svg', function() {
     return ob_get_clean();
 } );
 
-add_filter( 'typekit_embed', function( $content ) {
-    return '
+add_action( 'wp_head', function() {
+    echo '
 <script src="https://use.typekit.net/gty7fbd.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
     ';
-
 } );
