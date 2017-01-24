@@ -28,12 +28,19 @@ add_filter( 'post_gallery', function( $output, $atts ) {
         );
 
         $title = '';
-        foreach ( explode(' ', $gallery_post->post_content ) as $word ) {
+        foreach ( explode(' ', $gallery_post->post_content ) as $word_key => $word ) {
             $wordlength = strlen( $word );
             $split_word = str_split( $word );
+
+            if ( 0 !== $key && 0 === $word_key ) {
+                array_unshift( $split_word, '&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;' );
+            } else {
+                array_unshift( $split_word, '&nbsp;' );
+            }
+
             $split_word = implode( '</span><span>', $split_word );
 
-            $title .= "<span class='title-$key word-$wordcount length-$wordlength'><span>$split_word</span></span> ";
+            $title .= "<span class='title-$key $new_word word-$wordcount length-$wordlength'><span>$split_word</span></span> ";
             $wordcount++;
         }
 
@@ -46,7 +53,7 @@ add_filter( 'post_gallery', function( $output, $atts ) {
     }
 
     return "
-        <div class=front-page-gallery>
+        <div class='front-page-gallery pre-load'>
             <div class=front-page-gallery__titles>
                 $titles
             </div>
@@ -74,7 +81,7 @@ if ( has_shortcode( $post->post_content, 'gallery' ) ) {
 
 get_header();
 
-echo $non_gallery_post_content;
+echo do_shortcode( $non_gallery_post_content );
 echo isset( $gallery ) ? do_shortcode( $gallery ) : '';
 
 get_footer();

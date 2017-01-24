@@ -1,55 +1,55 @@
 .front-page-splash {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   transition: opacity 1s;
-  height: 0;
-  overflow-y: visible;
   max-width: 1600px;
-  margin: 0 auto;
+  width: 100%;
+}
+
+.front-page-splash__background-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .front-page-splash__background {
-  position: absolute;
   width: auto;
-  top: 0;
-  left: 0;
+  height: auto;
   z-index: -1;
   transition: height .2s;
-  width: 100%;
-  max-width: 1600px;
-  height: auto;
 }
 
 .front-page-splash__text {
-  height: 600px;
-  height: 50vw;
-  min-height: 300px;
-  padding-top: 1.5em;
+  min-height: 400px;
+  padding: 4em 1.5em 0;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  span {
+.liaa-logo-container {
+  width: 90%;
+  padding: 3em;
+  padding: 3em 5vw 1.5em;
+  margin: 0 auto;
+
+  svg {
+    width: 100%;
+    min-width: 200px;
+    height: auto;
     color: white;
-    text-transform: uppercase;
+    margin: 0 auto;
     display: block;
-    text-align: center;
-    line-height: .944;
-
-    &:first-of-type {
-      font-size: 15em;
-      font-size: 17.5vw;
-      font-weight: 900;
-      letter-spacing: -.0625em;
-      margin-left: -.075em;
-    }
-
-    &:nth-of-type(2) {
-      font-size: 12.2em;
-      font-size: 14vw;
-      letter-spacing: -.01em;
-    }
-
-    &:last-of-type {
-      font-size: 5.9em;
-      font-size: 7.02vw;
-    }
   }
 }
