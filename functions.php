@@ -19,14 +19,14 @@ add_action( 'wp_head', function() {
     if ( ! $extra_css ) {
         return;
     }
-    
+
     echo "<style type='text/css'>$extra_css</style>";
 }, 10 );
 
 add_shortcode( 'lunder-logo-svg', function() {
     ob_start();
     echo '<div class=liaa-logo-container>';
-    include 'lunder-institute-aa.svg';
+    include 'lunder-institute-aa.php';
     echo '</div>';
     return ob_get_clean();
 } );

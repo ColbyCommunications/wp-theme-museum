@@ -40,7 +40,7 @@ add_filter( 'post_gallery', function( $output, $atts ) {
 
             $split_word = implode( '</span><span>', $split_word );
 
-            $title .= "<span class='title-$key $new_word word-$wordcount length-$wordlength'><span>$split_word</span></span> ";
+            $title .= "<span class='title-$key $word-$wordcount length-$wordlength'><span>$split_word</span></span> ";
             $wordcount++;
         }
 
