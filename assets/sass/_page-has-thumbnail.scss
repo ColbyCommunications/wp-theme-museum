@@ -1,0 +1,36 @@
+.page-has-thumbnail__thumbnail-container {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.page-has-thumbnail__header {
+  position: relative;
+}
+
+.page-has-thumbnail__title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  color: white;
+  padding: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  align-items: flex-end;
+}
+
+.page-has-thumbnail__content {
+  max-width: 970px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3em;
+
+  p {
+    @extend .row;
+  }
+}

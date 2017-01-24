@@ -10,13 +10,18 @@ window.addEventListener('load', handleSplash);
 window.addEventListener('load', () => new GalleryHandler());
 
 function handleSplash() {
-  const simpleFooter = document.querySelector('.simple-footer');
   const splash = document.querySelector('.front-page-splash');
+
+  const simpleFooter = document.querySelector('.simple-footer');
   const splashText = document.querySelector('.front-page-splash__text');
   const splashBackground = document.querySelector(
     '.front-page-splash__background'
   );
   const header = document.querySelector('.three-column-header');
+
+  if (!splash) {
+    return document.querySelector('body').style.opacity = '1';
+  }
 
   let setSplashFooterMargin = () => {
     simpleFooter.style['margin-top'] = `${splash.clientHeight}px`;

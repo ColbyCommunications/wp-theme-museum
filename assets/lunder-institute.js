@@ -31,11 +31,16 @@ window.addEventListener('load', function () {
 });
 
 function handleSplash() {
-  var simpleFooter = document.querySelector('.simple-footer');
   var splash = document.querySelector('.front-page-splash');
+
+  var simpleFooter = document.querySelector('.simple-footer');
   var splashText = document.querySelector('.front-page-splash__text');
   var splashBackground = document.querySelector('.front-page-splash__background');
   var header = document.querySelector('.three-column-header');
+
+  if (!splash) {
+    return document.querySelector('body').style.opacity = '1';
+  }
 
   var setSplashFooterMargin = function setSplashFooterMargin() {
     simpleFooter.style['margin-top'] = splash.clientHeight + 'px';
