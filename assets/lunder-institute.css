@@ -1,7 +1,7 @@
 /*!
  * Theme Name: Lunder Institute
  * Author: John Watkins, Colby College Communications
- * Version: 0.0.3
+ * Version: 0.0.4
  * Text Domain: lunder-institute
  */
 /* cyrillic-ext */
@@ -2088,10 +2088,10 @@ blockquote {
   margin: 0 0 1rem; }
 
 a {
-  color: #C3002F;
+  color: #ba0c2f;
   text-decoration: none; }
   a:focus, a:hover {
-    color: #77001d;
+    color: #72071d;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -3506,7 +3506,7 @@ select.form-control-lg:not([size]):not([multiple]) {
     text-decoration: none; }
   .btn:focus, .btn.focus {
     outline: 0;
-    box-shadow: 0 0 0 2px rgba(195, 0, 47, 0.25); }
+    box-shadow: 0 0 0 2px rgba(186, 12, 47, 0.25); }
   .btn.disabled, .btn:disabled {
     cursor: not-allowed;
     opacity: .65; }
@@ -3519,23 +3519,23 @@ fieldset[disabled] a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #C3002F;
-  border-color: #C3002F; }
+  background-color: #ba0c2f;
+  border-color: #ba0c2f; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #900023;
-    border-color: #860020; }
+    background-color: #8a0923;
+    border-color: #810820; }
   .btn-primary:focus, .btn-primary.focus {
-    box-shadow: 0 0 0 2px rgba(195, 0, 47, 0.5); }
+    box-shadow: 0 0 0 2px rgba(186, 12, 47, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
-    background-color: #C3002F;
-    border-color: #C3002F; }
+    background-color: #ba0c2f;
+    border-color: #ba0c2f; }
   .btn-primary:active, .btn-primary.active,
   .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #900023;
+    background-color: #8a0923;
     background-image: none;
-    border-color: #860020; }
+    border-color: #810820; }
 
 .btn-secondary {
   color: #353535;
@@ -3638,24 +3638,24 @@ fieldset[disabled] a.btn {
     border-color: #c12e2a; }
 
 .btn-outline-primary {
-  color: #C3002F;
+  color: #ba0c2f;
   background-image: none;
   background-color: transparent;
-  border-color: #C3002F; }
+  border-color: #ba0c2f; }
   .btn-outline-primary:hover {
     color: #fff;
-    background-color: #C3002F;
-    border-color: #C3002F; }
+    background-color: #ba0c2f;
+    border-color: #ba0c2f; }
   .btn-outline-primary:focus, .btn-outline-primary.focus {
-    box-shadow: 0 0 0 2px rgba(195, 0, 47, 0.5); }
+    box-shadow: 0 0 0 2px rgba(186, 12, 47, 0.5); }
   .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-    color: #C3002F;
+    color: #ba0c2f;
     background-color: transparent; }
   .btn-outline-primary:active, .btn-outline-primary.active,
   .show > .btn-outline-primary.dropdown-toggle {
     color: #fff;
-    background-color: #C3002F;
-    border-color: #C3002F; }
+    background-color: #ba0c2f;
+    border-color: #ba0c2f; }
 
 .btn-outline-secondary {
   color: #ccc;
@@ -3759,7 +3759,7 @@ fieldset[disabled] a.btn {
 
 .btn-link {
   font-weight: normal;
-  color: #C3002F;
+  color: #ba0c2f;
   border-radius: 0; }
   .btn-link, .btn-link:active, .btn-link.active, .btn-link:disabled {
     background-color: transparent; }
@@ -3768,7 +3768,7 @@ fieldset[disabled] a.btn {
   .btn-link:hover {
     border-color: transparent; }
   .btn-link:focus, .btn-link:hover {
-    color: #77001d;
+    color: #72071d;
     text-decoration: underline;
     background-color: transparent; }
   .btn-link:disabled {
@@ -4027,8 +4027,9 @@ input[type="button"].btn-block {
       padding-right: 0; }
     .site-menu li a {
       color: #353535;
-      font-weight: 600;
-      text-transform: uppercase; }
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: .85rem; }
   .site-menu .sub-menu {
     visibility: hidden;
     position: absolute;
@@ -4293,7 +4294,11 @@ input[type="button"].btn-block {
   text-transform: uppercase;
   font-weight: 600;
   display: flex;
-  align-items: flex-end; }
+  align-items: flex-end;
+  font-size: 1.8rem;
+  color: #fff;
+  max-width: 900px;
+  margin: 0 auto; }
 
 .page-has-thumbnail__content {
   max-width: 970px;
@@ -4313,6 +4318,11 @@ input[type="button"].btn-block {
   margin: 0 auto;
   padding: 3rem; }
 
+.page-no-thumbnail__title {
+  font-size: 1.8rem;
+  color: #fff;
+  font-family: "Open Sans",Helvetica,sans-serif; }
+
 body {
   position: relative;
   opacity: 0;
@@ -4320,3 +4330,47 @@ body {
   overflow-x: hidden;
   max-width: 1600px;
   margin: 0 auto; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: .9rem;
+  line-height: 1.4rem; }
+
+.intro, .lead {
+  font-size: 1.4rem;
+  line-height: 1.95rem;
+  margin-bottom: 1.9rem;
+  color: #000;
+  font-weight: 200; }
+
+.caption {
+  color: #898989;
+  font-size: .8rem;
+  line-height: 1.2rem; }
+
+h1, .h1 {
+  font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
+  text-transform: uppercase;
+  color: #353535;
+  font-size: 1.2rem;
+  font-weight: 800; }
+
+h2, .h2 {
+  font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
+  text-transform: uppercase;
+  color: #353535;
+  font-size: 1.05rem;
+  font-weight: 800; }
+
+h3, .h3 {
+  font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
+  text-transform: uppercase;
+  color: #353535;
+  font-size: .9rem;
+  font-weight: 800; }
+
+li {
+  font-size: .9rem;
+  line-height: 1.3rem;
+  color: #898989; }

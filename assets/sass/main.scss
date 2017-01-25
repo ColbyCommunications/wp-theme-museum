@@ -1,7 +1,7 @@
 /*!
  * Theme Name: Lunder Institute
  * Author: John Watkins, Colby College Communications
- * Version: 0.0.3
+ * Version: 0.0.4
  * Text Domain: lunder-institute
  */
 
@@ -34,4 +34,55 @@ body {
   overflow-x: hidden;
   max-width: 1600px;
   margin: 0 auto;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: .9rem;
+    line-height: 1.4rem;
+}
+
+.intro, .lead {
+  font-size: 1.4rem;
+  line-height: 1.95rem;
+  margin-bottom: 1.9rem;
+  color: #000;
+  font-weight: 200;
+}
+
+.caption {
+  color: #898989;
+  font-size: .8rem;
+  line-height: 1.2rem;
+}
+
+h1, .h1 {
+    font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
+    text-transform: uppercase;
+    color: #353535;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+h2, .h2 {
+    font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
+    text-transform: uppercase;
+    color: #353535;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+h3, .h3 {
+    font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
+    text-transform: uppercase;
+    color: #353535;
+    font-size: .9rem;
+    font-weight: 800;
+}
+
+li {
+    font-size: .9rem;
+    line-height: 1.3rem;
+    color: #898989;
 }

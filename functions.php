@@ -167,3 +167,54 @@ add_action( 'wp_head', function() {
     <?php
     }
 } );
+
+add_action( 'wp_enqueue_scripts', function() {
+    global $is_gecko, $is_safari, $lunder_institute;
+
+    if ( $is_gecko ) {
+        wp_enqueue_style(
+            "{$lunder_institute->text_domain}-firefox",
+            "{$lunder_institute->assets_url}firefox.css",
+            [ $lunder_institute->text_domain ],
+            $lunder_institute->version
+        );
+    }
+
+    if ( $is_safari ) {
+        wp_enqueue_style(
+            "{$lunder_institute->text_domain}-safari",
+            "{$lunder_institute->assets_url}safari.css",
+            [ $lunder_institute->text_domain ],
+            $lunder_institute->version
+        );
+    }
+}, 11 );
+
+add_action( 'init', function() {
+    add_shortcode( 'media-kit', function( $atts ) {
+        $kit_posts = get_posts( [
+            'category_name' => 'media-kit',
+            'posts_per_page' => 50,
+            'orderby' => 'name'
+            ] );
+
+        ob_start();
+        foreach ( $kit_posts as $kit_post ) {
+            $post_thumbnail = get_the_post_thumbnail( $kit_post->ID, 'medium' );
+            $post_content = apply_filters( 'the_content', $kit_post->post_content );
+
+            echo "
+            <section class=media-kit-post>
+                <div class=media-kit-post__thumbnail-container>
+                    $post_thumbnail
+                </div>
+
+                <h1 class=media-kit-post__title>$kit_post->post_title</h1>
+                <div class=media-kit-post__content>$post_content</div>
+            </section>
+            ";
+        }
+
+        return ob_get_clean();
+    } );
+} );

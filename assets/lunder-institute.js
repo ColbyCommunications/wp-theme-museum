@@ -29,6 +29,7 @@ window.addEventListener('load', handleSplash);
 window.addEventListener('load', function () {
   return new GalleryHandler();
 });
+window.addEventListener('load', fixSVGs);
 
 function handleSplash() {
   var splash = document.querySelector('.front-page-splash');
@@ -179,6 +180,40 @@ window.addEventListener('load', function () {
 window.addEventListener('load', function () {
   var text = document.querySelector('.front-page-gallery__titles');
 });
+
+function fixSVGs() {
+  var svgs = document.querySelectorAll('svg');
+
+  if (!svgs) {
+    return;
+  }
+
+  var fixIt = function fixIt(svg) {
+    var height = svg.getAttribute('height');
+    var width = svg.getAttribute('width');
+
+    if (!height || !width) {
+      return;
+    }
+
+    width = Number(width.replace('px', ''));
+    height = Number(height.replace('px', ''));
+
+    var ratio = height / width;
+    var computedHeight = svg.clientWidth * ratio;
+    console.log(width, height, ratio);
+
+    svg.style.height = computedHeight + 'px';
+  };
+
+  var fixThem = function fixThem() {
+    [].forEach.call(svgs, fixIt);
+  };
+
+  fixThem();
+  fixThem = (0, _debounce2.default)(fixThem, 100);
+  window.addEventListener('resize', fixThem);
+}
 
 },{"colby-bootstrap/js/menu-handler":2,"lodash/debounce":9,"vanilla-lazyload":15}],2:[function(require,module,exports){
 'use strict';

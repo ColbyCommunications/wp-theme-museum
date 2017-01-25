@@ -8,6 +8,7 @@ const galleryInterval = 8000;
 
 window.addEventListener('load', handleSplash);
 window.addEventListener('load', () => new GalleryHandler());
+window.addEventListener('load', fixSVGs);
 
 function handleSplash() {
   const splash = document.querySelector('.front-page-splash');
@@ -173,3 +174,37 @@ window.addEventListener(
 window.addEventListener('load', () => {
   const text = document.querySelector('.front-page-gallery__titles');
 });
+
+function fixSVGs() {
+  const svgs = document.querySelectorAll('svg');
+
+  if (!svgs) {
+    return;
+  }
+
+  let fixIt = svg => {
+    let height = svg.getAttribute('height');
+    let width = svg.getAttribute('width');
+
+    if (!height || !width) {
+      return;
+    }
+
+    width = Number(width.replace('px', ''));
+    height = Number(height.replace('px', ''));
+
+    const ratio = height / width;
+    const computedHeight = svg.clientWidth * ratio;
+    console.log(width, height, ratio);
+
+    svg.style.height = `${computedHeight}px`;
+  };
+
+  let fixThem = () => {
+    [].forEach.call(svgs, fixIt);
+  };
+
+  fixThem();
+  fixThem = debounce(fixThem, 100);
+  window.addEventListener('resize', fixThem);
+}
