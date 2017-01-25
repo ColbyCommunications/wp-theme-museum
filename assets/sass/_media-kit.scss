@@ -7,7 +7,7 @@
 }
 
 .media-kit-post__thumbnail-container {
-  @extend .col-12, .col-md-6;
+  @extend .col-12, .col-md-4;
   float: left;
   padding-top: .75em;
   padding-bottom: .75em;
@@ -23,7 +23,7 @@
 }
 
 .media-kit-post__content-container {
-  @extend .col-12, .col-md-6;
+  @extend .col-12, .col-md-8;
   float: right;
 
   @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
