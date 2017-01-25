@@ -2193,7 +2193,7 @@ output {
   display: none !important; }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .media-kit-post__title, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.66667rem;
   font-family: inherit;
   font-weight: 300;
@@ -2203,7 +2203,7 @@ h1, h2, h3, h4, h5, h6,
 h1, .h1 {
   font-size: 1.888rem; }
 
-h2, .h2 {
+h2, .h2, .media-kit-post__title {
   font-size: 1.588rem; }
 
 h3, .h3 {
@@ -4379,7 +4379,7 @@ h1, .h1 {
   font-size: 1.2rem;
   font-weight: 800; }
 
-h2, .h2 {
+h2, .h2, .media-kit-post__title {
   font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
   text-transform: uppercase;
   color: #353535;

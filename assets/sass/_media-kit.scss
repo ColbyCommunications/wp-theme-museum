@@ -30,3 +30,7 @@
     padding-left: .75em;
   }
 }
+
+.media-kit-post__title {
+  @extend .h2;
+}
