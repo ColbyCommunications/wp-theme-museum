@@ -195,7 +195,8 @@ add_action( 'init', function() {
         $kit_posts = get_posts( [
             'category_name' => 'media-kit',
             'posts_per_page' => 50,
-            'orderby' => 'name'
+            'orderby' => 'name',
+            'order' => 'ASC'
             ] );
 
         ob_start();
@@ -209,8 +210,10 @@ add_action( 'init', function() {
                     $post_thumbnail
                 </div>
 
-                <h1 class=media-kit-post__title>$kit_post->post_title</h1>
-                <div class=media-kit-post__content>$post_content</div>
+                <div class=media-kit-post__content-container>
+                    <h1 class=media-kit-post__title>$kit_post->post_title</h1>
+                    <div class=media-kit-post__content>$post_content</div>
+                </div>
             </section>
             ";
         }
