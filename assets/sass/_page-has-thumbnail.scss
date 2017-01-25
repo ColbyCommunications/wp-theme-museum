@@ -26,6 +26,7 @@
   color: #fff;
   max-width: 900px;
   margin: 0 auto;
+  font-family: "Open Sans",Helvetica,sans-serif;
 }
 
 .page-has-thumbnail__content {
@@ -33,8 +34,4 @@
   width: 100%;
   margin: 0 auto;
   padding: 3em;
-
-  p {
-    @extend .row;
-  }
 }
