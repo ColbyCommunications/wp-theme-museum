@@ -1,7 +1,16 @@
+.main--page-has-thumbnail {
+  margin-top: -105px;
+}
+
 .page-has-thumbnail__thumbnail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   img {
     width: 100%;
     height: auto;
+    min-width: 800px;
   }
 }
 
@@ -17,21 +26,29 @@
   left: 0;
   z-index: 2;
   color: white;
-  padding: 1.5rem;
   text-transform: uppercase;
   font-weight: 600;
   display: flex;
   align-items: flex-end;
   font-size: 1.8rem;
   color: #fff;
-  max-width: 900px;
+  max-width: 970px;
   margin: 0 auto;
   font-family: "Open Sans",Helvetica,sans-serif;
+  padding: 1.5rem;
+
+  @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+    padding: 1.5rem 3rem;
+  }
 }
 
 .page-has-thumbnail__content {
   max-width: 970px;
   width: 100%;
   margin: 0 auto;
-  padding: 3em;
+  padding: 1.5rem;
+
+  @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+    padding: 1.5rem 3rem;
+  }
 }

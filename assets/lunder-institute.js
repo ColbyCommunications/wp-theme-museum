@@ -11,6 +11,10 @@ var _menuHandler = require('colby-bootstrap/js/menu-handler');
 
 var _menuHandler2 = _interopRequireDefault(_menuHandler);
 
+var _fitParentToChild = require('colby-bootstrap/js/fit-parent-to-child');
+
+var _fitParentToChild2 = _interopRequireDefault(_fitParentToChild);
+
 var _debounce = require('lodash/debounce');
 
 var _debounce2 = _interopRequireDefault(_debounce);
@@ -215,7 +219,54 @@ function fixSVGs() {
   window.addEventListener('resize', fixThem);
 }
 
-},{"colby-bootstrap/js/menu-handler":2,"lodash/debounce":9,"vanilla-lazyload":15}],2:[function(require,module,exports){
+},{"colby-bootstrap/js/fit-parent-to-child":2,"colby-bootstrap/js/menu-handler":3,"lodash/debounce":10,"vanilla-lazyload":16}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = fitParentToChild;
+
+var _debounce = require('lodash/debounce');
+
+var _debounce2 = _interopRequireDefault(_debounce);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+/**
+ * Set the height of an HTML element to that of a child element.
+ */
+function fitParentToChild(settings) {
+  if (!settings.parentSelector || !settings.childSelector) {
+    return;
+  }
+
+  var containers = document.querySelectorAll(settings.parentSelector);
+
+  if (!containers) {
+    return;
+  }
+
+  [].concat(_toConsumableArray(containers)).forEach(function (container) {
+    var child = container.querySelector(settings.childSelector);
+
+    if (!child || !container) {
+      return;
+    }
+
+    var matchHeight = function matchHeight() {
+      return container.style.height = child.clientHeight + 'px';
+    };
+
+    matchHeight();
+
+    window.addEventListener('resize', (0, _debounce2.default)(matchHeight, 100));
+  });
+}
+
+},{"lodash/debounce":10}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -269,7 +320,7 @@ var MenuHandler = function () {
 
 exports.default = MenuHandler;
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 var root = require('./_root');
 
 /** Built-in value references. */
@@ -277,7 +328,7 @@ var Symbol = root.Symbol;
 
 module.exports = Symbol;
 
-},{"./_root":8}],4:[function(require,module,exports){
+},{"./_root":9}],5:[function(require,module,exports){
 var Symbol = require('./_Symbol'),
     getRawTag = require('./_getRawTag'),
     objectToString = require('./_objectToString');
@@ -307,7 +358,7 @@ function baseGetTag(value) {
 
 module.exports = baseGetTag;
 
-},{"./_Symbol":3,"./_getRawTag":6,"./_objectToString":7}],5:[function(require,module,exports){
+},{"./_Symbol":4,"./_getRawTag":7,"./_objectToString":8}],6:[function(require,module,exports){
 (function (global){
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
@@ -316,7 +367,7 @@ module.exports = freeGlobal;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var Symbol = require('./_Symbol');
 
 /** Used for built-in method references. */
@@ -364,7 +415,7 @@ function getRawTag(value) {
 
 module.exports = getRawTag;
 
-},{"./_Symbol":3}],7:[function(require,module,exports){
+},{"./_Symbol":4}],8:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -388,7 +439,7 @@ function objectToString(value) {
 
 module.exports = objectToString;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 var freeGlobal = require('./_freeGlobal');
 
 /** Detect free variable `self`. */
@@ -399,7 +450,7 @@ var root = freeGlobal || freeSelf || Function('return this')();
 
 module.exports = root;
 
-},{"./_freeGlobal":5}],9:[function(require,module,exports){
+},{"./_freeGlobal":6}],10:[function(require,module,exports){
 var isObject = require('./isObject'),
     now = require('./now'),
     toNumber = require('./toNumber');
@@ -589,7 +640,7 @@ function debounce(func, wait, options) {
 
 module.exports = debounce;
 
-},{"./isObject":10,"./now":13,"./toNumber":14}],10:[function(require,module,exports){
+},{"./isObject":11,"./now":14,"./toNumber":15}],11:[function(require,module,exports){
 /**
  * Checks if `value` is the
  * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
@@ -622,7 +673,7 @@ function isObject(value) {
 
 module.exports = isObject;
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /**
  * Checks if `value` is object-like. A value is object-like if it's not `null`
  * and has a `typeof` result of "object".
@@ -653,7 +704,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObjectLike = require('./isObjectLike');
 
@@ -684,7 +735,7 @@ function isSymbol(value) {
 
 module.exports = isSymbol;
 
-},{"./_baseGetTag":4,"./isObjectLike":11}],13:[function(require,module,exports){
+},{"./_baseGetTag":5,"./isObjectLike":12}],14:[function(require,module,exports){
 var root = require('./_root');
 
 /**
@@ -709,7 +760,7 @@ var now = function() {
 
 module.exports = now;
 
-},{"./_root":8}],14:[function(require,module,exports){
+},{"./_root":9}],15:[function(require,module,exports){
 var isObject = require('./isObject'),
     isSymbol = require('./isSymbol');
 
@@ -777,7 +828,7 @@ function toNumber(value) {
 
 module.exports = toNumber;
 
-},{"./isObject":10,"./isSymbol":12}],15:[function(require,module,exports){
+},{"./isObject":11,"./isSymbol":13}],16:[function(require,module,exports){
 !function(a,b){"function"==typeof define&&define.amd?define([],b):"object"==typeof exports?module.exports=b():a.LazyLoad=b()}(this,function(){function a(){r||(n={elements_selector:"img",container:window,threshold:300,throttle:50,data_src:"original",data_srcset:"original-set",class_loading:"loading",class_loaded:"loaded",skip_invisible:!0,callback_load:null,callback_error:null,callback_set:null,callback_processed:null},o=!!window.addEventListener,p=!!window.attachEvent,q=!!document.body.classList,r=!0)}function b(a,b,c){return o?void a.addEventListener(b,c):void(p&&(a.attachEvent("on"+b,function(a){return function(){c.call(a,window.event)}}(a)),a=null))}function c(a,b,c){return o?void a.removeEventListener(b,c):void(p&&a.detachEvent("on"+b,c))}function d(a,b,c){function d(){return window.innerWidth||l.documentElement.clientWidth||document.body.clientWidth}function e(){return window.innerHeight||l.documentElement.clientHeight||document.body.clientHeight}function f(a){return a.getBoundingClientRect().top+m-l.documentElement.clientTop}function g(a){return a.getBoundingClientRect().left+n-l.documentElement.clientLeft}function h(){var d;return d=b===window?e()+m:f(b)+b.offsetHeight,d<=f(a)-c}function i(){var e;return e=b===window?d()+window.pageXOffset:g(b)+d(),e<=g(a)-c}function j(){var d;return d=b===window?m:f(b),d>=f(a)+c+a.offsetHeight}function k(){var d;return d=b===window?n:g(b),d>=g(a)+c+a.offsetWidth}var l,m,n;return l=a.ownerDocument,m=window.pageYOffset||l.body.scrollTop,n=window.pageXOffset||l.body.scrollLeft,!(h()||j()||i()||k())}function e(){var a=new Date;return a.getTime()}function f(a,b){var c,d={};for(c in a)a.hasOwnProperty(c)&&(d[c]=a[c]);for(c in b)b.hasOwnProperty(c)&&(d[c]=b[c]);return d}function g(a){try{return Array.prototype.slice.call(a)}catch(b){var c,d=[],e=a.length;for(c=0;e>c;c++)d.push(a[c]);return d}}function h(a,b){return q?void a.classList.add(b):void(a.className+=(a.className?" ":"")+b)}function i(a,b){return q?void a.classList.remove(b):void(a.className=a.className.replace(new RegExp("(^|\\s+)"+b+"(\\s+|$)")," ").replace(/^\s+/,"").replace(/\s+$/,""))}function j(a,b){var c=a.parentElement;if("PICTURE"===c.tagName)for(var d=0;d<c.children.length;d++){var e=c.children[d];if("SOURCE"===e.tagName){var f=e.getAttribute("data-"+b);f&&e.setAttribute("srcset",f)}}}function k(a,b,c){var d=a.tagName,e=a.getAttribute("data-"+c);if("IMG"===d){j(a,b);var f=a.getAttribute("data-"+b);return f&&a.setAttribute("srcset",f),void(e&&a.setAttribute("src",e))}return"IFRAME"===d?void(e&&a.setAttribute("src",e)):void(a.style.backgroundImage="url("+e+")")}function l(a,b){return function(){return a.apply(b,arguments)}}function m(c){a(),this._settings=f(n,c),this._queryOriginNode=this._settings.container===window?document:this._settings.container,this._previousLoopTime=0,this._loopTimeout=null,this._handleScrollFn=l(this.handleScroll,this),b(window,"resize",this._handleScrollFn),this.update()}var n,o,p,q,r=!1;return m.prototype._showOnAppear=function(a){function d(){null!==e&&(e.callback_load&&e.callback_load(a),i(a,e.class_loading),h(a,e.class_loaded),c(a,"load",d))}var e=this._settings;("IMG"===a.tagName||"IFRAME"===a.tagName)&&(b(a,"load",d),b(a,"error",function(){c(a,"load",d),i(a,e.class_loading),e.callback_error&&e.callback_error(a)}),h(a,e.class_loading)),k(a,e.data_srcset,e.data_src),e.callback_set&&e.callback_set(a)},m.prototype._loopThroughElements=function(){var a,b,c=this._settings,e=this._elements,f=e?e.length:0,g=[];for(a=0;f>a;a++)b=e[a],c.skip_invisible&&null===b.offsetParent||d(b,c.container,c.threshold)&&(this._showOnAppear(b),g.push(a),b.wasProcessed=!0);for(;g.length>0;)e.splice(g.pop(),1),c.callback_processed&&c.callback_processed(e.length);0===f&&this._stopScrollHandler()},m.prototype._purgeElements=function(){var a,b,c=this._elements,d=c.length,e=[];for(a=0;d>a;a++)b=c[a],b.wasProcessed&&e.push(a);for(;e.length>0;)c.splice(e.pop(),1)},m.prototype._startScrollHandler=function(){this._isHandlingScroll||(this._isHandlingScroll=!0,b(this._settings.container,"scroll",this._handleScrollFn))},m.prototype._stopScrollHandler=function(){this._isHandlingScroll&&(this._isHandlingScroll=!1,c(this._settings.container,"scroll",this._handleScrollFn))},m.prototype.handleScroll=function(){var a,b,c;this._settings&&(b=e(),c=this._settings.throttle,0!==c?(a=c-(b-this._previousLoopTime),0>=a||a>c?(this._loopTimeout&&(clearTimeout(this._loopTimeout),this._loopTimeout=null),this._previousLoopTime=b,this._loopThroughElements()):this._loopTimeout||(this._loopTimeout=setTimeout(l(function(){this._previousLoopTime=e(),this._loopTimeout=null,this._loopThroughElements()},this),a))):this._loopThroughElements())},m.prototype.update=function(){this._elements=g(this._queryOriginNode.querySelectorAll(this._settings.elements_selector)),this._purgeElements(),this._loopThroughElements(),this._startScrollHandler()},m.prototype.destroy=function(){c(window,"resize",this._handleScrollFn),this._loopTimeout&&(clearTimeout(this._loopTimeout),this._loopTimeout=null),this._stopScrollHandler(),this._elements=null,this._queryOriginNode=null,this._settings=null},m});
 
 },{}]},{},[1])

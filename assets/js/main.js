@@ -1,5 +1,6 @@
 import LazyLoad from 'vanilla-lazyload';
 import MenuHandler from 'colby-bootstrap/js/menu-handler';
+import fitParentToChild from 'colby-bootstrap/js/fit-parent-to-child';
 import debounce from 'lodash/debounce';
 
 const lazyload = new LazyLoad();

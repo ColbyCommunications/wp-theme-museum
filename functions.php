@@ -202,6 +202,11 @@ add_action( 'init', function() {
         ob_start();
         foreach ( $kit_posts as $kit_post ) {
             $post_thumbnail = get_the_post_thumbnail( $kit_post->ID, 'medium' );
+            $post_thumbnail = str_replace(
+                ['srcset=', 'src='],
+                ['data-original-set=', 'data-original='],
+                $post_thumbnail
+            );
             $post_content = apply_filters( 'the_content', $kit_post->post_content );
 
             echo "
