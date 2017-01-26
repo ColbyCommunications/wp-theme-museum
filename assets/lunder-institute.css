@@ -661,19 +661,19 @@ html {
   .col-md-3, .three_column-header__left, .three_column-header__right, #resultstable2 > tbody > tr > td {
     flex: 0 0 25%;
     max-width: 25%; }
-  .col-md-4, .collection-container #searchtable .content .coll_left_half, .collection-container #resultstable tr td:nth-of-type(3) {
+  .col-md-4, .collection-container #resultstable tr td:nth-of-type(3) {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
   .col-md-5, .two-level-header__site-name {
     flex: 0 0 41.66667%;
     max-width: 41.66667%; }
-  .col-md-6, .collection-container #resultstable tr td:nth-of-type(2) {
+  .col-md-6, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(2) {
     flex: 0 0 50%;
     max-width: 50%; }
   .col-md-7, .two-level-header__site-menu {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
-  .col-md-8, .collection-container #searchtable .content .coll_right_half {
+  .col-md-8 {
     flex: 0 0 66.66667%;
     max-width: 66.66667%; }
   .col-md-9, .three-column-header__collapsible-columns, .three_column-header__middle {
@@ -1428,19 +1428,19 @@ html {
   .col-md-3, .three_column-header__left, .three_column-header__right, #resultstable2 > tbody > tr > td {
     flex: 0 0 25%;
     max-width: 25%; }
-  .col-md-4, .collection-container #searchtable .content .coll_left_half, .collection-container #resultstable tr td:nth-of-type(3) {
+  .col-md-4, .collection-container #resultstable tr td:nth-of-type(3) {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
   .col-md-5, .two-level-header__site-name {
     flex: 0 0 41.66667%;
     max-width: 41.66667%; }
-  .col-md-6, .collection-container #resultstable tr td:nth-of-type(2) {
+  .col-md-6, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(2) {
     flex: 0 0 50%;
     max-width: 50%; }
   .col-md-7, .two-level-header__site-menu {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
-  .col-md-8, .collection-container #searchtable .content .coll_right_half {
+  .col-md-8 {
     flex: 0 0 66.66667%;
     max-width: 66.66667%; }
   .col-md-9, .three-column-header__collapsible-columns, .three_column-header__middle {
@@ -2787,19 +2787,19 @@ pre {
   .col-md-3, .three_column-header__left, .three_column-header__right, #resultstable2 > tbody > tr > td {
     flex: 0 0 25%;
     max-width: 25%; }
-  .col-md-4, .collection-container #searchtable .content .coll_left_half, .collection-container #resultstable tr td:nth-of-type(3) {
+  .col-md-4, .collection-container #resultstable tr td:nth-of-type(3) {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
   .col-md-5, .two-level-header__site-name {
     flex: 0 0 41.66667%;
     max-width: 41.66667%; }
-  .col-md-6, .collection-container #resultstable tr td:nth-of-type(2) {
+  .col-md-6, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(2) {
     flex: 0 0 50%;
     max-width: 50%; }
   .col-md-7, .two-level-header__site-menu {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
-  .col-md-8, .collection-container #searchtable .content .coll_right_half {
+  .col-md-8 {
     flex: 0 0 66.66667%;
     max-width: 66.66667%; }
   .col-md-9, .three-column-header__collapsible-columns, .three_column-header__middle {
