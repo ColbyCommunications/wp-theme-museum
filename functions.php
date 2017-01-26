@@ -209,8 +209,23 @@ add_action( 'init', function() {
             );
             $post_content = apply_filters( 'the_content', $kit_post->post_content );
 
+
+            $modal = "
+                <div class=media-kit-post__modal>
+                    <div class=media-kit-post__modal-thumbnail-container>
+                        $original_post_thumbnail
+                    </div>
+
+                    <div class=media-kit-post__modal-content-container>
+                        <h1 class=media-kit-post__modal-title>$kit_post->post_title</h1>
+                        <div class=media-kit-post__modal-content>$post_content</div>
+                    </div>
+                </div>";
+
+            $modal = htmlentities( $modal );
+
             echo "
-            <a href=# data-image='$original_post_thumbnail' class=media-kit-post>
+            <a href=# data-image='$modal' class=media-kit-post>
                 <div class=media-kit-post__thumbnail-container>
                     $post_thumbnail
                 </div>

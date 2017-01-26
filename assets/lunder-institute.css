@@ -4105,6 +4105,21 @@ input[type="button"].btn-block {
     .media-kit-post__content-container {
       padding-left: .75em; } }
 
+.media-kit-post__modal {
+  padding: 1.5em; }
+
+.media-kit-post__modal-thumbnail-container {
+  text-align: center; }
+  .media-kit-post__modal-thumbnail-container image {
+    max-width: 100%;
+    height: auto; }
+
+.media-kit-post__modal-content-container {
+  width: 100%;
+  max-width: 768px;
+  padding: 1.5em;
+  margin: 0 auto; }
+
 .collection-container table {
   width: 100%; }
 

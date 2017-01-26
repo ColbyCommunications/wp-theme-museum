@@ -41,3 +41,23 @@
 .media-kit-post__title {
   @extend .h2;
 }
+
+.media-kit-post__modal {
+  padding: 1.5em;
+}
+
+.media-kit-post__modal-thumbnail-container {
+  text-align: center;
+
+  image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.media-kit-post__modal-content-container {
+  width: 100%;
+  max-width: 768px;
+  padding: 1.5em;
+  margin: 0 auto;
+}
