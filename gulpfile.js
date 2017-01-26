@@ -13,14 +13,14 @@ const browserify = require('browserify');
 const uglify = require('gulp-uglify');
 const watchify = require('watchify');
 const babel = require('babelify');
-const watchpaths = { sass: [ 'assets/sass/*.scss', 'assets/sass/**/*.scss' ] };
+const watchpaths = { sass: ['assets/sass/*.scss', 'assets/sass/**/*.scss'] };
 
-const sassIncludePaths = [ 'assets/scss', 'node_modules/colby-bootstrap/scss' ];
+const sassIncludePaths = ['assets/scss', 'node_modules/colby-bootstrap/scss'];
 
 function compile(watch) {
-  const presets = { presets: [ 'es2015', 'react' ] };
+  const presets = { presets: ['es2015', 'react'] };
   const browserified = browserify('./assets/js/main.js', {
-    debug: true
+    debug: true,
   }).transform(babel, presets);
   const bundler = watchify(browserified);
   const rebundle = () => {
@@ -72,21 +72,21 @@ gulp.task(
     gulp
       .src('assets/sass/main.scss')
       .pipe(sass({ outputStyle: 'compressed', includePaths: sassIncludePaths }))
-      .pipe(autoprefixer({ browsers: [ 'last 5 versions' ], cascade: false }))
+      .pipe(autoprefixer({ browsers: ['last 5 versions'], cascade: false }))
       .pipe(rename(`style.css`))
       .pipe(gulp.dest(''))
 );
 
 gulp.task(
   'gulpWatch',
-  () => gulp.watch(watchpaths.sass, [ 'sass', 'sass-compressed' ])
+  () => gulp.watch(watchpaths.sass, ['sass', 'sass-compressed'])
 );
 
 gulp.task(
   'gulpAdminWatch',
-  () => gulp.watch('assets/sass-admin/*.scss', [ 'sass-admin' ])
+  () => gulp.watch('assets/sass-admin/*.scss', ['sass-admin'])
 );
 
 gulp.task('build', () => compile());
 gulp.task('watch', () => watch());
-gulp.task('default', [ 'gulpWatch', 'watch', 'gulpAdminWatch' ]);
+gulp.task('default', ['gulpWatch', 'watch', 'gulpAdminWatch']);

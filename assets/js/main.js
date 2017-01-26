@@ -2,6 +2,9 @@ import LazyLoad from 'vanilla-lazyload';
 import MenuHandler from 'colby-bootstrap/js/menu-handler';
 import fitParentToChild from 'colby-bootstrap/js/fit-parent-to-child';
 import debounce from 'lodash/debounce';
+import vex from 'vex-js';
+
+vex.defaultOptions.className = 'vex-theme-default';
 
 const lazyload = new LazyLoad();
 const splashTimeout = 3000;
@@ -177,5 +180,23 @@ window.addEventListener('load', () => {
   fitParentToChild({
     parentSelector: '.front-page-gallery',
     childSelector: '.front-page-gallery__images img',
+  });
+});
+
+window.addEventListener('load', () => {
+  const mediaKitPosts = document.querySelectorAll('.media-kit-post');
+
+  if (!mediaKitPosts) {
+    return;
+  }
+
+  [].forEach.call(mediaKitPosts, post => {
+    post.addEventListener('click', event => {
+      event.preventDefault();
+
+      const imageHTML = post.getAttribute('data-image');
+      vex.open({ unsafeContent: imageHTML });
+      document.querySelector('.vex').classList.add('active');
+    });
   });
 });

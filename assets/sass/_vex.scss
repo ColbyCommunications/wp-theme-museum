@@ -1,0 +1,59 @@
+.vex {
+  opacity: 0;
+  transition: opacity .8s;
+  transition-delay: .1s;
+  overflow-x: hidden;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.vex.vex-theme-default {
+  padding-top: 7em;
+  padding-bottom: 7em;
+
+  .vex-content {
+    z-index: -1;
+    border-radius: 0;
+    background: white;
+    width: 94%;
+    padding: 1em;
+  }
+
+  .vex-close {
+    position: absolute;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 31px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    top: 3px;
+    right: 3px;
+    color: white;
+    background: transparent;
+    top: -36px;
+    right: -18px;
+    border: none;
+    outline: none;
+    border-radius: 0;
+  }
+
+  .vex-close:before, .vex-close:hover:before, .vex.vex-theme-default .vex-close:active:before {
+    color: white;
+    font-size: 36px;
+    background: transparent;
+  }
+}
+
+.vex-overlay {
+  background: rgba(0,0,0,0.6);
+  z-index: -2;
+  right: 15px;
+}
+
+
+.vex .linemate-canvas {
+  z-index: -1 !important;
+}

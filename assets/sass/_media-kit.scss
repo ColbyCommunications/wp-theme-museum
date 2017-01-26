@@ -4,6 +4,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-decoration: none;
+  color: $black;
+
+  &:hover, &:focus {
+    text-decoration: none;
+    color: rgba($black, .9);
+  }
 }
 
 .media-kit-post__thumbnail-container {

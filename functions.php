@@ -201,16 +201,16 @@ add_action( 'init', function() {
 
         ob_start();
         foreach ( $kit_posts as $kit_post ) {
-            $post_thumbnail = get_the_post_thumbnail( $kit_post->ID, 'large' );
+            $original_post_thumbnail = get_the_post_thumbnail( $kit_post->ID, 'large' );
             $post_thumbnail = str_replace(
                 ['srcset=', 'src='],
                 ['data-original-set=', 'data-original='],
-                $post_thumbnail
+                $original_post_thumbnail
             );
             $post_content = apply_filters( 'the_content', $kit_post->post_content );
 
             echo "
-            <section class=media-kit-post>
+            <a href=# data-image='$original_post_thumbnail' class=media-kit-post>
                 <div class=media-kit-post__thumbnail-container>
                     $post_thumbnail
                 </div>
@@ -219,7 +219,7 @@ add_action( 'init', function() {
                     <h1 class=media-kit-post__title>$kit_post->post_title</h1>
                     <div class=media-kit-post__content>$post_content</div>
                 </div>
-            </section>
+            </a>
             ";
         }
 
