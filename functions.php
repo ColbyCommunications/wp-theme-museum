@@ -230,6 +230,7 @@ add_action( 'init', function() {
 
 function embarkSearchResults( $search_term ) { ?>
 	<?php
+
 	$embarkURL = 'http://embark.colby.edu/';
 	if ( trim( $search_term ) ) {
 		$embarkURL .= '4DACTION/HANDLECGI/CTN3?display=por';
@@ -239,7 +240,7 @@ function embarkSearchResults( $search_term ) { ?>
 		if ( substr_count( $_GET['obj'], '?') >= 1 )  {
 			$parameters = explode( '?', $_GET['obj'] );
 			foreach ( $parameters as $arrayitem ) {
-				if ( false !== stripos( $arrayitem, "Obj" ) ) {
+				if ( false !== strpos( $arrayitem, "Obj" ) ) {
 					$_GET['obj'] = $arrayitem;
 				}
 				if ( false !== stripos( $arrayitem, "sid" ) ) {
@@ -304,7 +305,7 @@ function embarkSearchResults( $search_term ) { ?>
       		'</a> &bull; <a' => '</a> | <a'
 		];
 		$response_body = str_replace( array_keys( $replacements ), array_values( $replacements ), $response['body'] );
-		$response_body = str_replace( '/academics_cs/museum/search/', "?s=$search_term&obj=", $response_body );
+		$response_body = str_replace( '/academics_cs/museum/search/', "?obj=", $response_body );
       	echo str_replace( 'its-embark.colby.edu', 'embark.colby.edu', $response_body );
 		// If no results, automatically select the 'Museum website search results' tab.
 		if ( false !== stripos( $response['body'], 'no results found' ) || get_query_var( 'paged' ) > 1 ) { ?>
@@ -320,3 +321,19 @@ function embarkSearchResults( $search_term ) { ?>
 		echo 'Unable to connect to EmbARK search server.';
     }
 }
+
+add_action( 'init', function() {
+    add_shortcode( 'embark-search', function ( $atts ) {
+        $_GET['obj'] = isset( $_GET['obj'] ) ? $_GET['obj'] : 'Prt1410';
+
+        ob_start(); ?>
+        <div class=collection-container>
+            <?php embarkSearchResults( 'lunder' ); ?>
+        </div>
+
+        <?php
+        $html = ob_get_clean();
+
+        return preg_replace("/<script.*?\/script>/s", "", $html) ?: $html;
+    } );
+} );

@@ -1,0 +1,58 @@
+.collection-container {
+  table {
+    width: 100%;
+  }
+
+  form {
+    display: none;
+  }
+
+  #search_resultstop {
+    display: none;
+  }
+
+  .typeselect {
+    padding-right: 1.5em;
+  }
+
+  .site_subnav {
+    
+  }
+
+  #resultstable {
+    tr {
+      clear: both;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      td {
+        padding: .75em !important;
+        width: auto !important;
+      }
+
+      td:first-of-type {
+        @extend .col-sm-2;
+        padding-left: 0 !important;
+      }
+
+      td:nth-of-type(2) {
+        @extend .col-sm-6;
+      }
+
+      td:nth-of-type(3) {
+        @extend .col-sm-4;
+        padding-right: 0 !important;
+      }
+
+      .imgtd {
+        padding: .75em;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
