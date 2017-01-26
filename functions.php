@@ -274,6 +274,7 @@ function embarkSearchResults( $search_term ) { ?>
 			if ( isset( $_GET['sid'] ) && is_numeric( $_GET['sid'] ) ) {
 				$embarkURL .= "&sid={$_GET['sid']}";
 			}
+
 			$response = wp_remote_get( $embarkURL );
 		} else {
 			// Submit search query via POST.
@@ -281,11 +282,11 @@ function embarkSearchResults( $search_term ) { ?>
 				'body' => [
 					'searchType' => 'all',
 					'WholeWord' => '0',
-					'RefineSearch' => 'NewSelection',
-					'theKW' => $search_term
+					'RefineSearch' => 'WithinCurrent',
+					'theKW' => $search_term,
 				]
 			];
-			$response = wp_remote_post( $embarkURL, $args );
+			$response = wp_remote_post( $args );
 		}
 	}
 	try {
@@ -323,7 +324,7 @@ add_action( 'init', function() {
 
         ob_start(); ?>
         <div class=collection-container>
-            <form class=collection__search-form>
+            <?php /* <form class=collection__search-form>
                 <input
                     name=cq
                     type=text
@@ -335,7 +336,7 @@ add_action( 'init', function() {
             <a class=collection__reset-link href=<?php bloginfo( 'url' ); ?>/collection>
                 Reset
             </a>
-            <?php endif; ?>
+            <?php endif; */ ?>
 
             <?php embarkSearchResults( $cq ?: 'lunder'  ); ?>
         </div>

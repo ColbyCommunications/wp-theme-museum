@@ -4124,8 +4124,6 @@ input[type="button"].btn-block {
     .collection-container #searchtable .content .coll_left_half a {
       cursor: pointer;
       pointer-events: none; }
-    .collection-container #searchtable .content .coll_left_half img {
-      width: 100%; }
   .collection-container #searchtable > tbody {
     width: 100%;
     display: block; }
