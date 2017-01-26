@@ -15,6 +15,8 @@
 
       .search_viewtype, .site_nav_bar {
         width: 100%;
+        font-size: .891em;
+        margin-bottom: 1rem;
       }
 
       .search_viewtype a:first-of-type {
@@ -22,7 +24,7 @@
       }
 
       .coll_left_half {
-        @extend .col-12, .col-md-6;
+        @extend .col-12, .col-md-5;
 
         a {
           cursor: pointer;
@@ -35,7 +37,7 @@
       }
 
       .coll_right_half {
-        @extend .col-12, .col-md-6;
+        @extend .col-12, .col-md-7;
       }
     }
 
