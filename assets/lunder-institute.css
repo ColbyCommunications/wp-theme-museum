@@ -4208,7 +4208,8 @@ input[type="button"].btn-block {
 
 .collection-container .collection__search-form {
   display: block;
-  margin-bottom: .75em; }
+  margin-bottom: 1.125em;
+  margin-top: .75em; }
   .collection-container .collection__search-form input {
     padding: .375em;
     width: 100%; }
