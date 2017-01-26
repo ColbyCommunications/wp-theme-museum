@@ -4214,6 +4214,12 @@ input[type="button"].btn-block {
     padding: .375em;
     width: 100%; }
 
+.collection__reset-link {
+  display: block;
+  height: 0;
+  overflow: visible;
+  font-size: .891em; }
+
 .front-page-splash {
   display: flex;
   justify-content: center;

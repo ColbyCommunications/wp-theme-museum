@@ -331,12 +331,21 @@ add_action( 'init', function() {
                     value="<?php echo isset( $_GET['cq'] ) ? $_GET['cq'] : ''; ?>"
                     />
             </form>
+            <?php if ( $cq ) : ?>
+            <a class=collection__reset-link href=<?php bloginfo( 'url' ); ?>/collection>
+                Reset
+            </a>
+            <?php endif; ?>
 
             <?php embarkSearchResults( $cq ?: 'lunder'  ); ?>
         </div>
 
         <?php
         $html = ob_get_clean();
+
+        if ( $cq ) {
+            $html = str_replace( '&sid=', "&cq=$cq&sid=", $html );
+        }
 
         return preg_replace("/<script.*?\/script>/s", "", $html) ?: $html;
     } );
