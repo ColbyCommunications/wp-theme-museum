@@ -17,8 +17,21 @@
         width: 100%;
       }
 
+      .search_viewtype a:first-of-type {
+        display: none;
+      }
+
       .coll_left_half {
         @extend .col-12, .col-md-4;
+
+        a {
+          cursor: pointer;
+          pointer-events: none;
+        }
+
+        img {
+          width: 100%;
+        }
       }
 
       .coll_right_half {
@@ -50,7 +63,7 @@
   }
 
   .typeselect {
-    padding-right: 1.5em;
+    padding-left: 1.5em;
   }
 
   .site_subnav_left, .site_subnav_right {
@@ -137,4 +150,25 @@
 #coll_lg_img {
   text-align: center;
   padding: 1.5em;
+}
+
+.site_subnav {
+  display: flex;
+  justify-content: center;
+
+  a {
+    margin-left: .5em;
+    margin-right: .5em;
+  }
+}
+
+#search_topnav {
+  width: 100%;
+  text-align: right;
+}
+
+.search_listing_img_holder {
+  td {
+    height: auto !important;
+  }
 }
