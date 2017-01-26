@@ -19,6 +19,10 @@
         margin-bottom: 1rem;
       }
 
+      .search_viewtype a {
+        margin-left: 1em;
+      }
+
       .search_viewtype a:first-of-type {
         display: none;
       }
@@ -172,5 +176,15 @@
 .search_listing_img_holder {
   td {
     height: auto !important;
+  }
+}
+
+.collection-container .collection__search-form {
+  display: block;
+  margin-bottom: .75em;
+
+  input {
+    padding: .375em;
+    width: 100%;
   }
 }

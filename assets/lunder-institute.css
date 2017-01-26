@@ -4117,6 +4117,8 @@ input[type="button"].btn-block {
       width: 100%;
       font-size: .891em;
       margin-bottom: 1rem; }
+    .collection-container #searchtable .content .search_viewtype a {
+      margin-left: 1em; }
     .collection-container #searchtable .content .search_viewtype a:first-of-type {
       display: none; }
     .collection-container #searchtable .content .coll_left_half a {
@@ -4203,6 +4205,13 @@ input[type="button"].btn-block {
 
 .search_listing_img_holder td {
   height: auto !important; }
+
+.collection-container .collection__search-form {
+  display: block;
+  margin-bottom: .75em; }
+  .collection-container .collection__search-form input {
+    padding: .375em;
+    width: 100%; }
 
 .front-page-splash {
   display: flex;

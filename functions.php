@@ -270,7 +270,7 @@ function embarkSearchResults( $search_term ) { ?>
 		}
 	} else {
 		if ( isset( $_GET['obj'] ) ) {
-			$embarkURL = "http://embark.colby.edu/{$_GET[obj]}";
+			$embarkURL = "http://embark.colby.edu/{$_GET['obj']}";
 			if ( isset( $_GET['sid'] ) && is_numeric( $_GET['sid'] ) ) {
 				$embarkURL .= "&sid={$_GET['sid']}";
 			}
@@ -308,15 +308,6 @@ function embarkSearchResults( $search_term ) { ?>
 		$response_body = str_replace( '/academics_cs/museum/search/', "?obj=", $response_body );
       	echo str_replace( 'its-embark.colby.edu', 'embark.colby.edu', $response_body );
 		// If no results, automatically select the 'Museum website search results' tab.
-		if ( false !== stripos( $response['body'], 'no results found' ) || get_query_var( 'paged' ) > 1 ) { ?>
-	      <script>
-		      jQuery(document).ready(function() {
-			     jQuery("#tab-coll").removeClass("active");
-			     jQuery("#tab-mus a").click();
-		      });
-		  </script>
-	      <?php
-      }
     } catch ( Exception $ex ) {
 		echo 'Unable to connect to EmbARK search server.';
     }
@@ -324,11 +315,24 @@ function embarkSearchResults( $search_term ) { ?>
 
 add_action( 'init', function() {
     add_shortcode( 'embark-search', function ( $atts ) {
-        $_GET['obj'] = isset( $_GET['obj'] ) ? $_GET['obj'] : 'Prt1410';
+        $cq = isset( $_GET['cq'] ) ? sanitize_text_field( $_GET['cq'] ) : '';
+
+        if ( ! $cq ) {
+            $_GET['obj'] = isset( $_GET['obj'] ) ? $_GET['obj'] : 'Prt1410';
+        }
 
         ob_start(); ?>
         <div class=collection-container>
-            <?php embarkSearchResults( 'lunder' ); ?>
+            <form class=collection__search-form>
+                <input
+                    name=cq
+                    type=text
+                    placeholder="Search the collection"
+                    value="<?php echo isset( $_GET['cq'] ) ? $_GET['cq'] : ''; ?>"
+                    />
+            </form>
+
+            <?php embarkSearchResults( $cq ?: 'lunder'  ); ?>
         </div>
 
         <?php
