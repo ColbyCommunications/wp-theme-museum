@@ -5082,17 +5082,33 @@ body.vex-open {
 .main--page-has-thumbnail {
   margin-top: -105px; }
 
+.page-has-thumbnail > * {
+  max-width: 970px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem; }
+  @media screen and (min-width: 48rem) {
+    .page-has-thumbnail > * {
+      padding-left: 3rem;
+      padding-right: 3rem; } }
+
 .page-has-thumbnail__thumbnail-container {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  max-width: none; }
   .page-has-thumbnail__thumbnail-container img {
     width: 100%;
     height: auto;
     min-width: 800px; }
 
 .page-has-thumbnail__header {
-  position: relative; }
+  position: relative;
+  max-width: none;
+  padding: 0;
+  margin-bottom: 1.5em; }
 
 .page-has-thumbnail__title {
   position: absolute;
@@ -5116,13 +5132,13 @@ body.vex-open {
     .page-has-thumbnail__title {
       padding: 1.5rem 3rem; } }
 
-.page-has-thumbnail__content {
+.page-no-thumbnail > * {
   max-width: 970px;
   width: 100%;
   margin: 0 auto;
   padding: 1.5rem; }
   @media screen and (min-width: 48rem) {
-    .page-has-thumbnail__content {
+    .page-no-thumbnail > * {
       padding: 1.5rem 3rem; } }
 
 .page-no-thumbnail__header {
@@ -5130,12 +5146,6 @@ body.vex-open {
   width: 100%;
   margin: 0 auto;
   padding: 1.5rem 3rem; }
-
-.page-no-thumbnail__content {
-  max-width: 970px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 3rem; }
 
 .page-no-thumbnail__title {
   font-size: 1.8rem;

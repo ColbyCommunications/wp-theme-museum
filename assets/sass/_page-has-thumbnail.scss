@@ -2,11 +2,28 @@
   margin-top: -105px;
 }
 
+.page-has-thumbnail {
+  > * {
+    max-width: 970px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+}
+
 .page-has-thumbnail__thumbnail-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  max-width: none;
+
   img {
     width: 100%;
     height: auto;
@@ -16,6 +33,9 @@
 
 .page-has-thumbnail__header {
   position: relative;
+  max-width: none;
+  padding: 0;
+  margin-bottom: 1.5em;
 }
 
 .page-has-thumbnail__title {
@@ -35,17 +55,6 @@
   max-width: 970px;
   margin: 0 auto;
   font-family: "Open Sans",Helvetica,sans-serif;
-  padding: 1.5rem;
-
-  @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
-    padding: 1.5rem 3rem;
-  }
-}
-
-.page-has-thumbnail__content {
-  max-width: 970px;
-  width: 100%;
-  margin: 0 auto;
   padding: 1.5rem;
 
   @media screen and (min-width: map-get($grid-breakpoints, 'md')) {

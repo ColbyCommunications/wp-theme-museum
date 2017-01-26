@@ -1,15 +1,21 @@
+.page-no-thumbnail {
+  > * {
+    max-width: 970px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem;
+
+    @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+      padding: 1.5rem 3rem;
+    }
+  }
+}
+
 .page-no-thumbnail__header {
   max-width: 970px;
   width: 100%;
   margin: 0 auto;
   padding: 1.5rem 3rem;
-}
-
-.page-no-thumbnail__content {
-  max-width: 970px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 3rem;
 }
 
 .page-no-thumbnail__title {
