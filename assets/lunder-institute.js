@@ -27,7 +27,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var lazyload = new _vanillaLazyload2.default();
 var splashTimeout = 3000;
-var galleryInterval = 3000;
+var galleryInterval = 4000;
 
 window.addEventListener('load', handleSplash);
 window.addEventListener('load', function () {

@@ -5,7 +5,7 @@ import debounce from 'lodash/debounce';
 
 const lazyload = new LazyLoad();
 const splashTimeout = 3000;
-const galleryInterval = 3000;
+const galleryInterval = 4000;
 
 window.addEventListener('load', handleSplash);
 window.addEventListener('load', () => new GalleryHandler());
