@@ -4,8 +4,8 @@ import fitParentToChild from 'colby-bootstrap/js/fit-parent-to-child';
 import debounce from 'lodash/debounce';
 
 const lazyload = new LazyLoad();
-const splashTimeout = 5000;
-const galleryInterval = 8000;
+const splashTimeout = 3000;
+const galleryInterval = 3000;
 
 window.addEventListener('load', handleSplash);
 window.addEventListener('load', () => new GalleryHandler());
@@ -25,20 +25,12 @@ function handleSplash() {
     return document.querySelector('body').style.opacity = '1';
   }
 
-  let setSplashFooterMargin = () => {
-    simpleFooter.style['margin-top'] = `${splash.clientHeight}px`;
-    setTimeout(() => simpleFooter.style['transition'] = 'margin-top .5s', 200);
-  };
-  setSplashFooterMargin();
-  setSplashFooterMargin = debounce(setSplashFooterMargin, 200);
-  window.addEventListener('resize', setSplashFooterMargin);
-
   document.querySelector('body').style.opacity = '1';
   setTimeout(
     () => {
       splash.style.opacity = '0';
-      window.removeEventListener('resize', setSplashFooterMargin);
     },
+
     splashTimeout
   );
   setTimeout(
@@ -46,18 +38,9 @@ function handleSplash() {
       splash.style.height = '0';
       splash.style['pointer-events'] = 'none';
     },
+
     splashTimeout + 1000
   );
-
-  let resizeSplashBackground = () => {
-    splashBackground.style.height = `${splashText.clientHeight +
-      header.clientHeight}px`;
-    splashBackground.style.width = 'auto';
-  };
-
-  resizeSplashBackground();
-  resizeSplashBackground = debounce(resizeSplashBackground, 200);
-  window.addEventListener('resize', resizeSplashBackground);
 }
 
 class GalleryHandler {
@@ -79,34 +62,14 @@ class GalleryHandler {
   }
 
   run() {
-    const simpleFooter = document.querySelector('.simple-footer');
-
     setTimeout(
       () => {
+        this.gallery.classList.remove('pre-load');
         this.handleActiveIndex();
         setInterval(this.handleActiveIndex, galleryInterval);
-        this.header = document.querySelector('body > header');
-
-        let setFooterMargin = () =>
-          simpleFooter.style['margin-top'] = `${this.gallery.clientHeight}px`;
-        setFooterMargin();
-        setFooterMargin = debounce(setFooterMargin, 200);
-        window.addEventListener('resize', setFooterMargin);
-
         this.gallery.style.opacity = '1';
-        this.gallery.classList.remove('pre-load');
-
-        let setImageHeights = () => {
-          document.querySelector(
-            '.front-page-gallery__images'
-          ).style.height = `${this.gallery.clientHeight +
-            this.header.clientHeight}px`;
-        };
-
-        setImageHeights();
-        setImageHeights = debounce(setImageHeights, 200);
-        window.addEventListener('resize', setImageHeights);
       },
+
       splashTimeout
     );
   }
@@ -122,7 +85,7 @@ class GalleryHandler {
       document.querySelectorAll(`.front-page-gallery__titles > span`),
       span => {
         span.style['font-weight'] = '';
-        span.style['opacity'] = '';
+        span.style.opacity = '';
       }
     );
 
@@ -130,7 +93,7 @@ class GalleryHandler {
       document.querySelectorAll(`.title-${this.activeIndex}`),
       span => {
         span.style['font-weight'] = '900';
-        span.style['opacity'] = 1;
+        span.style.opacity = 1;
       }
     );
 
@@ -159,7 +122,7 @@ window.addEventListener('load', () => {
     event.preventDefault();
 
     menuIcon.classList.toggle('active');
-    [ ...menus ].forEach(menu => menu.classList.toggle('mobile-active'));
+    [...menus].forEach(menu => menu.classList.toggle('mobile-active'));
   });
 });
 
@@ -168,7 +131,7 @@ window.addEventListener(
   () =>
     new MenuHandler({
       parentSelector: '.menu-item-has-children',
-      submenuSelector: '.sub-menu'
+      submenuSelector: '.sub-menu',
     })
 );
 
@@ -209,3 +172,10 @@ function fixSVGs() {
   fixThem = debounce(fixThem, 100);
   window.addEventListener('resize', fixThem);
 }
+
+window.addEventListener('load', () => {
+  fitParentToChild({
+    parentSelector: '.front-page-gallery',
+    childSelector: '.front-page-gallery__images img',
+  });
+});

@@ -16,26 +16,29 @@ add_filter( 'post_gallery', function( $output, $atts ) {
     $titles = '';
     $wordcount = 1;
     foreach ( $gallery_posts as $key => $gallery_post ) {
-        $images .= str_replace(
+        $attachment_image = wp_get_attachment_image(
+            $gallery_post->ID,
+            'full',
+            false,
+            $key === 0 ? ['class' => 'front-page-gallery__active-image'] : []
+        );
+
+        $images .= 0 === $key ? $attachment_image : str_replace(
             ['srcset=', 'src='],
             ['data-original-set=', 'data-original='],
-            wp_get_attachment_image(
-                $gallery_post->ID,
-                'full',
-                false,
-                $key === 0 ? ['class' => 'front-page-gallery__active-image'] : []
-            )
+            $attachment_image
         );
 
         $title = '';
-        foreach ( explode(' ', $gallery_post->post_content ) as $word_key => $word ) {
+        $words = explode(' ', $gallery_post->post_content );
+        foreach ( $words as $word_key => $word ) {
             $wordlength = strlen( $word );
             $split_word = str_split( $word );
 
-            if ( 0 !== $key && 0 === $word_key ) {
-                array_unshift( $split_word, '&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;' );
+            if ( count( $words ) - 1 === $word_key ) {
+                $split_word = array_merge( $split_word, ['&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;'] );
             } else {
-                array_unshift( $split_word, '&nbsp;' );
+                $split_word = array_merge( $split_word, ['&nbsp;'] );
             }
 
             $split_word = implode( '</span><span>', $split_word );

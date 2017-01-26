@@ -26,8 +26,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var lazyload = new _vanillaLazyload2.default();
-var splashTimeout = 5000;
-var galleryInterval = 8000;
+var splashTimeout = 3000;
+var galleryInterval = 3000;
 
 window.addEventListener('load', handleSplash);
 window.addEventListener('load', function () {
@@ -47,34 +47,14 @@ function handleSplash() {
     return document.querySelector('body').style.opacity = '1';
   }
 
-  var setSplashFooterMargin = function setSplashFooterMargin() {
-    simpleFooter.style['margin-top'] = splash.clientHeight + 'px';
-    setTimeout(function () {
-      return simpleFooter.style['transition'] = 'margin-top .5s';
-    }, 200);
-  };
-  setSplashFooterMargin();
-  setSplashFooterMargin = (0, _debounce2.default)(setSplashFooterMargin, 200);
-  window.addEventListener('resize', setSplashFooterMargin);
-
   document.querySelector('body').style.opacity = '1';
   setTimeout(function () {
     splash.style.opacity = '0';
-    window.removeEventListener('resize', setSplashFooterMargin);
   }, splashTimeout);
   setTimeout(function () {
     splash.style.height = '0';
     splash.style['pointer-events'] = 'none';
   }, splashTimeout + 1000);
-
-  var resizeSplashBackground = function resizeSplashBackground() {
-    splashBackground.style.height = splashText.clientHeight + header.clientHeight + 'px';
-    splashBackground.style.width = 'auto';
-  };
-
-  resizeSplashBackground();
-  resizeSplashBackground = (0, _debounce2.default)(resizeSplashBackground, 200);
-  window.addEventListener('resize', resizeSplashBackground);
 }
 
 var GalleryHandler = function () {
@@ -100,30 +80,11 @@ var GalleryHandler = function () {
     value: function run() {
       var _this = this;
 
-      var simpleFooter = document.querySelector('.simple-footer');
-
       setTimeout(function () {
+        _this.gallery.classList.remove('pre-load');
         _this.handleActiveIndex();
         setInterval(_this.handleActiveIndex, galleryInterval);
-        _this.header = document.querySelector('body > header');
-
-        var setFooterMargin = function setFooterMargin() {
-          return simpleFooter.style['margin-top'] = _this.gallery.clientHeight + 'px';
-        };
-        setFooterMargin();
-        setFooterMargin = (0, _debounce2.default)(setFooterMargin, 200);
-        window.addEventListener('resize', setFooterMargin);
-
         _this.gallery.style.opacity = '1';
-        _this.gallery.classList.remove('pre-load');
-
-        var setImageHeights = function setImageHeights() {
-          document.querySelector('.front-page-gallery__images').style.height = _this.gallery.clientHeight + _this.header.clientHeight + 'px';
-        };
-
-        setImageHeights();
-        setImageHeights = (0, _debounce2.default)(setImageHeights, 200);
-        window.addEventListener('resize', setImageHeights);
       }, splashTimeout);
     }
   }, {
@@ -137,12 +98,12 @@ var GalleryHandler = function () {
 
       [].forEach.call(document.querySelectorAll('.front-page-gallery__titles > span'), function (span) {
         span.style['font-weight'] = '';
-        span.style['opacity'] = '';
+        span.style.opacity = '';
       });
 
       [].forEach.call(document.querySelectorAll('.title-' + this.activeIndex), function (span) {
         span.style['font-weight'] = '900';
-        span.style['opacity'] = 1;
+        span.style.opacity = 1;
       });
 
       [].forEach.call(this.images, function (image) {
@@ -218,6 +179,13 @@ function fixSVGs() {
   fixThem = (0, _debounce2.default)(fixThem, 100);
   window.addEventListener('resize', fixThem);
 }
+
+window.addEventListener('load', function () {
+  (0, _fitParentToChild2.default)({
+    parentSelector: '.front-page-gallery',
+    childSelector: '.front-page-gallery__images img'
+  });
+});
 
 },{"colby-bootstrap/js/fit-parent-to-child":2,"colby-bootstrap/js/menu-handler":3,"lodash/debounce":10,"vanilla-lazyload":16}],2:[function(require,module,exports){
 'use strict';

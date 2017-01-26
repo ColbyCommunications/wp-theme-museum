@@ -226,3 +226,97 @@ add_action( 'init', function() {
         return ob_get_clean();
     } );
 } );
+
+
+function embarkSearchResults( $search_term ) { ?>
+	<?php
+	$embarkURL = 'http://embark.colby.edu/';
+	if ( trim( $search_term ) ) {
+		$embarkURL .= '4DACTION/HANDLECGI/CTN3?display=por';
+	}
+	if ( isset( $_GET['x'] ) && isset( $_GET['obj'] ) && is_numeric($_GET['x'] ) ) {
+		$args = array();
+		if ( substr_count( $_GET['obj'], '?') >= 1 )  {
+			$parameters = explode( '?', $_GET['obj'] );
+			foreach ( $parameters as $arrayitem ) {
+				if ( false !== stripos( $arrayitem, "Obj" ) ) {
+					$_GET['obj'] = $arrayitem;
+				}
+				if ( false !== stripos( $arrayitem, "sid" ) ) {
+					$_GET['sid'] = str_ireplace( 'sid=', '', $arrayitem);
+				}
+			}
+		}
+		$embarkURL = "http://embark.colby.edu/{$_GET['obj']}";
+		if ( false != stripos( $_GET['obj'], '?' ) ) {
+			$embarkURL .= '&';
+		} else {
+			$embarkURL .= '?';
+		}
+		$embarkURL .= "x={$_GET['x']}";
+		if ( isset( $_GET['sid'] ) && is_numeric( $_GET['sid'] ) ) {
+			$embarkURL .= "&sid={$_GET['sid']}";
+		}
+		if ( isset( $_GET['port'] ) && is_numeric( $_GET['port'] ) ) {
+			$embarkURL .= "&port={$_GET['port']}";
+		}
+		$embarkURL = str_replace( '//P', '/P', $embarkURL);
+		$embarkURL = str_replace( '//O', '/O', $embarkURL);
+		$response = wp_remote_get( $embarkURL );
+		if ( isset( $_GET['debug'] ) ) {
+			pp( $embarkURL );
+			pp( $response, 1 );
+		}
+	} else {
+		if ( isset( $_GET['obj'] ) ) {
+			$embarkURL = "http://embark.colby.edu/{$_GET[obj]}";
+			if ( isset( $_GET['sid'] ) && is_numeric( $_GET['sid'] ) ) {
+				$embarkURL .= "&sid={$_GET['sid']}";
+			}
+			$response = wp_remote_get( $embarkURL );
+		} else {
+			// Submit search query via POST.
+			$args = [
+				'body' => [
+					'searchType' => 'all',
+					'WholeWord' => '0',
+					'RefineSearch' => 'NewSelection',
+					'theKW' => $search_term
+				]
+			];
+			$response = wp_remote_post( $embarkURL, $args );
+		}
+	}
+	try {
+		$replacements = [
+			'/academics_cs/museum/images/' => '/wp-content/themes/colbymuseum/images/',
+	  		'BACK TO SINGLE OBJECT VIEW' => '< Back to Single Object View',
+   	  		'SINGLE OBJECT' => 'Single Object',
+   	  		'THUMBNAILS' => 'Thumbnails',
+   	  		'LIST VIEW' => 'List View',
+   	  		'BACK TO TOP' => 'Back to Top &uarr;',
+   	  		'ENLARGE/ZOOM IMAGE' => 'Enlarge/Zoom Image',
+   	  		'BACKGROUND:' => 'Background:',
+   	  		'ENLARGE/ZOOM IMAGE' => 'Enlarge/Zoom Image',
+      		'LIGHT' => 'Light',
+      		'MEDIUM' => 'Medium',
+      		'DARK' => 'Dark',
+      		'</a> &bull; <a' => '</a> | <a'
+		];
+		$response_body = str_replace( array_keys( $replacements ), array_values( $replacements ), $response['body'] );
+		$response_body = str_replace( '/academics_cs/museum/search/', "?s=$search_term&obj=", $response_body );
+      	echo str_replace( 'its-embark.colby.edu', 'embark.colby.edu', $response_body );
+		// If no results, automatically select the 'Museum website search results' tab.
+		if ( false !== stripos( $response['body'], 'no results found' ) || get_query_var( 'paged' ) > 1 ) { ?>
+	      <script>
+		      jQuery(document).ready(function() {
+			     jQuery("#tab-coll").removeClass("active");
+			     jQuery("#tab-mus a").click();
+		      });
+		  </script>
+	      <?php
+      }
+    } catch ( Exception $ex ) {
+		echo 'Unable to connect to EmbARK search server.';
+    }
+}
