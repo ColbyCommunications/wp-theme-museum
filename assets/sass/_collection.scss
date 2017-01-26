@@ -16,7 +16,7 @@
   }
 
   .site_subnav {
-    
+
   }
 
   #resultstable {
@@ -32,16 +32,16 @@
       }
 
       td:first-of-type {
-        @extend .col-sm-2;
+        @extend .col-3, .col-md-2;
         padding-left: 0 !important;
       }
 
       td:nth-of-type(2) {
-        @extend .col-sm-6;
+        @extend .col-9, .col-md-6;
       }
 
       td:nth-of-type(3) {
-        @extend .col-sm-4;
+        @extend .col-12, .col-md-4;
         padding-right: 0 !important;
       }
 
