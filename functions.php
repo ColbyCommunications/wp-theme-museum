@@ -222,7 +222,7 @@ add_action( 'init', function() {
                     </div>
                 </div>";
 
-            $modal = htmlentities( $modal );
+            $modal = esc_attr( $modal );
 
             echo "
             <a href=# data-image='$modal' class=media-kit-post>
