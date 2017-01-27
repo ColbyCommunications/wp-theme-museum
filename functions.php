@@ -410,3 +410,11 @@ add_filter( 'rest_post_query', function( $prepared_args, $request ) {
 
 	return $prepared_args;
 }, 10, 2 );
+
+add_filter( 'rest_prepare_post', function( $response, $the_post ) {
+	if ( has_category( 'media-kit', $the_post ) ) {
+		$response->data['link'] = get_bloginfo( 'url' ) . "/media-kit#$the_post->post_name";
+	}
+
+	return $response;
+}, 10, 2 );

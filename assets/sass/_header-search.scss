@@ -46,11 +46,12 @@
 .header-search-results__prev-next {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 
 	a {
 		font-size: 2em !important;
 		font-weight: bold;
-		padding: .75em;
+		padding: .75em .375em;
 
 		&:hover, &:focus{
 			text-decoration: none;
