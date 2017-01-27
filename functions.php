@@ -9,24 +9,28 @@ require( 'class-colby-wp-theme.php' );
 
 $lunder_institute = new Colby_Wp_Theme();
 
+if ( $lunder_institute ) {
+	'hello';
+}
+
 add_action( 'wp_head', function() {
-    if ( ! is_singular() ) {
-        return;
-    }
+	if ( ! is_singular() ) {
+		return;
+	}
 
-    $extra_css = get_post_meta( get_the_id(), 'extra_css', true );
+	$extra_css = get_post_meta( get_the_id(), 'extra_css', true );
 
-    if ( ! $extra_css ) {
-        return;
-    }
+	if ( ! $extra_css ) {
+		return;
+	}
 
-    echo "<style type='text/css'>$extra_css</style>";
+	echo "<style type='text/css'>$extra_css</style>";
 }, 10 );
 
 add_shortcode( 'lunder-logo-svg', function() {
-    ob_start();
-    echo '<div class=liaa-logo-container>'; ?>
-    <svg x="0px" y="0px"
+	ob_start();
+	echo '<div class=liaa-logo-container>'; ?>
+	<svg x="0px" y="0px"
 	 width="256px" height="147px" viewBox="177.5 324.5 256 147" enable-background="new 177.5 324.5 256 147" xml:space="preserve">
 <title>Lunder Institute of American Art</title>
 <g>
@@ -144,131 +148,131 @@ add_shortcode( 'lunder-logo-svg', function() {
 </svg>
 
 <?php
-    echo '</div>';
+	echo '</div>';
 
-    return ob_get_clean();
+	return ob_get_clean();
 } );
 
 add_action( 'wp_head', function() {
-    global $is_gecko;
+	global $is_gecko;
 
-    echo '
+	echo '
 <script src="https://use.typekit.net/gty7fbd.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    ';
+	';
 
-    if ( $is_gecko ) {
-    ?>
+	if ( $is_gecko ) {
+	?>
 <style>
 .front-page-gallery__images img {
-    left: 0;
+	left: 0;
 }
 </style>
-    <?php
-    }
+	<?php
+	}
 } );
 
 add_action( 'wp_enqueue_scripts', function() {
-    global $is_gecko, $is_safari, $lunder_institute;
+	global $is_gecko, $is_safari, $lunder_institute;
 
-    if ( $is_gecko ) {
-        wp_enqueue_style(
-            "{$lunder_institute->text_domain}-firefox",
-            "{$lunder_institute->assets_url}firefox.css",
-            [ $lunder_institute->text_domain ],
-            $lunder_institute->version
-        );
-    }
+	if ( $is_gecko ) {
+		wp_enqueue_style(
+			"{$lunder_institute->text_domain}-firefox",
+			"{$lunder_institute->assets_url}firefox.css",
+			[ $lunder_institute->text_domain ],
+			$lunder_institute->version
+		);
+	}
 
-    if ( $is_safari ) {
-        wp_enqueue_style(
-            "{$lunder_institute->text_domain}-safari",
-            "{$lunder_institute->assets_url}safari.css",
-            [ $lunder_institute->text_domain ],
-            $lunder_institute->version
-        );
-    }
+	if ( $is_safari ) {
+		wp_enqueue_style(
+			"{$lunder_institute->text_domain}-safari",
+			"{$lunder_institute->assets_url}safari.css",
+			[ $lunder_institute->text_domain ],
+			$lunder_institute->version
+		);
+	}
 }, 11 );
 
 add_action( 'init', function() {
-    add_shortcode( 'media-kit', function( $atts ) {
-        $kit_posts = get_posts( [
-            'category_name' => 'media-kit',
-            'posts_per_page' => 50,
-            'orderby' => 'name',
-            'order' => 'ASC'
-            ] );
+	add_shortcode( 'media-kit', function( $atts ) {
+		$kit_posts = get_posts( [
+			'category_name' => 'media-kit',
+			'posts_per_page' => 50,
+			'orderby' => 'name',
+			'order' => 'ASC'
+			] );
 
-        $post_names = [];
-        $titles = implode( '', array_map( function( $kit_post ) use ( &$post_names ) {
-        	$first_word = substr( $kit_post->post_name, 0, strpos( $kit_post->post_name, '-' ) );
+		$post_names = [];
+		$titles = implode( '', array_map( function( $kit_post ) use ( &$post_names ) {
+			$first_word = substr( $kit_post->post_name, 0, strpos( $kit_post->post_name, '-' ) );
 
-        	if ( in_array( $first_word, $post_names ) ) {
-            	return;
-            } else {
-            	$post_names[] = $first_word;
-            }
+			if ( in_array( $first_word, $post_names ) ) {
+				return;
+			} else {
+				$post_names[] = $first_word;
+			}
 
-        	return "
-        		<a class=media-kit__jump-link href=#$kit_post->post_name>
-        			" . substr( $kit_post->post_title, 0, strpos( $kit_post->post_title, ',') ) . "
-        		</a> 
-        	";
-        }, $kit_posts ?: [] ) );
-
-
-        ob_start();
-
-        echo "<div class=media-kit__jump-links>$titles</div>";
-
-        $post_names = [];
-        foreach ( $kit_posts as $kit_post ) {
-            $original_post_thumbnail = get_the_post_thumbnail( $kit_post->ID, 'large' );
-            $post_thumbnail = str_replace(
-                ['srcset=', 'src='],
-                ['data-original-set=', 'data-original='],
-                $original_post_thumbnail
-            );
-            $post_content = apply_filters( 'the_content', $kit_post->post_content );
+			return "
+				<a class=media-kit__jump-link href=#$kit_post->post_name>
+					" . substr( $kit_post->post_title, 0, strpos( $kit_post->post_title, ',') ) . "
+				</a>
+			";
+		}, $kit_posts ?: [] ) );
 
 
-            $modal = "
-                <div class=media-kit-post__modal>
-                    <div class=media-kit-post__modal-thumbnail-container>
-                        $original_post_thumbnail
-                    </div>
+		ob_start();
 
-                    <div class=media-kit-post__modal-content-container>
-                        <h1 class=media-kit-post__modal-title>$kit_post->post_title</h1>
-                        <div class=media-kit-post__modal-content>$post_content</div>
-                    </div>
-                </div>";
+		echo "<div class=media-kit__jump-links>$titles</div>";
 
-            $modal = esc_attr( $modal );
+		$post_names = [];
+		foreach ( $kit_posts as $kit_post ) {
+			$original_post_thumbnail = get_the_post_thumbnail( $kit_post->ID, 'large' );
+			$post_thumbnail = str_replace(
+				['srcset=', 'src='],
+				['data-original-set=', 'data-original='],
+				$original_post_thumbnail
+			);
+			$post_content = apply_filters( 'the_content', $kit_post->post_content );
 
-            if ( ! in_array( $kit_post->post_name, $post_names ) ) {
-            	$id_attribute = " id=$kit_post->post_name";
-            } else {
-            	$post_names[] = $kit_post->post_name;
-            	$id_attribute = '';
-            }
 
-            echo "
-            <a href=#{$id_attribute} data-image='{$modal}' class=media-kit-post>
-                <div class=media-kit-post__thumbnail-container>
-                    $post_thumbnail
-                </div>
+			$modal = "
+				<div class=media-kit-post__modal>
+					<div class=media-kit-post__modal-thumbnail-container>
+						$original_post_thumbnail
+					</div>
 
-                <div class=media-kit-post__content-container>
-                    <h1 class=media-kit-post__title>$kit_post->post_title</h1>
-                    <div class=media-kit-post__content>$post_content</div>
-                </div>
-            </a>
-            ";
-        }
+					<div class=media-kit-post__modal-content-container>
+						<h1 class=media-kit-post__modal-title>$kit_post->post_title</h1>
+						<div class=media-kit-post__modal-content>$post_content</div>
+					</div>
+				</div>";
 
-        return ob_get_clean();
-    } );
+			$modal = esc_attr( $modal );
+
+			if ( ! in_array( $kit_post->post_name, $post_names ) ) {
+				$id_attribute = " id=$kit_post->post_name";
+			} else {
+				$post_names[] = $kit_post->post_name;
+				$id_attribute = '';
+			}
+
+			echo "
+			<a href=#{$id_attribute} data-image='{$modal}' class=media-kit-post>
+				<div class=media-kit-post__thumbnail-container>
+					$post_thumbnail
+				</div>
+
+				<div class=media-kit-post__content-container>
+					<h1 class=media-kit-post__title>$kit_post->post_title</h1>
+					<div class=media-kit-post__content>$post_content</div>
+				</div>
+			</a>
+			";
+		}
+
+		return ob_get_clean();
+	} );
 } );
 
 
@@ -344,63 +348,64 @@ function embarkSearchResults( $search_term ) { ?>
    	  		'ENLARGE/ZOOM IMAGE' => 'Enlarge/Zoom Image',
    	  		'BACKGROUND:' => 'Background:',
    	  		'ENLARGE/ZOOM IMAGE' => 'Enlarge/Zoom Image',
-      		'LIGHT' => 'Light',
-      		'MEDIUM' => 'Medium',
-      		'DARK' => 'Dark',
-      		'</a> &bull; <a' => '</a> | <a'
+	  		'LIGHT' => 'Light',
+	  		'MEDIUM' => 'Medium',
+	  		'DARK' => 'Dark',
+	  		'</a> &bull; <a' => '</a> | <a'
 		];
 		$response_body = str_replace( array_keys( $replacements ), array_values( $replacements ), $response['body'] );
 		$response_body = str_replace( '/academics_cs/museum/search/', "?obj=", $response_body );
-      	echo str_replace( 'its-embark.colby.edu', 'embark.colby.edu', $response_body );
+	  	echo str_replace( 'its-embark.colby.edu', 'embark.colby.edu', $response_body );
 		// If no results, automatically select the 'Museum website search results' tab.
-    } catch ( Exception $ex ) {
+	} catch ( Exception $ex ) {
 		echo 'Unable to connect to EmbARK search server.';
-    }
+	}
 }
 
 add_action( 'init', function() {
-    add_shortcode( 'embark-search', function ( $atts ) {
-        $cq = isset( $_GET['cq'] ) ? sanitize_text_field( $_GET['cq'] ) : '';
+	add_shortcode( 'embark-search', function ( $atts ) {
+		$cq = isset( $_GET['cq'] ) ? sanitize_text_field( $_GET['cq'] ) : '';
 
-        if ( ! $cq ) {
-            $_GET['obj'] = isset( $_GET['obj'] ) ? $_GET['obj'] : 'Prt1410';
-        }
+		if ( ! $cq ) {
+			$_GET['obj'] = isset( $_GET['obj'] ) ? $_GET['obj'] : 'Prt1410';
+		}
 
-        ob_start(); ?>
-        <div class=collection-container>
-            <?php /* <form class=collection__search-form>
-                <input
-                    name=cq
-                    type=text
-                    placeholder="Search the collection"
-                    value="<?php echo isset( $_GET['cq'] ) ? $_GET['cq'] : ''; ?>"
-                    />
-            </form>
-            <?php if ( $cq ) : ?>
-            <a class=collection__reset-link href=<?php bloginfo( 'url' ); ?>/collection>
-                Reset
-            </a>
-            <?php endif; */ ?>
+		ob_start(); ?>
+		<div class=collection-container>
+			<?php /* <form class=collection__search-form>
+				<input
+					name=cq
+					type=text
+					placeholder="Search the collection"
+					value="<?php echo isset( $_GET['cq'] ) ? $_GET['cq'] : ''; ?>"
+					/>
+			</form>
+			<?php if ( $cq ) : ?>
+			<a class=collection__reset-link href=<?php bloginfo( 'url' ); ?>/collection>
+				Reset
+			</a>
+			<?php endif; */ ?>
 
-            <?php embarkSearchResults( $cq ?: 'lunder'  ); ?>
-        </div>
+			<?php embarkSearchResults( $cq ?: 'lunder'  ); ?>
+		</div>
 
-        <?php
-        $html = ob_get_clean();
+		<?php
+		$html = ob_get_clean();
 
-        if ( $cq ) {
-            $html = str_replace( '&sid=', "&cq=$cq&sid=", $html );
-        }
+		if ( $cq ) {
+			$html = str_replace( '&sid=', "&cq=$cq&sid=", $html );
+		}
 
-        return preg_replace("/<script.*?\/script>/s", "", $html) ?: $html;
-    } );
+		return preg_replace("/<script.*?\/script>/s", "", $html) ?: $html;
+	} );
 } );
 
-add_filter( 'rest_post_query', function( $prepared_args, $request ) { 
+add_filter( 'rest_post_query', function( $prepared_args, $request ) {
 	$params = $request->get_params();
 
 	if ( isset( $params['search'] ) ) {
 		$prepared_args['post_type'] = 'any';
+		$prepared_args['posts_per_page'] = 5;
 	}
 
 	return $prepared_args;

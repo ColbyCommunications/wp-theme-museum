@@ -218,12 +218,16 @@ class HeaderSearch extends Component {
       search: '',
       results: [],
       showingResults: false,
-    }
+      currentPage: 1,
+      loading: false,
+    };
+    this.totalPages = null;
 
     this.handleSearch = this.handleSearch.bind(this);
-    this.handleSearch = debounce(this.handleSearch, 200);
-
+    this.closeSearch = this.closeSearch.bind(this);
     this.drawResult = this.drawResult.bind(this);
+
+    this.handleSearch = debounce(this.handleSearch, 200);
   }
 
   componentDidMount() {
@@ -232,8 +236,12 @@ class HeaderSearch extends Component {
         return;
       }
 
+      if (event.target.nodeName == 'A' || event.target.nodeName == 'INPUT') {
+        return;
+      }
+
       if (!event.target.classList.contains('header-search-container')) {
-        this.setState({showingResults: false, search: '', results: []});
+        this.closeSearch();
       }
     });
 
@@ -243,7 +251,7 @@ class HeaderSearch extends Component {
       }
 
       if (event.keyCode == 27) {
-       this.setState({showingResults: false, search: '', results: []}); 
+        this.closeSearch();
       }
     });
   }
@@ -251,26 +259,40 @@ class HeaderSearch extends Component {
   drawResult(result, key) {
     return (
       <li key={key}>
-        <a href={result.link}>
-          {result.title.rendered}
-        </a>
+        <a
+          href={result.link}
+          dangerouslySetInnerHTML={{ __html: result.title.rendered }}
+        />
       </li>
     );
   }
 
+  closeSearch() {
+    return this.setState({
+      search: '',
+      results: [],
+      showingResults: false,
+      currentPage: 1,
+    });
+  }
+
   handleSearch(search) {
-    if (!search) {
-      return this.setState({showingResults: false, search: '', results: []}); 
+    if (search === '') {
+      return this.closeSearch();
     }
 
-    fetch(`${wpData.bloginfoUrl}/wp-json/wp/v2/posts?search=${search}&post_type=`)
-      .then(data => {
+    this.setState({ loading: true });
 
-        return data.json();
+    const url = `${wpData.bloginfoUrl}` +
+      `/wp-json/wp/v2/posts?search=${search}&page=${this.state.currentPage}`;
+
+    fetch(url)
+      .then(response => {
+        this.totalPages = response.headers.get('X-WP-TotalPages');
+        return response.json();
       })
       .then(results => {
-        console.log(results);
-        this.setState({ results, showingResults: true })
+        this.setState({ results, showingResults: true, loading: false });
       });
   }
 
@@ -278,27 +300,73 @@ class HeaderSearch extends Component {
     return (
       <div className="header-search-container">
         <a
-          href='#'
+          href="#"
           style={{
             opacity: this.state.search ? '0' : '1',
-            'pointerEvents': this.state.search ? 'none' : 'auto',
+            pointerEvents: this.state.search ? 'none' : 'auto',
           }}
-          onClick={event => event.preventDefault()}>
+          onClick={event => event.preventDefault()}
+        >
           Search
         </a>
         <input
           value={this.state.search}
           onChange={event => {
             this.setState({ search: event.target.value });
-            this.handleSearch(event.target.value)
+            this.handleSearch(event.target.value);
           }}
-          />
 
+        />
         <ul
           style={{ display: this.state.showingResults ? 'block' : 'none' }}
-          className="header-search-results">
-          <h3>Search Results</h3>
+          className="header-search-results"
+        >
+          <h3>
+            Search Results{' '}
+            {this.totalPages > 1 ? `(Page ${this.state.currentPage})` : ''}
+          </h3>
+          <a
+            href="#"
+            className="header-search-results__close"
+            dangerouslySetInnerHTML={{ __html: '&Cross;' }}
+            onClick={event => {
+              event.preventDefault();
+              this.closeSearch();
+            }}
+
+          />
           {this.state.results.map(this.drawResult)}
+          <div className="header-search-results__prev-next">
+            <a
+              href="#"
+              dangerouslySetInnerHTML={{
+                __html: this.state.currentPage > 1 ? '&laquo;' : '',
+              }}
+              onClick={event => {
+                event.preventDefault();
+                this.setState({ currentPage: this.state.currentPage - 1 });
+                this.handleSearch(this.state.search);
+              }}
+
+            />
+            <div className="header-search-results__loading">
+              {this.state.loading === true ? 'Loading ...' : ''}
+            </div>
+            <a
+              href="#"
+              dangerouslySetInnerHTML={{
+                __html: this.state.currentPage < this.totalPages
+                  ? '&raquo;'
+                  : '',
+              }}
+              onClick={event => {
+                event.preventDefault();
+                this.setState({ currentPage: this.state.currentPage + 1 });
+                this.handleSearch(this.state.search);
+              }}
+
+            />
+          </div>
         </ul>
       </div>
     );

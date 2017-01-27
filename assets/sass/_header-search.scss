@@ -18,7 +18,42 @@
 	padding: 1.5em;
 	border: 1px solid $gray-lighter;
 
+	@media screen and (max-width: 767px) {
+		position: static;
+		width: auto;
+		padding: 0;
+		padding-top: 1.5em;
+		border: 0;
+	}
+
 	li {
-		padding-bottom: .25em;
+		padding-bottom: .5em;
+	}
+}
+
+.header-search-results__close {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 3em !important;
+    top: .25rem;
+
+    &:hover {
+    	text-decoration: none;
+    }
+}
+
+.header-search-results__prev-next {
+	display: flex;
+	justify-content: space-between;
+
+	a {
+		font-size: 2em !important;
+		font-weight: bold;
+		padding: .75em;
+
+		&:hover, &:focus{
+			text-decoration: none;
+		}
 	}
 }
