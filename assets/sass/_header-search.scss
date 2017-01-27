@@ -12,7 +12,7 @@
 
 .header-search-results {
 	position: absolute;
-	top: 4.5em;
+	top: 2.5em;
 	width: 300px;
 	background: white;
 	padding: 1.5em;
@@ -51,10 +51,18 @@
 	a {
 		font-size: 2em !important;
 		font-weight: bold;
-		padding: .75em .375em;
+		padding: .75em 0 .75em 1.5em;
+
+		&:first-of-type {
+			padding: .75em 1.5em .75em 0;
+		}
 
 		&:hover, &:focus{
 			text-decoration: none;
 		}
 	}
+}
+
+.header-search-results__loading {
+	font-size: .891em;
 }

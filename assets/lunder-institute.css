@@ -4909,7 +4909,7 @@ body.vex-open {
 
 .header-search-results {
   position: absolute;
-  top: 4.5em;
+  top: 2.5em;
   width: 300px;
   background: white;
   padding: 1.5em;
@@ -4935,13 +4935,19 @@ body.vex-open {
 
 .header-search-results__prev-next {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
   .header-search-results__prev-next a {
     font-size: 2em !important;
     font-weight: bold;
-    padding: .75em; }
+    padding: .75em 0 .75em 1.5em; }
+    .header-search-results__prev-next a:first-of-type {
+      padding: .75em 1.5em .75em 0; }
     .header-search-results__prev-next a:hover, .header-search-results__prev-next a:focus {
       text-decoration: none; }
+
+.header-search-results__loading {
+  font-size: .891em; }
 
 .front-page-splash {
   display: flex;
