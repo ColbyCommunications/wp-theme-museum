@@ -3,10 +3,19 @@
 if ( has_post_thumbnail() ) {
     add_filter( 'page_has_thumbnail_article_footer', function( $content ) {
         global $post;
+
+        $caption = get_the_post_thumbnail_caption( $post->ID );
+
+        if ( ! $caption ) {
+            return '';
+        }
+
         ob_start();
-        echo '<div class=page-has-thumbnail__footer-caption>Banner image: ';
-        the_post_thumbnail_caption( $post->ID );
-        echo '</div>';
+        echo "
+        <div class=page-has-thumbnail__footer-caption>
+            $caption
+        </div>
+        ";
         return ob_get_clean();
     } );
 
