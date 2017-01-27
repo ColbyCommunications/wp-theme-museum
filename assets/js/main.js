@@ -202,8 +202,3 @@ window.addEventListener('load', () => {
   });
 });
 
-window.addEventListener('load', () => {
-  smoothScroll.init({
-    selector: '.media-kit__jump-link'
-  });
-});

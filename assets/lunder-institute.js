@@ -215,12 +215,6 @@ window.addEventListener('load', function () {
   });
 });
 
-window.addEventListener('load', function () {
-  _smoothScroll2.default.init({
-    selector: '.media-kit__jump-link'
-  });
-});
-
 },{"colby-bootstrap/js/fit-parent-to-child":3,"colby-bootstrap/js/menu-handler":4,"lodash/debounce":13,"smooth-scroll":19,"vanilla-lazyload":20,"vex-js":21}],2:[function(require,module,exports){
 /*
  * classList.js: Cross-browser full element.classList implementation.
