@@ -13,7 +13,7 @@ if ( has_post_thumbnail() ) {
         ob_start();
         echo "
         <div class=page-has-thumbnail__footer-caption>
-            $caption
+            Banner image: $caption
         </div>
         ";
         return ob_get_clean();
