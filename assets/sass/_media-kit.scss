@@ -1,10 +1,11 @@
 .media-kit__jump-links {
-  text-align: justify;
+  padding-bottom: 3em;
 }
 
 .media-kit__jump-link {
   white-space: nowrap;
-  @extend .small;
+  font-size: .891em;
+  font-weight: 600;
 
   &:after { 
     content: '';
