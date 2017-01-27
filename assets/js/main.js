@@ -4,6 +4,8 @@ import fitParentToChild from 'colby-bootstrap/js/fit-parent-to-child';
 import debounce from 'lodash/debounce';
 import vex from 'vex-js';
 import smoothScroll from 'smooth-scroll';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
 vex.defaultOptions.className = 'vex-theme-default';
 
@@ -202,3 +204,103 @@ window.addEventListener('load', () => {
   });
 });
 
+window.addEventListener('load', () => {
+  const searchContainer = document.getElementById('header-search');
+
+  render(<HeaderSearch />, searchContainer);
+});
+
+class HeaderSearch extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      search: '',
+      results: [],
+      showingResults: false,
+    }
+
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleSearch = debounce(this.handleSearch, 200);
+
+    this.drawResult = this.drawResult.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('click', event => {
+      if (this.showingResults === false) {
+        return;
+      }
+
+      if (!event.target.classList.contains('header-search-container')) {
+        this.setState({showingResults: false, search: '', results: []});
+      }
+    });
+
+    window.addEventListener('keydown', event => {
+      if (this.showingResults === false) {
+        return;
+      }
+
+      if (event.keyCode == 27) {
+       this.setState({showingResults: false, search: '', results: []}); 
+      }
+    });
+  }
+
+  drawResult(result, key) {
+    return (
+      <li key={key}>
+        <a href={result.link}>
+          {result.title.rendered}
+        </a>
+      </li>
+    );
+  }
+
+  handleSearch(search) {
+    if (!search) {
+      return this.setState({showingResults: false, search: '', results: []}); 
+    }
+
+    fetch(`${wpData.bloginfoUrl}/wp-json/wp/v2/posts?search=${search}&post_type=`)
+      .then(data => {
+
+        return data.json();
+      })
+      .then(results => {
+        console.log(results);
+        this.setState({ results, showingResults: true })
+      });
+  }
+
+  render() {
+    return (
+      <div className="header-search-container">
+        <a
+          href='#'
+          style={{
+            opacity: this.state.search ? '0' : '1',
+            'pointerEvents': this.state.search ? 'none' : 'auto',
+          }}
+          onClick={event => event.preventDefault()}>
+          Search
+        </a>
+        <input
+          value={this.state.search}
+          onChange={event => {
+            this.setState({ search: event.target.value });
+            this.handleSearch(event.target.value)
+          }}
+          />
+
+        <ul
+          style={{ display: this.state.showingResults ? 'block' : 'none' }}
+          className="header-search-results">
+          <h3>Search Results</h3>
+          {this.state.results.map(this.drawResult)}
+        </ul>
+      </div>
+    );
+  }
+}

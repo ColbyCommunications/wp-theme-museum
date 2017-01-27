@@ -29,7 +29,7 @@ function compile(watch) {
       this.emit('end');
     }).pipe(
       source(`${textDomain}.js`)
-    ).pipe(buffer()).pipe(sourcemaps.init({ loadMaps: true })).pipe(sourcemaps.write('./')).pipe(gulp.dest('./assets'));
+    ).pipe(buffer()).pipe(uglify().on('error', gutil.log)).pipe(sourcemaps.init({ loadMaps: true })).pipe(sourcemaps.write('./')).pipe(gulp.dest('./assets'));
   };
 
   if (watch) {

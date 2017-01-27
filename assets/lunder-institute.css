@@ -4897,6 +4897,26 @@ body.vex-open {
 .vex .linemate-canvas {
   z-index: -1 !important; }
 
+#header-search {
+  position: relative; }
+  #header-search input {
+    position: absolute;
+    top: -.2em;
+    left: -.25em;
+    background: transparent;
+    border: 0;
+    padding: .25em; }
+
+.header-search-results {
+  position: absolute;
+  top: 4.5em;
+  width: 300px;
+  background: white;
+  padding: 1.5em;
+  border: 1px solid #9E9E9E; }
+  .header-search-results li {
+    padding-bottom: .25em; }
+
 .front-page-splash {
   display: flex;
   justify-content: center;

@@ -25,7 +25,13 @@ function three_column_header_draw_middle_column() {
         'container_class' => 'site-menu-container',
         'depth' => 2,
     ] );
-    return ob_get_clean();
+    
+    $lists = explode( '</ul>', ob_get_clean() );
+
+    $lists[count($lists) - 2] .= '<li><div id=header-search></div></li>';
+    $lists = implode( '</ul>', $lists );
+
+    return $lists;
 }
 endif;
 

@@ -1,0 +1,24 @@
+#header-search {
+	position: relative;
+	input {
+		position: absolute;
+		top: -.2em;
+		left: -.25em;
+		background: transparent;
+		border: 0;
+		padding: .25em;
+	}
+}
+
+.header-search-results {
+	position: absolute;
+	top: 4.5em;
+	width: 300px;
+	background: white;
+	padding: 1.5em;
+	border: 1px solid $gray-lighter;
+
+	li {
+		padding-bottom: .25em;
+	}
+}

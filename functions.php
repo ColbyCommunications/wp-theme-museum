@@ -395,3 +395,13 @@ add_action( 'init', function() {
         return preg_replace("/<script.*?\/script>/s", "", $html) ?: $html;
     } );
 } );
+
+add_filter( 'rest_post_query', function( $prepared_args, $request ) { 
+	$params = $request->get_params();
+
+	if ( isset( $params['search'] ) ) {
+		$prepared_args['post_type'] = 'any';
+	}
+
+	return $prepared_args;
+}, 10, 2 );
