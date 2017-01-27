@@ -4078,12 +4078,11 @@ input[type="button"].btn-block {
   transform: rotate(-45deg) translate3d(-9pt, -1pt, 0); }
 
 .media-kit__jump-links {
-  padding-bottom: 3em; }
+  padding-bottom: 1.5em; }
 
 .media-kit__jump-link {
   white-space: nowrap;
-  font-size: .891em;
-  font-weight: 600; }
+  font-size: .891em; }
   .media-kit__jump-link:after {
     content: '';
     margin-left: .375em;
