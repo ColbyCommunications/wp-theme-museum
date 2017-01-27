@@ -3,6 +3,7 @@ import MenuHandler from 'colby-bootstrap/js/menu-handler';
 import fitParentToChild from 'colby-bootstrap/js/fit-parent-to-child';
 import debounce from 'lodash/debounce';
 import vex from 'vex-js';
+import smoothScroll from 'smooth-scroll';
 
 vex.defaultOptions.className = 'vex-theme-default';
 
@@ -198,5 +199,11 @@ window.addEventListener('load', () => {
       vex.open({ unsafeContent: imageHTML });
       document.querySelector('.vex').classList.add('active');
     });
+  });
+});
+
+window.addEventListener('load', () => {
+  smoothScroll.init({
+    selector: '.media-kit__jump-link'
   });
 });

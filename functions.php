@@ -199,7 +199,29 @@ add_action( 'init', function() {
             'order' => 'ASC'
             ] );
 
+        $post_names = [];
+        $titles = implode( '', array_map( function( $kit_post ) use ( &$post_names ) {
+        	$first_word = substr( $kit_post->post_name, 0, strpos( $kit_post->post_name, '-' ) );
+
+        	if ( in_array( $first_word, $post_names ) ) {
+            	return;
+            } else {
+            	$post_names[] = $first_word;
+            }
+
+        	return "
+        		<a class=media-kit__jump-link href=#$kit_post->post_name>
+        			" . substr( $kit_post->post_title, 0, strpos( $kit_post->post_title, ',') ) . "
+        		</a> 
+        	";
+        }, $kit_posts ?: [] ) );
+
+
         ob_start();
+
+        echo "<div class=media-kit__jump-links>$titles</div>";
+
+        $post_names = [];
         foreach ( $kit_posts as $kit_post ) {
             $original_post_thumbnail = get_the_post_thumbnail( $kit_post->ID, 'large' );
             $post_thumbnail = str_replace(
@@ -224,8 +246,15 @@ add_action( 'init', function() {
 
             $modal = esc_attr( $modal );
 
+            if ( ! in_array( $kit_post->post_name, $post_names ) ) {
+            	$id_attribute = " id=$kit_post->post_name";
+            } else {
+            	$post_names[] = $kit_post->post_name;
+            	$id_attribute = '';
+            }
+
             echo "
-            <a href=# data-image='$modal' class=media-kit-post>
+            <a href=#{$id_attribute} data-image='{$modal}' class=media-kit-post>
                 <div class=media-kit-post__thumbnail-container>
                     $post_thumbnail
                 </div>

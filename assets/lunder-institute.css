@@ -2249,7 +2249,8 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
 small,
-.small {
+.small,
+.media-kit__jump-link {
   font-size: 80%;
   font-weight: normal; }
 
@@ -4076,6 +4077,20 @@ input[type="button"].btn-block {
 
 .menu-icon-container.active path:last-of-type {
   transform: rotate(-45deg) translate3d(-9pt, -1pt, 0); }
+
+.media-kit__jump-links {
+  text-align: justify; }
+
+.media-kit__jump-link {
+  white-space: nowrap; }
+  .media-kit__jump-link:after {
+    content: '';
+    margin-left: .375em;
+    margin-right: .375em; }
+  .media-kit__jump-link:last-of-type {
+    margin-right: auto; }
+    .media-kit__jump-link:last-of-type:after {
+      content: ''; }
 
 .media-kit-post {
   clear: both;
