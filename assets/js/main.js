@@ -19,7 +19,7 @@ const galleryInterval = 4000;
 window.addEventListener('load', handleSplash);
 window.addEventListener('load', () => new GalleryHandler());
 
-if (wpData.isSafari) {
+if (wpData.isSafari || wpData.isIE) {
   window.addEventListener('load', fixSVGs);
 }
 

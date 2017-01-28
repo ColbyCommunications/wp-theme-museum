@@ -20,8 +20,6 @@ export default function fixSVGs() {
 
     const ratio = height / width;
     const computedHeight = svg.clientWidth * ratio;
-    console.log(svg);
-    console.log(svg.clientWidth);
 
     svg.style.height = `${computedHeight}px`;
   };

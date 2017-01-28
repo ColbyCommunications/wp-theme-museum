@@ -153,27 +153,8 @@ add_shortcode( 'lunder-logo-svg', function() {
 	return ob_get_clean();
 } );
 
-add_action( 'wp_head', function() {
-	global $is_gecko;
-
-	echo '
-<script src="https://use.typekit.net/gty7fbd.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
-	';
-
-	if ( $is_gecko ) {
-	?>
-<style>
-.front-page-gallery__images img {
-	left: 0;
-}
-</style>
-	<?php
-	}
-} );
-
 add_action( 'wp_enqueue_scripts', function() {
-	global $is_gecko, $is_safari, $lunder_institute;
+	global $is_gecko, $is_safari, $is_IE, $lunder_institute;
 
 	if ( $is_gecko ) {
 		wp_enqueue_style(
@@ -188,6 +169,15 @@ add_action( 'wp_enqueue_scripts', function() {
 		wp_enqueue_style(
 			"{$lunder_institute->text_domain}-safari",
 			"{$lunder_institute->assets_url}safari.css",
+			[ $lunder_institute->text_domain ],
+			$lunder_institute->version
+		);
+	}
+
+	if ( $is_IE ) {
+		wp_enqueue_style(
+			"{$lunder_institute->text_domain}-ie",
+			"{$lunder_institute->assets_url}ie.css",
 			[ $lunder_institute->text_domain ],
 			$lunder_institute->version
 		);
@@ -418,3 +408,11 @@ add_filter( 'rest_prepare_post', function( $response, $the_post ) {
 
 	return $response;
 }, 10, 2 );
+
+add_action( 'wp_head', function() {
+	echo '
+<script src="https://use.typekit.net/gty7fbd.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	';
+
+} );

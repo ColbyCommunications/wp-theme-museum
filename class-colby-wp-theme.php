@@ -66,7 +66,7 @@ class Colby_Wp_Theme {
 			'isGecko' => $is_gecko,
 			'isiphone' => $is_iphone,
 			'isSafari' => $is_safari,
-			'isIe' => $is_IE,
+			'isIE' => $is_IE,
 			'isEdge' => $is_edge,
     	];
 
