@@ -10,8 +10,8 @@
   margin-top: -105px;
 }
 
-.front-page-gallery__images {
-  position: absolute;
+.front-page-gallery__image-container {
+	position: absolute;
   width: 100%;
   z-index: -2;
   top: 0;
@@ -20,13 +20,11 @@
   bottom: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   min-height: 300px;
   overflow: hidden;
 
   img {
-    position: absolute;
-    top: 0;
     opacity: 0;
     transition: opacity 1s;
     width: 100%;

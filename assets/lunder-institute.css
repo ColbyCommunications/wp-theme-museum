@@ -5009,7 +5009,7 @@ body.vex-open {
   position: relative;
   margin-top: -105px; }
 
-.front-page-gallery__images {
+.front-page-gallery__image-container {
   position: absolute;
   width: 100%;
   z-index: -2;
@@ -5019,18 +5019,16 @@ body.vex-open {
   bottom: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   min-height: 300px;
   overflow: hidden; }
-  .front-page-gallery__images img {
-    position: absolute;
-    top: 0;
+  .front-page-gallery__image-container img {
     opacity: 0;
     transition: opacity 1s;
     width: 100%;
     height: auto;
     min-width: 900px; }
-  .front-page-gallery__images .front-page-gallery__active-image {
+  .front-page-gallery__image-container .front-page-gallery__active-image {
     opacity: 1; }
 
 .front-page-gallery__titles {
@@ -5164,7 +5162,7 @@ body.vex-open {
 
 .page-has-thumbnail__thumbnail-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   max-width: none; }
   .page-has-thumbnail__thumbnail-container img {
@@ -5176,7 +5174,8 @@ body.vex-open {
   position: relative;
   max-width: none;
   padding: 0;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  overflow-x: hidden; }
 
 .page-has-thumbnail__title {
   position: absolute;

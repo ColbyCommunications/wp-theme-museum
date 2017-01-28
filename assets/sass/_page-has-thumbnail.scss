@@ -20,7 +20,7 @@
 
 .page-has-thumbnail__thumbnail-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   max-width: none;
 
@@ -36,6 +36,7 @@
   max-width: none;
   padding: 0;
   margin-bottom: 1.5em;
+	overflow-x: hidden;
 }
 
 .page-has-thumbnail__title {

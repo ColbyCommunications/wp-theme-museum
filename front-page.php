@@ -23,11 +23,11 @@ add_filter( 'post_gallery', function( $output, $atts ) {
             $key === 0 ? ['class' => 'front-page-gallery__active-image'] : []
         );
 
-        $images .= 0 === $key ? $attachment_image : str_replace(
+        $images .= "<div class=front-page-gallery__image-container>" . ( 0 === $key ? $attachment_image : str_replace(
             ['srcset=', 'src='],
             ['data-original-set=', 'data-original='],
             $attachment_image
-        );
+        ) ) . "</div>";
 
         $title = '';
         $words = explode(' ', $gallery_post->post_content );
