@@ -7,7 +7,6 @@
   "minimum-stability": "dev",
 	"autoload": {
       "files": [
-					"inc/analytics.php",
 					"inc/rest-filters.php",
           "inc/shortcodes/lunder-logo-svg.php",
 					"inc/shortcodes/media-kit.php",
