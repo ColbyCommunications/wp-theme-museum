@@ -1,5 +1,13 @@
 <?php
 
+/** Add typekit to page head. */
+add_action( 'wp_head', function() {
+	echo '
+<script src="https://use.typekit.net/gty7fbd.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	';
+} );
+
 if ( ! function_exists( 'three_column_header_draw_left_column' ) ) :
 function three_column_header_draw_left_column() {
     ob_start(); ?>

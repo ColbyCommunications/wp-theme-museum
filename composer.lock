@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f951144049c257b891d28e4da0a4d01f",
+    "hash": "f26598eb7178684204d38d8889f83e6a",
     "content-hash": "34c9242306ba6417766604f1a5943c9f",
     "packages": [
         {
@@ -57,12 +57,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColbyCommunications/wp-components.git",
-                "reference": "cf034e66ed99ccaacdd7e60a893cd12932362184"
+                "reference": "cdf78d8a1f827ec25ec140234bf65148ef278789"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ColbyCommunications/wp-components/zipball/cf034e66ed99ccaacdd7e60a893cd12932362184",
-                "reference": "cf034e66ed99ccaacdd7e60a893cd12932362184",
+                "url": "https://api.github.com/repos/ColbyCommunications/wp-components/zipball/cdf78d8a1f827ec25ec140234bf65148ef278789",
+                "reference": "cdf78d8a1f827ec25ec140234bf65148ef278789",
                 "shasum": ""
             },
             "require": {
@@ -71,7 +71,8 @@
             "type": "library",
             "autoload": {
                 "files": [
-                    "autoload.php"
+                    "autoload.php",
+                    "src/features/acf-options-page.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -82,7 +83,7 @@
                 }
             ],
             "description": "A collection of commonly used WordPress parts.",
-            "time": "2017-01-28 21:14:07"
+            "time": "2017-01-28 22:02:29"
         },
         {
             "name": "jwatkins/wp-development",
