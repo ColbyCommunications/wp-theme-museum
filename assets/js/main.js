@@ -4,8 +4,11 @@ import fitParentToChild from 'colby-bootstrap/js/fit-parent-to-child';
 import debounce from 'lodash/debounce';
 import vex from 'vex-js';
 import smoothScroll from 'smooth-scroll';
-import React, { Component } from 'react';
+import React, { Component } from 'react/dist/react.min';
 import { render } from 'react-dom';
+import 'whatwg-fetch';
+
+import fixSVGs from './fix-svgs';
 
 vex.defaultOptions.className = 'vex-theme-default';
 
@@ -15,7 +18,10 @@ const galleryInterval = 4000;
 
 window.addEventListener('load', handleSplash);
 window.addEventListener('load', () => new GalleryHandler());
-window.addEventListener('load', fixSVGs);
+
+if (wpData.isSafari) {
+  window.addEventListener('load', fixSVGs);
+}
 
 function handleSplash() {
   const splash = document.querySelector('.front-page-splash');
@@ -144,40 +150,6 @@ window.addEventListener(
 window.addEventListener('load', () => {
   const text = document.querySelector('.front-page-gallery__titles');
 });
-
-function fixSVGs() {
-  const svgs = document.querySelectorAll('svg');
-
-  if (!svgs) {
-    return;
-  }
-
-  let fixIt = svg => {
-    let height = svg.getAttribute('height');
-    let width = svg.getAttribute('width');
-
-    if (!height || !width) {
-      return;
-    }
-
-    width = Number(width.replace('px', ''));
-    height = Number(height.replace('px', ''));
-
-    const ratio = height / width;
-    const computedHeight = svg.clientWidth * ratio;
-    console.log(width, height, ratio);
-
-    svg.style.height = `${computedHeight}px`;
-  };
-
-  let fixThem = () => {
-    [].forEach.call(svgs, fixIt);
-  };
-
-  fixThem();
-  fixThem = debounce(fixThem, 100);
-  window.addEventListener('resize', fixThem);
-}
 
 window.addEventListener('load', () => {
   fitParentToChild({

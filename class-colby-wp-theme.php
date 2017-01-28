@@ -59,8 +59,15 @@ class Colby_Wp_Theme {
     }
 
     public function localize_scripts() {
+		global $is_gecko, $is_iphone, $is_safari, $is_IE, $is_edge;
+
         $wp_data = [
     		'bloginfoUrl' => get_bloginfo( 'url' ),
+			'isGecko' => $is_gecko,
+			'isiphone' => $is_iphone,
+			'isSafari' => $is_safari,
+			'isIe' => $is_IE,
+			'isEdge' => $is_edge,
     	];
 
         if ( empty( $wp_data = apply_filters( 'colby_wp_theme_localized_data', $wp_data ) ) ) {

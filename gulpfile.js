@@ -17,6 +17,11 @@ const watchpaths = { sass: ['assets/sass/*.scss', 'assets/sass/**/*.scss'] };
 
 const sassIncludePaths = ['assets/scss', 'node_modules/colby-bootstrap/scss'];
 
+gulp.task('set-prod-node-env', function () {
+  console.log('Setting node environment');
+  return process.env.NODE_ENV = 'production';
+});
+
 function compile(watch) {
   const presets = { presets: ['es2015', 'react'] };
   const browserified = browserify('./assets/js/main.js', {
@@ -89,4 +94,9 @@ gulp.task(
 
 gulp.task('build', () => compile());
 gulp.task('watch', () => watch());
-gulp.task('default', ['gulpWatch', 'watch', 'gulpAdminWatch']);
+gulp.task('default', [
+  'set-prod-node-env',
+  'gulpWatch',
+  'watch',
+  'gulpAdminWatch',
+]);
