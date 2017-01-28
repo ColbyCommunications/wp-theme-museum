@@ -8,8 +8,6 @@ import React, { Component } from 'react/dist/react.min';
 import { render } from 'react-dom';
 import 'whatwg-fetch';
 
-import fixSVGs from './fix-svgs';
-
 vex.defaultOptions.className = 'vex-theme-default';
 
 const lazyload = new LazyLoad();
@@ -18,10 +16,6 @@ const galleryInterval = 4000;
 
 window.addEventListener('load', handleSplash);
 window.addEventListener('load', () => new GalleryHandler());
-
-if (wpData.isSafari || wpData.isIE) {
-  window.addEventListener('load', fixSVGs);
-}
 
 function handleSplash() {
   const splash = document.querySelector('.front-page-splash');
@@ -40,15 +34,15 @@ function handleSplash() {
   document.querySelector('body').style.opacity = '1';
   setTimeout(
     () => {
-      //      splash.style.opacity = '0';
+      splash.style.opacity = '0';
     },
 
     splashTimeout
   );
   setTimeout(
     () => {
-      //      splash.style.height = '0';
-      //      splash.style['pointer-events'] = 'none';
+      splash.style.height = '0';
+      splash.style['pointer-events'] = 'none';
     },
 
     splashTimeout + 1000
@@ -79,7 +73,7 @@ class GalleryHandler {
         this.gallery.classList.remove('pre-load');
         this.handleActiveIndex();
         setInterval(this.handleActiveIndex, galleryInterval);
-        //        this.gallery.style.opacity = '1';
+        this.gallery.style.opacity = '1';
       },
 
       splashTimeout
