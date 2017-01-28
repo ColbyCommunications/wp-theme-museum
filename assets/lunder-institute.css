@@ -4145,7 +4145,7 @@ input[type="button"].btn-block {
 .media-kit-post__modal-content-container {
   width: 100%;
   max-width: 768px;
-  padding: 2.25em 1.5em .75em;
+  padding: 2.25em .75em .75em;
   margin: 0 auto; }
 
 .collection-container table {
@@ -4751,7 +4751,6 @@ body.vex-open {
     border-radius: 5px;
     background: #f0f0f0;
     color: #444;
-    padding: 1em;
     position: relative;
     margin: 0 auto;
     max-width: 100%;
@@ -4879,7 +4878,7 @@ body.vex-open {
     border-radius: 0;
     background: white;
     width: 94%;
-    padding: 1em; }
+    padding: 0; }
   .vex.vex-theme-default .vex-close {
     position: absolute;
     font-size: 32px;
