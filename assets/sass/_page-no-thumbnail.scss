@@ -12,6 +12,10 @@
       padding-right: 3rem;
     }
   }
+
+	@media screen and (max-width: 767px) {
+		padding-top: 3em;
+	}
 }
 
 .page-no-thumbnail__header {

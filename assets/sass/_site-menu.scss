@@ -7,6 +7,17 @@
     position: relative;
   }
 
+	@media screen and (max-width: 767px) {
+		li {
+			margin-top: .25em;
+			margin-bottom: .25em;
+		}
+
+		.menu-item a {
+			font-size: 1.122em;
+		}
+	}
+
   li {
     display: inline-block;
     padding-right: 1em;
