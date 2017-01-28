@@ -1,6 +1,7 @@
 import debounce from 'lodash/debounce';
 
 export default function fixSVGs() {
+  return;
   const svgs = document.querySelectorAll('svg');
 
   if (!svgs) {
