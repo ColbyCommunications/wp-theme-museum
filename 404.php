@@ -3,7 +3,7 @@ get_header(); ?>
 
 <main id=main class=main--index>
 
-<article <?php post_class(); ?>>
+<article class="article-404">
     <header>
         <h1>No posts found.</h1>
     </header>

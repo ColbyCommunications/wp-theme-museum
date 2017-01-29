@@ -5392,3 +5392,8 @@ li {
 .post {
   max-width: 970px;
   margin: 0 auto; }
+
+.article-404 {
+  max-width: 970px;
+  padding: 1.5em;
+  margin: 0 auto; }
