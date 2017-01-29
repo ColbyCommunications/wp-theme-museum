@@ -5417,3 +5417,7 @@ li {
   max-width: 970px;
   padding: 1.5em;
   margin: 0 auto; }
+
+@media screen and (max-width: 767px) {
+  #wpadminbar {
+    display: none !important; } }

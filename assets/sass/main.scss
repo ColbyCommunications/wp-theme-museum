@@ -136,3 +136,9 @@ li {
 	padding: 1.5em;
 	margin: 0 auto;
 }
+
+#wpadminbar {
+	@media screen and (max-width: 767px) {
+		display: none !important;
+	}
+}
