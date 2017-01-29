@@ -1,7 +1,6 @@
 // Third-party node packages.
 import 'whatwg-fetch';
 import LazyLoad from 'vanilla-lazyload';
-import vex from 'vex-js';
 import smoothScroll from 'smooth-scroll';
 import React from 'react';
 import { render } from 'react-dom';
@@ -16,8 +15,6 @@ import handleSplash from './handle-splash';
 import GalleryHandler from './gallery-handler';
 import handleMediaKit from './handle-media-kit';
 import HeaderSearch from './header-search';
-
-vex.defaultOptions.className = 'vex-theme-default';
 
 const lazyload = new LazyLoad();
 

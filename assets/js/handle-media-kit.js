@@ -1,3 +1,7 @@
+import vex from 'vex-js';
+
+vex.defaultOptions.className = 'vex-theme-default';
+
 export default function() {
   const mediaKitPosts = document.querySelectorAll('.media-kit-post');
 
