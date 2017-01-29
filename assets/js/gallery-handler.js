@@ -4,32 +4,33 @@ const galleryInterval = 4000;
 export default class GalleryHandler {
   constructor() {
     this.gallery = document.querySelector('.front-page-gallery');
-    this.titles = document.querySelectorAll('[class*=title-]');
-    this.images = document.querySelectorAll('.front-page-gallery__images img');
-    this.imagesContainer = document.querySelector(
-      '.front-page-gallery__images'
+    this.titleSpans = document.querySelectorAll(
+      `.front-page-gallery__titles > span`
     );
+    this.images = document.querySelectorAll('.front-page-gallery__images img');
+    this.savedTitles = {};
+
+    this.start = null;
 
     this.run = this.run.bind(this);
     this.handleActiveIndex = this.handleActiveIndex.bind(this);
 
-    if (this.gallery && this.titles && this.images) {
+    if (this.gallery && this.titleSpans && this.images) {
       this.activeIndex = -1;
-      this.run();
+      window.requestAnimationFrame(this.run);
     }
   }
 
-  run() {
-    setTimeout(
-      () => {
-        this.gallery.classList.remove('pre-load');
-        this.handleActiveIndex();
-        setInterval(this.handleActiveIndex, galleryInterval);
-        this.gallery.style.opacity = '1';
-      },
+  run(timestamp) {
+    this.start = this.start ? this.start : timestamp;
+    const progress = timestamp - this.start;
 
-      splashTimeout
-    );
+    if (progress > splashTimeout && progress % splashTimeout < 25) {
+      this.handleActiveIndex();
+      this.gallery.style.opacity = '1';
+    }
+
+    window.requestAnimationFrame(this.run);
   }
 
   handleActiveIndex() {
@@ -39,21 +40,21 @@ export default class GalleryHandler {
       this.activeIndex = 0;
     }
 
-    [].forEach.call(
-      document.querySelectorAll(`.front-page-gallery__titles > span`),
-      span => {
-        span.style['font-weight'] = '';
-        span.style.opacity = '';
-      }
-    );
+    [].forEach.call(this.titleSpans, span => {
+      span.style['font-weight'] = '';
+      span.style.opacity = '';
+    });
 
-    [].forEach.call(
-      document.querySelectorAll(`.title-${this.activeIndex}`),
-      span => {
-        span.style['font-weight'] = '900';
-        span.style.opacity = 1;
-      }
-    );
+    // Cache words in this title.
+    if (!this.savedTitles[`.title-${this.activeIndex}`]) {
+      let titles = document.querySelectorAll(`.title-${this.activeIndex}`);
+      this.savedTitles[`.title-${this.activeIndex}`] = titles;
+    }
+
+    [].forEach.call(this.savedTitles[`.title-${this.activeIndex}`], span => {
+      span.style['font-weight'] = '900';
+      span.style.opacity = 1;
+    });
 
     [].forEach.call(
       this.images,
