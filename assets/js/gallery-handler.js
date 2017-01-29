@@ -25,9 +25,10 @@ export default class GalleryHandler {
     this.start = this.start ? this.start : timestamp;
     const progress = timestamp - this.start;
 
-    if (progress > splashTimeout && progress % splashTimeout < 20) {
+    if (progress > splashTimeout) {
       this.handleActiveIndex();
       this.gallery.style.opacity = '1';
+      this.start = timestamp;
     }
 
     window.requestAnimationFrame(this.run);
