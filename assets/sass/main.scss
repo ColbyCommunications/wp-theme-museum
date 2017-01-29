@@ -30,6 +30,8 @@
         'header-search',
         'front-page-splash',
         'front-page-gallery',
+				'index',
+				'archive',
         'page-has-thumbnail',
         'page-no-thumbnail';
 
@@ -48,6 +50,12 @@ p {
     line-height: 1.4rem;
 }
 
+.alignright {
+	float: right;
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
 .intro, .lead {
   font-size: 1.4rem;
   line-height: 1.95rem;
@@ -56,10 +64,17 @@ p {
   font-weight: 200;
 }
 
-.caption {
+.caption, .wp-caption-text {
   color: #898989;
   font-size: .8rem;
   line-height: 1.2rem;
+	padding-top: .25rem;
+}
+
+
+.size-full {
+	max-width: 100%;
+	height: auto;
 }
 
 h1, .h1 {
@@ -68,6 +83,7 @@ h1, .h1 {
     color: #353535;
     font-size: 1.2rem;
     font-weight: 800;
+		margin-bottom: .375em;
 }
 
 h2, .h2 {
@@ -86,8 +102,30 @@ h3, .h3 {
     font-weight: 800;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.wp-caption {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
 li {
     font-size: .9rem;
     line-height: 1.3rem;
     color: #898989;
+}
+
+.the-date {
+	margin-bottom: .75em;
+	display: block;
+	font-size: .841em;
+	color: $gray-dark;
+}
+
+.post {
+	max-width: 970px;
+	margin: 0 auto;
 }

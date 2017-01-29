@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Theme Name: Lunder Institute
  * Author: John Watkins, Colby College Communications
@@ -5161,6 +5162,69 @@ body.vex-open {
 .length-24 {
   flex: 24; }
 
+.main--index > article {
+  padding-top: 3em; }
+  .main--index > article > * {
+    max-width: 970px;
+    width: 100%; }
+  @media screen and (max-width: 767px) {
+    .main--index > article {
+      padding-top: 3em; } }
+
+.main--archive > article {
+  padding-top: 3em; }
+  .main--archive > article > * {
+    max-width: 970px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; }
+    @media screen and (min-width: 48rem) {
+      .main--archive > article > * {
+        padding-left: 3rem;
+        padding-right: 3rem; } }
+  .main--archive > article section:not(:first-of-type) header {
+    border-top: 1px solid #f5f5f5;
+    padding-top: 1.5em; }
+  @media screen and (max-width: 767px) {
+    .main--archive > article {
+      padding-top: 3em; } }
+
+.archive section {
+  padding-bottom: .75em; }
+  .archive section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 3em; }
+  .archive section h1 {
+    margin-bottom: .25em; }
+  .archive section h1 a {
+    color: #002878; }
+
+.archive__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .75em 0;
+  margin-top: 1.5em;
+  position: relative; }
+
+.archive__footer-next, .archive__footer-prev {
+  position: relative; }
+  .archive__footer-next a, .archive__footer-prev a {
+    position: relative;
+    font-size: .944em; }
+
+.archive__footer-next:not(:empty) a:after {
+  content: '»';
+  left: -.375em;
+  padding-left: .375em; }
+
+.archive__footer-prev:not(:empty) a:before {
+  content: '«';
+  left: -.375em;
+  padding-right: .375em; }
+
 .main--page-has-thumbnail {
   margin-top: -105px; }
 
@@ -5262,6 +5326,11 @@ p {
   font-size: .9rem;
   line-height: 1.4rem; }
 
+.alignright {
+  float: right;
+  margin-left: 1.5em;
+  margin-bottom: 1.5em; }
+
 .intro, .lead {
   font-size: 1.4rem;
   line-height: 1.95rem;
@@ -5269,17 +5338,23 @@ p {
   color: #000;
   font-weight: 200; }
 
-.caption, .page-has-thumbnail__footer-caption {
+.caption, .page-has-thumbnail__footer-caption, .wp-caption-text {
   color: #898989;
   font-size: .8rem;
-  line-height: 1.2rem; }
+  line-height: 1.2rem;
+  padding-top: .25rem; }
+
+.size-full {
+  max-width: 100%;
+  height: auto; }
 
 h1, .h1 {
   font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
   text-transform: uppercase;
   color: #353535;
   font-size: 1.2rem;
-  font-weight: 800; }
+  font-weight: 800;
+  margin-bottom: .375em; }
 
 h2, .h2, .media-kit-post__title {
   font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
@@ -5295,7 +5370,25 @@ h3, .h3 {
   font-size: .9rem;
   font-weight: 800; }
 
+img {
+  max-width: 100%;
+  height: auto; }
+
+.wp-caption {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
 li {
   font-size: .9rem;
   line-height: 1.3rem;
   color: #898989; }
+
+.the-date {
+  margin-bottom: .75em;
+  display: block;
+  font-size: .841em;
+  color: #353535; }
+
+.post {
+  max-width: 970px;
+  margin: 0 auto; }

@@ -1,0 +1,12 @@
+.main--index > article {
+	padding-top: 3em;
+
+  > * {
+    max-width: 970px;
+    width: 100%;
+  }
+
+	@media screen and (max-width: 767px) {
+		padding-top: 3em;
+	}
+}
