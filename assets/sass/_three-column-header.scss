@@ -10,6 +10,10 @@
   margin: 0 auto;
   height: 105px;
 
+	@media screen and (max-width: 767px) {
+		height: 75px;
+	}
+
   @media screen and (max-width: 767px) {
 		position: fixed;
 		top: 0;

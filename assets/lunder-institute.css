@@ -3967,6 +3967,10 @@ input[type="button"].btn-block {
   width: 160px;
   height: 71.23px;
   color: #C3002F; }
+  @media screen and (max-width: 767px) {
+    .lunder-logo-container svg {
+      width: 100px;
+      height: 44.52px; } }
 
 .three-column-header {
   padding: .75em 1.5em;
@@ -3978,6 +3982,9 @@ input[type="button"].btn-block {
   background: rgba(255, 255, 255, 0.5);
   margin: 0 auto;
   height: 105px; }
+  @media screen and (max-width: 767px) {
+    .three-column-header {
+      height: 75px; } }
   @media screen and (max-width: 767px) {
     .three-column-header {
       position: fixed;
@@ -4076,11 +4083,12 @@ input[type="button"].btn-block {
 .menu-icon-container {
   display: block;
   position: absolute;
-  top: 1.5em;
+  top: .75em;
   right: 1.5em; }
   @media screen and (min-width: 768px) {
     .menu-icon-container {
-      display: none; } }
+      display: none;
+      top: 1.5em; } }
   .menu-icon-container svg {
     height: 40px;
     width: 40px; }

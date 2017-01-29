@@ -1,7 +1,12 @@
 .lunder-logo-container {
-  svg {
+	svg {
     width: 160px;
     height: 71.23px;
     color: #C3002F;
-  }
+
+		@media screen and (max-width: 767px) {
+			width: 100px;
+			height: 44.52px;
+		}
+	}
 }
