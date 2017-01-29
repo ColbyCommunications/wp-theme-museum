@@ -31,7 +31,11 @@ export default class HeaderSearch extends Component {
         return;
       }
 
-      if (!event.target.classList.contains('header-search-container')) {
+      if (
+        !event.target.classList.contains('header-search-container') &&
+          !event.target.classList.contains('header-search-results') &&
+          !event.target.classList.contains('result-item')
+      ) {
         this.closeSearch();
       }
     });
@@ -49,7 +53,7 @@ export default class HeaderSearch extends Component {
 
   drawResult(result, key) {
     return (
-      <li key={key}>
+      <li key={key} className="result-item">
         <a
           href={result.link}
           dangerouslySetInnerHTML={{ __html: result.title.rendered }}
