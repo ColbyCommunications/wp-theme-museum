@@ -10,6 +10,12 @@
 	}
 }
 
+.header-search-container > a {
+	@media screen and (max-width: 767px) {
+		font-size: 1.122em;
+	}
+}
+
 .header-search-results {
 	position: absolute;
 	top: 2.5em;

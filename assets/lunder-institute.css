@@ -4028,22 +4028,24 @@ input[type="button"].btn-block {
   margin-bottom: .375em; }
   .site-menu .menu-item-has-children {
     position: relative; }
-  @media screen and (max-width: 767px) {
-    .site-menu li {
-      margin-top: .25em;
-      margin-bottom: .25em; }
-    .site-menu .menu-item a {
-      font-size: 1.122em; } }
   .site-menu li {
-    display: inline-block;
-    padding-right: 1em; }
+    margin-top: .25em;
+    margin-bottom: .375em;
+    display: inline-block; }
     .site-menu li:last-of-type {
       padding-right: 0; }
     .site-menu li a {
       color: #353535;
       font-weight: 400;
       text-transform: uppercase;
-      font-size: .85rem; }
+      font-size: 1.122em; }
+  @media screen and (min-width: 768px) {
+    .site-menu li {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-right: 1em; }
+    .site-menu a {
+      font-size: .85rem; } }
   .site-menu .sub-menu {
     visibility: hidden;
     position: absolute;
@@ -4919,6 +4921,10 @@ body.vex-open {
     background: transparent;
     border: 0;
     padding: .25em; }
+
+@media screen and (max-width: 767px) {
+  .header-search-container > a {
+    font-size: 1.122em; } }
 
 .header-search-results {
   position: absolute;
