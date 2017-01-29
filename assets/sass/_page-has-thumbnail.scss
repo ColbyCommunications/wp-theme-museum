@@ -1,5 +1,7 @@
 .main--page-has-thumbnail {
-  margin-top: -105px;
+	@media screen and (min-width: 767px) {
+	  margin-top: -105px;
+	}
 }
 
 .page-has-thumbnail {
