@@ -2,6 +2,11 @@
   left: 0;
 }
 
+.front-page-gallery__titles {
+	display: block;
+}
+
 .front-page-gallery__titles span {
 	flex: none !important;
+	display: inline-block;
 }
