@@ -142,3 +142,10 @@ li {
 		display: none !important;
 	}
 }
+
+html[lang="en"] {
+	@media screen and (max-width: 782px) {
+    margin-top: 0 !important;
+	}
+
+}

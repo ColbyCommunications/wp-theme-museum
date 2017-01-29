@@ -5267,7 +5267,7 @@ body.vex-open {
   .page-has-thumbnail__thumbnail-container img {
     width: 100%;
     height: auto;
-    min-width: 800px; }
+    min-width: 950px; }
 
 .page-has-thumbnail__header {
   position: relative;
@@ -5421,3 +5421,7 @@ li {
 @media screen and (max-width: 767px) {
   #wpadminbar {
     display: none !important; } }
+
+@media screen and (max-width: 782px) {
+  html[lang="en"] {
+    margin-top: 0 !important; } }
