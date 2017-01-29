@@ -4939,8 +4939,11 @@ body.vex-open {
   top: 2.5em;
   width: 300px;
   background: white;
-  padding: 1.5em;
+  padding-top: 1.5em;
+  padding-left: 0;
   border: 1px solid #9E9E9E; }
+  .header-search-results h3 {
+    padding-left: 1.5rem; }
   @media screen and (max-width: 767px) {
     .header-search-results {
       position: static;
@@ -4949,7 +4952,10 @@ body.vex-open {
       padding-top: 2.25em;
       border: 0; } }
   .header-search-results li {
-    padding-bottom: .5em; }
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    padding-bottom: .5em;
+    display: block; }
 
 .header-search-results__close {
   position: absolute;
@@ -4967,14 +4973,17 @@ body.vex-open {
   .header-search-results__prev-next a {
     font-size: 2em !important;
     font-weight: bold;
-    padding: .75em 0 .75em 1.5em; }
+    padding: 1.5rem; }
     .header-search-results__prev-next a:first-of-type {
-      padding: .75em 1.5em .75em 0; }
+      padding: 1.5rem; }
     .header-search-results__prev-next a:hover, .header-search-results__prev-next a:focus {
       text-decoration: none; }
 
 .header-search-results__loading {
   font-size: .891em; }
+
+.no-results {
+  padding: 1.5rem; }
 
 .front-page-splash {
   display: flex;

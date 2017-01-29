@@ -126,7 +126,11 @@ export default class HeaderSearch extends Component {
             }}
 
           />
-          {this.state.results.map(this.drawResult)}
+          {
+            this.state.results.length > 0
+              ? this.state.results.map(this.drawResult)
+              : <span className="no-results">No results.</span>
+          }
           <div className="header-search-results__prev-next">
             <a
               href="#"

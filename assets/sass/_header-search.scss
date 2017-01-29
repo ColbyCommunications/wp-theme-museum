@@ -21,8 +21,13 @@
 	top: 2.5em;
 	width: 300px;
 	background: white;
-	padding: 1.5em;
+	padding-top: 1.5em;
+	padding-left: 0;
 	border: 1px solid $gray-lighter;
+
+	h3 {
+		padding-left: 1.5rem;
+	}
 
 	@media screen and (max-width: 767px) {
 		position: static;
@@ -33,7 +38,10 @@
 	}
 
 	li {
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
 		padding-bottom: .5em;
+		display: block;
 	}
 }
 
@@ -57,10 +65,10 @@
 	a {
 		font-size: 2em !important;
 		font-weight: bold;
-		padding: .75em 0 .75em 1.5em;
+		padding: 1.5rem;
 
 		&:first-of-type {
-			padding: .75em 1.5em .75em 0;
+			padding: 1.5rem;
 		}
 
 		&:hover, &:focus{
@@ -71,4 +79,8 @@
 
 .header-search-results__loading {
 	font-size: .891em;
+}
+
+.no-results {
+	padding: 1.5rem;
 }
