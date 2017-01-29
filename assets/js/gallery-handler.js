@@ -25,7 +25,7 @@ export default class GalleryHandler {
     this.start = this.start ? this.start : timestamp;
     const progress = timestamp - this.start;
 
-    if (progress > splashTimeout && progress % splashTimeout < 25) {
+    if (progress > splashTimeout && progress % splashTimeout < 10) {
       this.handleActiveIndex();
       this.gallery.style.opacity = '1';
     }
