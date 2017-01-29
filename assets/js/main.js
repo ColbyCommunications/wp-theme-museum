@@ -18,6 +18,13 @@ import HeaderSearch from './header-search';
 
 const lazyload = new LazyLoad();
 
+// Import babel-polyfill if Array.from is not defined (a sign of an old browser).
+if (typeof Array.from === 'undefined') {
+  let script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js';
+  document.head.appendChild(script);
+}
+
 window.addEventListener('load', () => {
   handleSplash();
   handleThreeColumnMenu();
