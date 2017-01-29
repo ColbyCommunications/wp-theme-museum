@@ -1,4 +1,5 @@
 <?php
+/** Function by last web developer. */
 function embarkSearchResults( $search_term ) { ?>
 	<?php
 
@@ -84,6 +85,7 @@ function embarkSearchResults( $search_term ) { ?>
 		echo 'Unable to connect to EmbARK search server.';
 	}
 }
+/** End function by last web developer. */
 
 add_action( 'init', function() {
 	add_shortcode( 'embark-search', function ( $atts ) {
