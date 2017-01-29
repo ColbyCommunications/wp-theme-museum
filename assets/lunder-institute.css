@@ -5021,10 +5021,8 @@ body.vex-open {
   transition: opacity 1.5s;
   min-height: 300px;
   height: 0;
-  position: relative; }
-  @media screen and (min-width: 768px) {
-    .front-page-gallery {
-      margin-top: -105px; } }
+  position: relative;
+  margin-top: -105px; }
 
 .front-page-gallery__image-container {
   position: absolute;
