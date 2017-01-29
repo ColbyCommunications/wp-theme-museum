@@ -1,8 +1,4 @@
 <?php
-if ( ! have_posts() ) {
-    return include( locate_template( '404.php' ) );
-}
-
 get_header(); ?>
 
 <main id=main class=main--index>
