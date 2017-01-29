@@ -4992,11 +4992,11 @@ body.vex-open {
   height: auto;
   z-index: -1;
   transition: height .2s;
-  min-width: 1100px; }
+  min-width: 950px; }
 
 .front-page-splash__text {
   min-height: 400px;
-  padding: 4em 1.5em 0;
+  padding: 4em 1.5em 3em;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -5049,7 +5049,7 @@ body.vex-open {
     transition: opacity 1s;
     width: 100%;
     height: auto;
-    min-width: 1100px; }
+    min-width: 950px; }
   .front-page-gallery__image-container .front-page-gallery__active-image {
     opacity: 1; }
 
@@ -5065,13 +5065,14 @@ body.vex-open {
   padding: 8em 1.5em 0;
   max-width: 900px;
   padding-bottom: 4.5em;
-  padding-bottom: 4.5vw;
+  padding-bottom: 6vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
   @media screen and (min-width: 48rem) {
     .front-page-gallery__titles {
-      padding: 6em 1.5em 0; } }
+      padding: 3em 1.5em 3em;
+      padding: 6vw 1.5em 3em; } }
   .front-page-gallery__titles > span {
     color: white;
     font-size: 3em;
