@@ -10,3 +10,11 @@
 	flex: none !important;
 	display: inline-block;
 }
+
+.front-page-splash {
+	display: block;
+}
+
+.front-page-splash__text {
+	display: block;
+}
