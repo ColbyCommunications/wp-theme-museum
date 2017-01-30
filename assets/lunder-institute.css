@@ -5447,3 +5447,6 @@ li {
 @media screen and (max-width: 782px) {
   html[lang="en"] {
     margin-top: 0 !important; } }
+
+[data-original] {
+  min-height: 200px; }
