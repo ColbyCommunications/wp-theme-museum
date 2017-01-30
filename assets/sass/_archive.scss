@@ -1,76 +1,74 @@
 .main--archive > article {
 	padding-top: 3em;
 
-  > * {
-    max-width: 970px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-
-    @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
-      padding-left: 3rem;
-      padding-right: 3rem;
-    }
-  }
-
-	section:not(:first-of-type) header {
-		border-top: 1px solid $gray-lightest;
-		padding-top: 1.5em;
+	> * {
+		width: 100%;
+		max-width: 970px;
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+		@media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+			padding-right: 3rem;
+			padding-left: 3rem;
+		}
 	}
 
+	section:not(:first-of-type) header {
+		padding-top: 1.5em;
+		border-top: 1px solid $gray-lightest;
+	}
 	@media screen and (max-width: 767px) {
 		padding-top: 3em;
 	}
-
 }
 
 .archive {
-  section {
-    padding-bottom: .75em;
+	section {
+		padding-bottom: 0.75em;
 
-    &:last-of-type {
-      border-bottom: none;
-      margin-bottom: 3em;
-    }
+		&:last-of-type {
+			margin-bottom: 3em;
+			border-bottom: none;
+		}
 
-    h1 {
-			margin-bottom: .25em;
-    }
+		h1 {
+			margin-bottom: 0.25em;
+		}
 
-    h1 a {
-      color: $brand-success;
-    }
-  }
+		h1 a {
+			color: $brand-success;
+		}
+	}
 }
 
 .archive__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: .75em 0;
-  margin-top: 1.5em;
-  position: relative;
+	position: relative;
+	display: flex;
+	margin-top: 1.5em;
+	padding: 0.75em 0;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.archive__footer-next, .archive__footer-prev {
-  position: relative;
+.archive__footer-next,
+.archive__footer-prev {
+	position: relative;
 
-  a {
-    position: relative;
-    font-size: .944em;
-  }
+	a {
+		font-size: 0.944em;
+		position: relative;
+	}
 }
 
 .archive__footer-next:not(:empty) a:after {
-  content: '»';
-  left: -.375em;
-  padding-left: .375em;
+	left: -.375em;
+	padding-left: 0.375em;
+	content: '»';
 }
 
 .archive__footer-prev:not(:empty) a:before {
-  content: '«';
-  left: -.375em;
-  padding-right: .375em;
+	left: -.375em;
+	padding-right: 0.375em;
+	content: '«';
 }

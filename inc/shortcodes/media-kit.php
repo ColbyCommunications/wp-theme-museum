@@ -74,7 +74,7 @@ add_action( 'init', function() {
 				$id_attribute = '';
 			}
 
-			echo wp_kses_post( "
+			echo "
 			<a href=#{$id_attribute} data-image='{$modal}' class=media-kit-post>
 				<div class=media-kit-post__thumbnail-container>
 					$post_thumbnail
@@ -85,7 +85,7 @@ add_action( 'init', function() {
 					<div class=media-kit-post__content>$post_content</div>
 				</div>
 			</a>
-			" );
+			";
 		}
 
 		return ob_get_clean();

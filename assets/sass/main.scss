@@ -4,54 +4,25 @@
  * Version: 0.0.5
  * Text Domain: lunder-institute
  */
-
-
-
-@import 'this-variables',
-        'open-sans',
-        'bootstrap-basic',
-        'bootstrap-extended',
-        'skip-link',
-        'two-level-header',
-        'simple-footer';
-
-@import 'this-simple-footer',
-        'lunder-logo',
-        'three-column-header',
-        'site-menu',
-        'colby-logo',
-        'colby-museum-logo',
-        'menu-icon',
-        'media-kit',
-        'collection',
-        '../../node_modules/vex-js/sass/vex',
-        'vex-theme',
-        'vex',
-        'header-search',
-        'front-page-splash',
-        'front-page-gallery',
-				'index',
-				'archive',
-        'page-has-thumbnail',
-        'page-no-thumbnail';
+@import 'this-variables', 'open-sans', 'bootstrap-basic', 'bootstrap-extended', 'skip-link', 'two-level-header', 'simple-footer';
+@import 'this-simple-footer', 'lunder-logo', 'three-column-header', 'site-menu', 'colby-logo', 'colby-museum-logo', 'menu-icon', 'media-kit', 'collection', '../../node_modules/vex-js/sass/vex', 'vex-theme', 'vex', 'header-search', 'front-page-splash', 'front-page-gallery', 'index', 'archive', 'page-has-thumbnail', 'page-no-thumbnail';
 
 body {
-  position: relative;
-  opacity: 0;
-  transition: opacity .5s;
-  overflow-x: hidden;
-  margin: 0 auto;
+	position: relative;
+	opacity: 0;
+	transition: opacity 0.5s;
+	overflow-x: hidden;
+	margin: 0 auto;
 }
 
 p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    line-height: 1.4rem;
-
-		@media screen and (min-width: 768px) {
-			font-size: .9rem;
-		}
+	margin-top: 0;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	line-height: 1.4rem;
+	@media screen and (min-width: 768px) {
+		font-size: 0.9rem;
+	}
 }
 
 .alignright {
@@ -66,50 +37,54 @@ p {
 	margin-bottom: 1.5em;
 }
 
-.intro, .lead {
-  font-size: 1.4rem;
-  line-height: 1.95rem;
-  margin-bottom: 1.9rem;
-  color: #000;
-  font-weight: 200;
+.intro,
+.lead {
+	font-size: 1.4rem;
+	line-height: 1.95rem;
+	margin-bottom: 1.9rem;
+	color: #000;
+	font-weight: 200;
 }
 
-.caption, .wp-caption-text {
-  color: #898989;
-  font-size: .8rem;
-  line-height: 1.2rem;
-	padding-top: .25rem;
+.caption,
+.wp-caption-text {
+	color: #898989;
+	font-size: 0.8rem;
+	line-height: 1.2rem;
+	padding-top: 0.25rem;
 }
-
 
 .size-full {
 	max-width: 100%;
 	height: auto;
 }
 
-h1, .h1 {
-    font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
-    text-transform: uppercase;
-    color: #353535;
-    font-size: 1.2rem;
-    font-weight: 800;
-		margin-bottom: .375em;
+.h1,
+h1 {
+	font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
+	text-transform: uppercase;
+	color: #353535;
+	font-size: 1.2rem;
+	font-weight: 800;
+	margin-bottom: 0.375em;
 }
 
-h2, .h2 {
-    font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
-    text-transform: uppercase;
-    color: #353535;
-    font-size: 1.05rem;
-    font-weight: 800;
+.h2,
+h2 {
+	font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
+	text-transform: uppercase;
+	color: #353535;
+	font-size: 1.05rem;
+	font-weight: 800;
 }
 
-h3, .h3 {
-    font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
-    text-transform: uppercase;
-    color: #353535;
-    font-size: .9rem;
-    font-weight: 800;
+.h3,
+h3 {
+	font-family: "franklin-gothic-urw-cond", "Open Sans",Helvetica,sans-serif;
+	text-transform: uppercase;
+	color: #353535;
+	font-size: 0.9rem;
+	font-weight: 800;
 }
 
 img {
@@ -123,15 +98,15 @@ img {
 }
 
 li {
-    font-size: .9rem;
-    line-height: 1.3rem;
-    color: #898989;
+	font-size: 0.9rem;
+	line-height: 1.3rem;
+	color: #898989;
 }
 
 .the-date {
-	margin-bottom: .75em;
+	margin-bottom: 0.75em;
 	display: block;
-	font-size: .841em;
+	font-size: 0.841em;
 	color: $gray-dark;
 }
 
@@ -154,9 +129,8 @@ li {
 
 html[lang="en"] {
 	@media screen and (max-width: 782px) {
-    margin-top: 0 !important;
+		margin-top: 0 !important;
 	}
-
 }
 
 [data-original] {
