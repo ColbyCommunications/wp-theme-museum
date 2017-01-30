@@ -46,13 +46,23 @@ body {
 p {
     margin-top: 0;
     margin-bottom: 1rem;
-    font-size: .9rem;
+    font-size: 1rem;
     line-height: 1.4rem;
+
+		@media screen and (min-width: 768px) {
+			font-size: .9rem;
+		}
 }
 
 .alignright {
 	float: right;
 	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
@@ -110,7 +120,6 @@ img {
 .wp-caption {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
-	width: auto !important;
 }
 
 li {
