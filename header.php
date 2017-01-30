@@ -8,8 +8,7 @@ add_action( 'wp_head', function() {
 	';
 } );
 
-if ( ! function_exists( 'three_column_header_draw_left_column' ) ) :
-function three_column_header_draw_left_column() {
+add_filter( 'three_column_header_left_column', function( $content ) {
     ob_start(); ?>
 
     <div class=lunder-logo-container>
@@ -20,11 +19,9 @@ function three_column_header_draw_left_column() {
 
     <?php
     return ob_get_clean();
-}
-endif;
+} );
 
-if ( ! function_exists( 'three_column_header_draw_middle_column' ) ) :
-function three_column_header_draw_middle_column() {
+add_filter( 'three_column_header_middle_column', function( $content ) {
     ob_start();
 
     wp_nav_menu( [
@@ -41,11 +38,9 @@ function three_column_header_draw_middle_column() {
     $lists = implode( '</ul>', $lists );
 
     return $lists;
-}
-endif;
+} );
 
-if ( ! function_exists( 'three_column_header_draw_right_column' ) ) :
-function three_column_header_draw_right_column() {
+add_filter( 'three_column_header_right_column', function( $content ) {
     ob_start(); ?>
 
     <span class=colby-museum-logo-container>
@@ -62,8 +57,8 @@ function three_column_header_draw_right_column() {
 
     <?php
     return ob_get_clean();
-}
-endif;
+} );
+
 
 Colby_College\Wp_Components\Wp_Parts::load( 'head.php' );
 Colby_College\Wp_Components\Wp_Parts::load( 'three-column-header.php' );
