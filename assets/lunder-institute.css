@@ -4944,8 +4944,9 @@ body.vex-open {
   padding-top: 1.5em;
   padding-left: 0;
   border: 1px solid #9E9E9E; }
-  .header-search-results h3 {
-    padding-left: 1.5rem; }
+  @media screen and (min-width: 767px) {
+    .header-search-results h3 {
+      padding-left: 1.5rem; } }
   @media screen and (max-width: 767px) {
     .header-search-results {
       position: static;
@@ -4954,10 +4955,12 @@ body.vex-open {
       border: 0; } }
   .header-search-results .result-item {
     clear: both;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
     padding-bottom: 0.75em;
     display: block; }
+    @media screen and (min-width: 767px) {
+      .header-search-results .result-item {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem; } }
     .header-search-results .result-item a {
       text-transform: none;
       font-size: 1em; }

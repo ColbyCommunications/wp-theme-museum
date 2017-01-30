@@ -87,28 +87,33 @@ export default class HeaderSearch extends Component {
       return this.closeSearch();
     }
 
-    this.setState({ loading: true });
-
-    const url = `${wpData.bloginfoUrl}` +
-      `/wp-json/wp/v2/posts?search=${search}&page=${this.state.currentPage}`;
-
-    if (queryCache[url]) {
-      return this.setState({
-        results: queryCache[url],
-        showingResults: true,
-        loading: false,
-      });
+    const newState = { loading: true };
+    if (search != this.state.search) {
+      newState.currentPage = 1;
     }
 
-    fetch(url)
-      .then(response => {
-        this.totalPages = response.headers.get('X-WP-TotalPages');
-        return response.json();
-      })
-      .then(results => {
-        queryCache[url] = results;
-        this.setState({ results, showingResults: true, loading: false });
-      });
+    this.setState(newState, () => {
+      const url = `${wpData.bloginfoUrl}` +
+        `/wp-json/wp/v2/posts?search=${search}&page=${this.state.currentPage}`;
+
+      if (queryCache[url]) {
+        return this.setState({
+          results: queryCache[url],
+          showingResults: true,
+          loading: false,
+        });
+      }
+
+      fetch(url)
+        .then(response => {
+          this.totalPages = response.headers.get('X-WP-TotalPages');
+          return response.json();
+        })
+        .then(results => {
+          queryCache[url] = results;
+          this.setState({ results, showingResults: true, loading: false });
+        });
+    });
   }
 
   render() {

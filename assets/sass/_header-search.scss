@@ -27,7 +27,9 @@
 	border: 1px solid $gray-lighter;
 
 	h3 {
-		padding-left: 1.5rem;
+		@media screen and (min-width: 767px) {
+			padding-left: 1.5rem;
+		}
 	}
 	@media screen and (max-width: 767px) {
 		position: static;
@@ -38,10 +40,12 @@
 
 	.result-item {
 		clear: both;
-		padding-right: 1.5rem;
-		padding-left: 1.5rem;
 		padding-bottom: 0.75em;
 		display: block;
+		@media screen and (min-width: 767px) {
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+		}
 
 		a {
 			text-transform: none;
