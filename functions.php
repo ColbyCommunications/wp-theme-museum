@@ -30,7 +30,9 @@ register_post_type( 'collection', [
 		'name' => 'Collection Items',
 		'singular_name' => 'Collection Item',
 	],
-	'public' => true,
+	'public' => false,
+	'exclude_from_search' => false,
+	'publicly_queryable' => true,
 	'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail' ],
 	'show_in_rest' => true,
 ] );
