@@ -4939,7 +4939,7 @@ body.vex-open {
 .header-search-results {
   position: absolute;
   top: 2.5em;
-  width: 300px;
+  width: 320px;
   background: white;
   padding-top: 1.5em;
   padding-left: 0;
@@ -4952,11 +4952,25 @@ body.vex-open {
       width: auto;
       padding: 2.25em 0 0;
       border: 0; } }
-  .header-search-results li {
+  .header-search-results .result-item {
+    clear: both;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.75em;
     display: block; }
+    .header-search-results .result-item a {
+      text-transform: none;
+      font-size: 1em; }
+    .header-search-results .result-item:last-of-type {
+      padding-right: 1.5rem; }
+  .header-search-results .result-item__image {
+    height: auto;
+    max-height: 6em;
+    width: auto;
+    float: right;
+    order: 2;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em; }
 
 .header-search-results__close {
   position: absolute;
@@ -4968,6 +4982,7 @@ body.vex-open {
     text-decoration: none; }
 
 .header-search-results__prev-next {
+  clear: both;
   display: flex;
   justify-content: space-between;
   align-items: center; }

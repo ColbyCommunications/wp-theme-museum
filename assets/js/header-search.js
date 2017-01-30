@@ -29,14 +29,15 @@ export default class HeaderSearch extends Component {
         return;
       }
 
-      if (event.target.nodeName == 'A' || event.target.nodeName == 'INPUT') {
+      if (['A', 'INPUT', 'H3'].indexOf(event.target.nodeName) != -1) {
         return;
       }
 
       if (
         !event.target.classList.contains('header-search-container') &&
           !event.target.classList.contains('header-search-results') &&
-          !event.target.classList.contains('result-item')
+          !event.target.classList.contains('result-item') &&
+          !event.target.classList.contains('header-search-results__prev-next')
       ) {
         this.closeSearch();
       }
@@ -54,11 +55,19 @@ export default class HeaderSearch extends Component {
   }
 
   drawResult(result, key) {
+    let resultItemImage = '';
+    if (false && result.img_url) {
+      resultItemImage = `<img class=result-item__image` +
+        ` src=${result.img_url} alt="${result.title.rendered}" />`;
+    }
+
     return (
       <li key={key} className="result-item">
         <a
           href={result.link}
-          dangerouslySetInnerHTML={{ __html: result.title.rendered }}
+          dangerouslySetInnerHTML={{
+            __html: `${resultItemImage}${result.title.rendered}`,
+          }}
         />
       </li>
     );
