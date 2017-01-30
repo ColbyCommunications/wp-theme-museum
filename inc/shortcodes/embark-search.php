@@ -1,53 +1,66 @@
 <?php
-/** Function by last web developer. */
-function embarkSearchResults( $search_term ) { ?>
+/**
+ * Embark-search.php
+ *
+ * Shortcode for displaying assets in the embark server.
+ *
+ * @package lunder-institute
+ */
+
+/**
+ * Function by last web developer.
+ *
+ * @param string $search_term The current search term.
+ */
+function embark_search_results( $search_term ) {
+	?>
 	<?php
 
-	$embarkURL = 'http://embark.colby.edu/';
+	$embark_url = 'http://embark.colby.edu/';
 	if ( trim( $search_term ) ) {
-		$embarkURL .= '4DACTION/HANDLECGI/CTN3?display=por';
+		$embark_url .= '4DACTION/HANDLECGI/CTN3?display=por';
 	}
-	if ( isset( $_GET['x'] ) && isset( $_GET['obj'] ) && is_numeric($_GET['x'] ) ) {
+	if ( isset( $_GET['x'] ) && isset( $_GET['obj'] ) && is_numeric( $_GET['x'] ) ) {
 		$args = array();
-		if ( substr_count( $_GET['obj'], '?') >= 1 )  {
+		if ( substr_count( $_GET['obj'], '?' ) >= 1 ) {
 			$parameters = explode( '?', $_GET['obj'] );
 			foreach ( $parameters as $arrayitem ) {
-				if ( false !== strpos( $arrayitem, "Obj" ) ) {
+				if ( false !== strpos( $arrayitem, 'Obj' ) ) {
 					$_GET['obj'] = $arrayitem;
 				}
-				if ( false !== stripos( $arrayitem, "sid" ) ) {
-					$_GET['sid'] = str_ireplace( 'sid=', '', $arrayitem);
+				if ( false !== stripos( $arrayitem, 'sid' ) ) {
+					$_GET['sid'] = str_ireplace( 'sid=', '', $arrayitem );
 				}
 			}
 		}
-		$embarkURL = "http://embark.colby.edu/{$_GET['obj']}";
-		if ( false != stripos( $_GET['obj'], '?' ) ) {
-			$embarkURL .= '&';
+		$embark_url = "http://embark.colby.edu/{$_GET['obj']}";
+		if ( false !== stripos( $_GET['obj'], '?' ) ) {
+			$embark_url .= '&';
 		} else {
-			$embarkURL .= '?';
+			$embark_url .= '?';
 		}
-		$embarkURL .= "x={$_GET['x']}";
+		$embark_url .= "x={$_GET['x']}";
 		if ( isset( $_GET['sid'] ) && is_numeric( $_GET['sid'] ) ) {
-			$embarkURL .= "&sid={$_GET['sid']}";
+			$embark_url .= "&sid={$_GET['sid']}";
 		}
 		if ( isset( $_GET['port'] ) && is_numeric( $_GET['port'] ) ) {
-			$embarkURL .= "&port={$_GET['port']}";
+			$embark_url .= "&port={$_GET['port']}";
 		}
-		$embarkURL = str_replace( '//P', '/P', $embarkURL);
-		$embarkURL = str_replace( '//O', '/O', $embarkURL);
-		$response = wp_remote_get( $embarkURL );
+		$embark_url = str_replace( '//P', '/P', $embark_url );
+		$embark_url = str_replace( '//O', '/O', $embark_url );
+		$response = wp_remote_get( $embark_url );
 		if ( isset( $_GET['debug'] ) ) {
-			pp( $embarkURL );
+			pp( $embark_url );
 			pp( $response, 1 );
 		}
 	} else {
 		if ( isset( $_GET['obj'] ) ) {
-			$embarkURL = "http://embark.colby.edu/{$_GET['obj']}";
+			$embark_url = "http://embark.colby.edu/{$_GET['obj']}";
 			if ( isset( $_GET['sid'] ) && is_numeric( $_GET['sid'] ) ) {
-				$embarkURL .= "&sid={$_GET['sid']}";
+				$embark_url .= "&sid={$_GET['sid']}";
 			}
 
-			$response = wp_remote_get( $embarkURL );
+			$response = wp_remote_get( $embark_url );
 		} else {
 			// Submit search query via POST.
 			$args = [
@@ -56,7 +69,7 @@ function embarkSearchResults( $search_term ) { ?>
 					'WholeWord' => '0',
 					'RefineSearch' => 'WithinCurrent',
 					'theKW' => $search_term,
-				]
+				],
 			];
 			$response = wp_remote_post( $args );
 		}
@@ -65,20 +78,20 @@ function embarkSearchResults( $search_term ) { ?>
 		$replacements = [
 			'/academics_cs/museum/images/' => '/wp-content/themes/colbymuseum/images/',
 	  		'BACK TO SINGLE OBJECT VIEW' => '< Back to Single Object View',
-   	  		'SINGLE OBJECT' => 'Single Object',
-   	  		'THUMBNAILS' => 'Thumbnails',
-   	  		'LIST VIEW' => 'List View',
-   	  		'BACK TO TOP' => 'Back to Top &uarr;',
-   	  		'ENLARGE/ZOOM IMAGE' => 'Enlarge/Zoom Image',
-   	  		'BACKGROUND:' => 'Background:',
-   	  		'ENLARGE/ZOOM IMAGE' => 'Enlarge/Zoom Image',
+		  		'SINGLE OBJECT' => 'Single Object',
+		  		'THUMBNAILS' => 'Thumbnails',
+		  		'LIST VIEW' => 'List View',
+		  		'BACK TO TOP' => 'Back to Top &uarr;',
+		  		'ENLARGE/ZOOM IMAGE' => 'Enlarge/Zoom Image',
+		  		'BACKGROUND:' => 'Background:',
+		  		'ENLARGE/ZOOM IMAGE' => 'Enlarge/Zoom Image',
 	  		'LIGHT' => 'Light',
 	  		'MEDIUM' => 'Medium',
 	  		'DARK' => 'Dark',
-	  		'</a> &bull; <a' => '</a> | <a'
+	  		'</a> &bull; <a' => '</a> | <a',
 		];
 		$response_body = str_replace( array_keys( $replacements ), array_values( $replacements ), $response['body'] );
-		$response_body = str_replace( '/academics_cs/museum/search/', "?obj=", $response_body );
+		$response_body = str_replace( '/academics_cs/museum/search/', '?obj=', $response_body );
 	  	echo str_replace( 'its-embark.colby.edu', 'embark.colby.edu', $response_body );
 		// If no results, automatically select the 'Museum website search results' tab.
 	} catch ( Exception $ex ) {
@@ -97,7 +110,10 @@ add_action( 'init', function() {
 
 		ob_start(); ?>
 		<div class=collection-container>
-			<?php /* <form class=collection__search-form>
+			<?php
+
+			/*
+			<form class=collection__search-form>
 				<input
 					name=cq
 					type=text
@@ -109,9 +125,10 @@ add_action( 'init', function() {
 			<a class=collection__reset-link href=<?php bloginfo( 'url' ); ?>/collection>
 				Reset
 			</a>
-			<?php endif; */ ?>
+			<?php endif;
+			*/ ?>
 
-			<?php embarkSearchResults( $cq ?: 'lunder'  ); ?>
+			<?php embark_search_results( $cq ?: 'lunder' ); ?>
 		</div>
 
 		<?php
@@ -121,6 +138,6 @@ add_action( 'init', function() {
 			$html = str_replace( '&sid=', "&cq=$cq&sid=", $html );
 		}
 
-		return preg_replace("/<script.*?\/script>/s", "", $html) ?: $html;
+		return preg_replace( '/<script.*?\/script>/s', '', $html ) ?: $html;
 	} );
 } );

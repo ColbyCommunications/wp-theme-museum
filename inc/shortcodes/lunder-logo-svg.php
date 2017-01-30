@@ -1,4 +1,11 @@
 <?php
+/**
+ * Lunder-logo-svg.php
+ *
+ * Provide a shortcode for displaying the large Lunder Institute logo.
+ *
+ * @package lunder-institute
+ */
 
 add_shortcode( 'lunder-logo-svg', function() {
 	ob_start();
@@ -120,7 +127,7 @@ add_shortcode( 'lunder-logo-svg', function() {
 </g>
 </svg>
 
-<?php
+	<?php
 	echo '</div>';
 
 	return ob_get_clean();
