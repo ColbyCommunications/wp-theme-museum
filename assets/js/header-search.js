@@ -131,7 +131,11 @@ export default class HeaderSearch extends Component {
         >
           <h3>
             Search Results{' '}
-            {this.totalPages > 1 ? `(Page ${this.state.currentPage})` : ''}
+            {
+              this.totalPages > 1
+                ? `(Page ${this.state.currentPage} of ${this.totalPages})`
+                : ''
+            }
           </h3>
           <a
             href="#"

@@ -26,5 +26,9 @@ add_filter( 'rest_prepare_post', function( $response, $the_post ) {
 		$response->data['link'] = get_bloginfo( 'url' ) . "/media-kit#$the_post->post_name";
 	}
 
+	if ( 'collection' === $post->post_type ) {
+		$response->data['img_url'] = get_post_meta( $post->ID, 'image_url', true );
+	}
+
 	return $response;
 }, 10, 2 );
