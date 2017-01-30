@@ -1,6 +1,8 @@
 import debounce from 'lodash/debounce';
 import React, { Component } from 'react';
 
+const queryCache = {};
+
 export default class HeaderSearch extends Component {
   constructor(props) {
     super(props);
@@ -81,12 +83,21 @@ export default class HeaderSearch extends Component {
     const url = `${wpData.bloginfoUrl}` +
       `/wp-json/wp/v2/posts?search=${search}&page=${this.state.currentPage}`;
 
+    if (queryCache[url]) {
+      return this.setState({
+        results: queryCache[url],
+        showingResults: true,
+        loading: false,
+      });
+    }
+
     fetch(url)
       .then(response => {
         this.totalPages = response.headers.get('X-WP-TotalPages');
         return response.json();
       })
       .then(results => {
+        queryCache[url] = results;
         this.setState({ results, showingResults: true, loading: false });
       });
   }
