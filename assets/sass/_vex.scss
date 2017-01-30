@@ -23,18 +23,16 @@
 
   .vex-close {
     position: absolute;
-    font-size: 32px;
+    font-size: 4em;
     font-weight: normal;
-    line-height: 31px;
-    height: 30px;
-    width: 30px;
+    line-height: 1;
+    height: 4em;
+    width: 4em;
     text-align: center;
-    top: 5px;
-    right: 5px;
     color: white;
     background: transparent;
-    top: -36px;
-    right: -18px;
+    top: -44px;
+    right: 6px;
     border: none;
     outline: none;
     border-radius: 0;
@@ -42,7 +40,7 @@
 
   .vex-close:before, .vex-close:hover:before, .vex.vex-theme-default .vex-close:active:before {
     color: white;
-    font-size: 36px;
+    font-size: 1.122em;
     background: transparent;
   }
 }

@@ -100,6 +100,7 @@ export default class HeaderSearch extends Component {
             opacity: this.state.search ? '0' : '1',
             pointerEvents: this.state.search ? 'none' : 'auto',
           }}
+          tabIndex="-1"
           onClick={event => event.preventDefault()}
         >
           Search
