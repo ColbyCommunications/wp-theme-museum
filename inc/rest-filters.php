@@ -1,4 +1,11 @@
 <?php
+/**
+ * Rest-filters.php
+ *
+ * Hooks related to the WP REST API.
+ *
+ * @package lunder-institute
+ */
 
 /** Let all post types into REST post search. */
 add_filter( 'rest_post_query', function( $prepared_args, $request ) {

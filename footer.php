@@ -1,6 +1,15 @@
 <?php
+/**
+ * Footer.php
+ *
+ * The sitewide footer.
+ *
+ * @package lunder-institute
+ */
+
+/** Add the Google Analytics script. */
 add_action( 'wp_footer', function() {
-if ( strpos( get_bloginfo( 'url' ), 'colby.edu' ) && false === strpos( get_bloginfo( 'url' ), 'author' ) ) : ?>
+	if ( strpos( get_bloginfo( 'url' ), 'colby.edu' ) && false === strpos( get_bloginfo( 'url' ), 'author' ) ) : ?>
 
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -10,7 +19,8 @@ if ( strpos( get_bloginfo( 'url' ), 'colby.edu' ) && false === strpos( get_blogi
 	ga('create', 'UA-26881270-1', 'auto');
 	ga('send', 'pageview');
 </script>
-<?php endif;
+
+	<?php endif;
 } );
 
 Colby_College\Wp_Components\Wp_Parts::load( 'simple-footer.php' );
