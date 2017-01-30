@@ -39,6 +39,7 @@ function embark_search_results( $search_term ) {
 		} else {
 			$embark_url .= '?';
 		}
+
 		$embark_url .= "x={$_GET['x']}";
 		if ( isset( $_GET['sid'] ) && is_numeric( $_GET['sid'] ) ) {
 			$embark_url .= "&sid={$_GET['sid']}";

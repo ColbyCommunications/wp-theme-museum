@@ -19,3 +19,18 @@ add_action( 'pre_get_posts', function( $query ) {
 		$query->set( 'category__not_in', [ get_cat_ID( 'Media Kit' ) ] );
 	}
 } );
+
+if ( current_user_can( 'edit_others_posts' && isset( $_GET['refresh_embark'] ) ) ) {
+	require 'inc/embark-refresher.php';
+	new Embark_Refresher();
+}
+
+register_post_type( 'collection', [
+	'labels' => [
+		'name' => 'Collection Items',
+		'singular_name' => 'Collection Item',
+	],
+	'public' => true,
+	'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail' ],
+	'show_in_rest' => true,
+] );
