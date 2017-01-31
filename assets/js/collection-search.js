@@ -13,6 +13,10 @@ export default class CollectionSearch extends PostTypeSearch {
   }
 
   drawLoading() {
+    if (this.state.search && this.state.posts.length === 0) {
+      return <div>No results</div>;
+    }
+
     this.drawArchive();
   }
 
@@ -37,7 +41,11 @@ export default class CollectionSearch extends PostTypeSearch {
           }
         </div>
         <div className={`${this.cssNamespace}-search__nav-middle`}>
-          Page {this.currentPage} of {this.totalPages}
+          {
+            this.totalPages > 1
+              ? `Page ${this.currentPage} of ${this.totalPages}`
+              : ''
+          }
         </div>
         <div className={`${this.cssNamespace}-search__nav-right`}>
           {

@@ -8,6 +8,7 @@ export default class PostTypeSearch extends Component {
     this.cache = {};
 
     this.currentPage = 1;
+    this.totalPages = 0;
 
     this.postType = this.props.postType || 'posts';
     this.cssNamespace = this.postType;
