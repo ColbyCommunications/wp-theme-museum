@@ -11,7 +11,7 @@ $image_url = get_post_meta( $post->ID, 'image_url', true );
 ?>
 <main id=main class=main--single-collection>
 	<article <?php post_class(); ?>>
-		<div class=collection_content-container>
+		<div class=collection__content-container>
 			<h1 class=collection__title><?php the_title(); ?></h1>
 			<div class=collection__content><?php the_content(); ?></div>
 		</div>
