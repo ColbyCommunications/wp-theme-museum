@@ -39,10 +39,14 @@ export default class PostTypeSearch extends Component {
     const url = parse(window.location.href, true);
 
     if (
-      url.query && url.query[`${this.postType}Search`] && url.query.currentPage
+      url.query &&
+        [`${this.postType}Search`] in url.query &&
+        url.query.currentPage
     ) {
       return url.query;
     }
+
+    console.log(url.query);
 
     const parsedQuery = {};
     parsedQuery.currentPage = 1;

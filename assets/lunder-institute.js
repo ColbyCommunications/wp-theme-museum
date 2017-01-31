@@ -726,9 +726,11 @@ var PostTypeSearch = function (_Component) {
     value: function getURLQueryVars() {
       var url = (0, _urlParse2.default)(window.location.href, true);
 
-      if (url.query && url.query[this.postType + 'Search'] && url.query.currentPage) {
+      if (url.query && [this.postType + 'Search'] in url.query && url.query.currentPage) {
         return url.query;
       }
+
+      console.log(url.query);
 
       var parsedQuery = {};
       parsedQuery.currentPage = 1;
