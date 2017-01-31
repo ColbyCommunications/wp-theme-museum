@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import debounce from 'lodash/debounce';
 import parse from 'url-parse';
+import smoothScroll from 'smooth-scroll';
 
 export default class PostTypeSearch extends Component {
   constructor(props) {
@@ -25,8 +26,6 @@ export default class PostTypeSearch extends Component {
     this.handleSearchInputChange = this.handleSearchInputChange.bind(this);
     this.fetchPosts = this.fetchPosts.bind(this);
     this.drawPost = this.drawPost.bind(this);
-    this.drawTopNav = this.drawTopNav.bind(this);
-    this.drawBottomNav = this.drawBottomNav.bind(this);
     this.drawNav = this.drawNav.bind(this);
     this.updateWindowHistory = this.updateWindowHistory.bind(this);
 
@@ -109,6 +108,21 @@ export default class PostTypeSearch extends Component {
       });
   }
 
+  drawContent(post) {
+    return (
+      <div className={`${this.cssNamespace}-search__content-container`}>
+        <h1
+          className={`${this.cssNamespace}-search__title`}
+          dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+        />
+        <div
+          className={`${this.cssNamespace}-search__content`}
+          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+        />
+      </div>
+    );
+  }
+
   drawThumbnail(post) {
     return null;
   }
@@ -120,16 +134,7 @@ export default class PostTypeSearch extends Component {
         key={key}
         className={`${this.cssNamespace}-search__post`}
       >
-        <div className={`${this.cssNamespace}-search__content-container`}>
-          <h1
-            className={`${this.cssNamespace}-search__title`}
-            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-          />
-          <div
-            className={`${this.cssNamespace}-search__content`}
-            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-          />
-        </div>
+        {this.drawContent(post)}
         {this.drawThumbnail(post)}
       </a>
     );
@@ -139,16 +144,61 @@ export default class PostTypeSearch extends Component {
     return <div>Loading</div>;
   }
 
-  drawTopNav() {
-    return this.drawNav({ location: 'top' });
-  }
+  drawNav(options) {
+    return (
+      <div className={`${this.cssNamespace}-search__nav`}>
+        <div className={`${this.cssNamespace}-search__nav-left`}>
+          {
+            this.state.currentPage < 2 ? ' ' : <a
+                href="#"
+                onClick={event => {
+                  event.preventDefault();
 
-  drawBottomNav() {
-    return this.drawNav({ location: 'bottom' });
-  }
+                  if (
+                    options && options.location && options.location == 'bottom'
+                  ) {
+                    smoothScroll.animateScroll(this.refs['search-input']);
+                  }
 
-  drawNav() {
-    return null;
+                  this.fetchPosts({ pageIncrementer: -1 });
+                }}
+              >
+                Previous
+              </a>
+          }
+        </div>
+        <div className={`${this.cssNamespace}-search__nav-middle`}>
+          {
+            this.state.totalPages > 1
+              ? `Page ${this.state.currentPage} of ${this.state.totalPages}`
+              : ''
+          }
+          <div className={`${this.cssNamespace}-search__loading`}>
+            {this.state.loading == true ? 'Loading ...' : ''}
+          </div>
+        </div>
+        <div className={`${this.cssNamespace}-search__nav-right`}>
+          {
+            this.state.currentPage >= this.state.totalPages ? ' ' : <a
+                href="#"
+                onClick={event => {
+                  event.preventDefault();
+
+                  if (
+                    options && options.location && options.location == 'bottom'
+                  ) {
+                    smoothScroll.animateScroll(this.refs['search-input']);
+                  }
+
+                  this.fetchPosts({ pageIncrementer: 1 });
+                }}
+              >
+                Next
+              </a>
+          }
+        </div>
+      </div>
+    );
   }
 
   render() {
@@ -163,13 +213,13 @@ export default class PostTypeSearch extends Component {
             onChange={this.handleSearchInputChange}
           />
         </div>
-        {this.drawTopNav()}
+        {this.drawNav({ location: 'top' })}
         {
           this.state.posts !== null && this.state.posts.length
             ? this.state.posts.map(this.drawPost)
             : this.drawLoading()
         }
-        {this.drawBottomNav()}
+        {this.drawNav({ location: 'bottom' })}
       </div>
     );
   }

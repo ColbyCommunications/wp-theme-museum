@@ -15,10 +15,6 @@ var _debounce = require('lodash/debounce');
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
-var _smoothScroll = require('smooth-scroll');
-
-var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
-
 var _postTypeSearch = require('./post-type-search');
 
 var _postTypeSearch2 = _interopRequireDefault(_postTypeSearch);
@@ -42,7 +38,6 @@ var CollectionSearch = function (_PostTypeSearch) {
     _this.drawArchive = _this.drawArchive.bind(_this);
     _this.fetchPosts = _this.fetchPosts.bind(_this);
     _this.drawLoading = _this.drawLoading.bind(_this);
-    _this.drawNav = _this.drawNav.bind(_this);
     return _this;
   }
 
@@ -65,66 +60,6 @@ var CollectionSearch = function (_PostTypeSearch) {
       return this.fetchPosts();
     }
   }, {
-    key: 'drawNav',
-    value: function drawNav(options) {
-      var _this2 = this;
-
-      return _react2.default.createElement(
-        'div',
-        { className: this.cssNamespace + '-search__nav' },
-        _react2.default.createElement(
-          'div',
-          { className: this.cssNamespace + '-search__nav-left' },
-          this.state.currentPage < 2 ? ' ' : _react2.default.createElement(
-            'a',
-            {
-              href: '#',
-              onClick: function onClick(event) {
-                event.preventDefault();
-
-                if (options && options.location && options.location == 'bottom') {
-                  _smoothScroll2.default.animateScroll(_this2.refs['search-input']);
-                }
-
-                _this2.fetchPosts({ pageIncrementer: -1 });
-              }
-            },
-            'Previous'
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: this.cssNamespace + '-search__nav-middle' },
-          this.state.totalPages > 1 ? 'Page ' + this.state.currentPage + ' of ' + this.state.totalPages : '',
-          _react2.default.createElement(
-            'div',
-            { className: this.cssNamespace + '-search__loading' },
-            this.state.loading == true ? 'Loading ...' : ''
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: this.cssNamespace + '-search__nav-right' },
-          this.state.currentPage >= this.state.totalPages ? ' ' : _react2.default.createElement(
-            'a',
-            {
-              href: '#',
-              onClick: function onClick(event) {
-                event.preventDefault();
-
-                if (options && options.location && options.location == 'bottom') {
-                  _smoothScroll2.default.animateScroll(_this2.refs['search-input']);
-                }
-
-                _this2.fetchPosts({ pageIncrementer: 1 });
-              }
-            },
-            'Next'
-          )
-        )
-      );
-    }
-  }, {
     key: 'drawThumbnail',
     value: function drawThumbnail(post) {
       if (!post.img_url || post.img_url.indexOf('noimage') !== -1) {
@@ -144,7 +79,7 @@ var CollectionSearch = function (_PostTypeSearch) {
 
 exports.default = CollectionSearch;
 
-},{"./post-type-search":7,"lodash/debounce":43,"react":203,"smooth-scroll":205}],2:[function(require,module,exports){
+},{"./post-type-search":7,"lodash/debounce":43,"react":203}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -673,6 +608,10 @@ var _urlParse = require('url-parse');
 
 var _urlParse2 = _interopRequireDefault(_urlParse);
 
+var _smoothScroll = require('smooth-scroll');
+
+var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -708,8 +647,6 @@ var PostTypeSearch = function (_Component) {
     _this.handleSearchInputChange = _this.handleSearchInputChange.bind(_this);
     _this.fetchPosts = _this.fetchPosts.bind(_this);
     _this.drawPost = _this.drawPost.bind(_this);
-    _this.drawTopNav = _this.drawTopNav.bind(_this);
-    _this.drawBottomNav = _this.drawBottomNav.bind(_this);
     _this.drawNav = _this.drawNav.bind(_this);
     _this.updateWindowHistory = _this.updateWindowHistory.bind(_this);
 
@@ -793,6 +730,22 @@ var PostTypeSearch = function (_Component) {
       });
     }
   }, {
+    key: 'drawContent',
+    value: function drawContent(post) {
+      return _react2.default.createElement(
+        'div',
+        { className: this.cssNamespace + '-search__content-container' },
+        _react2.default.createElement('h1', {
+          className: this.cssNamespace + '-search__title',
+          dangerouslySetInnerHTML: { __html: post.title.rendered }
+        }),
+        _react2.default.createElement('div', {
+          className: this.cssNamespace + '-search__content',
+          dangerouslySetInnerHTML: { __html: post.content.rendered }
+        })
+      );
+    }
+  }, {
     key: 'drawThumbnail',
     value: function drawThumbnail(post) {
       return null;
@@ -807,18 +760,7 @@ var PostTypeSearch = function (_Component) {
           key: key,
           className: this.cssNamespace + '-search__post'
         },
-        _react2.default.createElement(
-          'div',
-          { className: this.cssNamespace + '-search__content-container' },
-          _react2.default.createElement('h1', {
-            className: this.cssNamespace + '-search__title',
-            dangerouslySetInnerHTML: { __html: post.title.rendered }
-          }),
-          _react2.default.createElement('div', {
-            className: this.cssNamespace + '-search__content',
-            dangerouslySetInnerHTML: { __html: post.content.rendered }
-          })
-        ),
+        this.drawContent(post),
         this.drawThumbnail(post)
       );
     }
@@ -832,19 +774,64 @@ var PostTypeSearch = function (_Component) {
       );
     }
   }, {
-    key: 'drawTopNav',
-    value: function drawTopNav() {
-      return this.drawNav({ location: 'top' });
-    }
-  }, {
-    key: 'drawBottomNav',
-    value: function drawBottomNav() {
-      return this.drawNav({ location: 'bottom' });
-    }
-  }, {
     key: 'drawNav',
-    value: function drawNav() {
-      return null;
+    value: function drawNav(options) {
+      var _this3 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { className: this.cssNamespace + '-search__nav' },
+        _react2.default.createElement(
+          'div',
+          { className: this.cssNamespace + '-search__nav-left' },
+          this.state.currentPage < 2 ? ' ' : _react2.default.createElement(
+            'a',
+            {
+              href: '#',
+              onClick: function onClick(event) {
+                event.preventDefault();
+
+                if (options && options.location && options.location == 'bottom') {
+                  _smoothScroll2.default.animateScroll(_this3.refs['search-input']);
+                }
+
+                _this3.fetchPosts({ pageIncrementer: -1 });
+              }
+            },
+            'Previous'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: this.cssNamespace + '-search__nav-middle' },
+          this.state.totalPages > 1 ? 'Page ' + this.state.currentPage + ' of ' + this.state.totalPages : '',
+          _react2.default.createElement(
+            'div',
+            { className: this.cssNamespace + '-search__loading' },
+            this.state.loading == true ? 'Loading ...' : ''
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: this.cssNamespace + '-search__nav-right' },
+          this.state.currentPage >= this.state.totalPages ? ' ' : _react2.default.createElement(
+            'a',
+            {
+              href: '#',
+              onClick: function onClick(event) {
+                event.preventDefault();
+
+                if (options && options.location && options.location == 'bottom') {
+                  _smoothScroll2.default.animateScroll(_this3.refs['search-input']);
+                }
+
+                _this3.fetchPosts({ pageIncrementer: 1 });
+              }
+            },
+            'Next'
+          )
+        )
+      );
     }
   }, {
     key: 'render',
@@ -863,9 +850,9 @@ var PostTypeSearch = function (_Component) {
             onChange: this.handleSearchInputChange
           })
         ),
-        this.drawTopNav(),
+        this.drawNav({ location: 'top' }),
         this.state.posts !== null && this.state.posts.length ? this.state.posts.map(this.drawPost) : this.drawLoading(),
-        this.drawBottomNav()
+        this.drawNav({ location: 'bottom' })
       );
     }
   }]);
@@ -875,7 +862,7 @@ var PostTypeSearch = function (_Component) {
 
 exports.default = PostTypeSearch;
 
-},{"lodash/debounce":43,"react":203,"url-parse":206}],8:[function(require,module,exports){
+},{"lodash/debounce":43,"react":203,"smooth-scroll":205,"url-parse":206}],8:[function(require,module,exports){
 /*
  * classList.js: Cross-browser full element.classList implementation.
  * 2014-07-23
