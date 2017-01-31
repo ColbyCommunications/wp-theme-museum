@@ -303,25 +303,25 @@ html {
       padding-right: 0;
       padding-left: 0; } }
 
-.row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+.row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
   display: flex;
   flex-wrap: wrap;
   margin-right: 0;
   margin-left: 0; }
   @media (min-width: 24rem) {
-    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
       margin-right: 0;
       margin-left: 0; } }
   @media (min-width: 48rem) {
-    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
       margin-right: 0;
       margin-left: 0; } }
   @media (min-width: 72rem) {
-    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
       margin-right: 0;
       margin-left: 0; } }
   @media (min-width: 96rem) {
-    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
       margin-right: 0;
       margin-left: 0; } }
 
@@ -333,26 +333,26 @@ html {
     padding-right: 0;
     padding-left: 0; }
 
-.col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+.col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
   position: relative;
   width: 100%;
   min-height: 1px;
   padding-right: 0;
   padding-left: 0; }
   @media (min-width: 24rem) {
-    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 0;
       padding-left: 0; } }
   @media (min-width: 48rem) {
-    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 0;
       padding-left: 0; } }
   @media (min-width: 72rem) {
-    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 0;
       padding-left: 0; } }
   @media (min-width: 96rem) {
-    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 0;
       padding-left: 0; } }
 
@@ -409,7 +409,7 @@ html {
   flex: 0 0 91.66667%;
   max-width: 91.66667%; }
 
-.col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td {
+.col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post {
   flex: 0 0 100%;
   max-width: 100%; }
 
@@ -665,13 +665,13 @@ html {
   .col-md-4, .media-kit-post__thumbnail-container, .collection-container #resultstable tr td:nth-of-type(3) {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
-  .col-md-5, .two-level-header__site-name, .collection-container #searchtable .content .coll_left_half {
+  .col-md-5, .two-level-header__site-name, .collection-container #searchtable .content .coll_left_half, .collection-search__post .post-type-search__thumbnail-container {
     flex: 0 0 41.66667%;
     max-width: 41.66667%; }
   .col-md-6, .collection-container #resultstable tr td:nth-of-type(2) {
     flex: 0 0 50%;
     max-width: 50%; }
-  .col-md-7, .two-level-header__site-menu, .collection-container #searchtable .content .coll_right_half {
+  .col-md-7, .two-level-header__site-menu, .collection-container #searchtable .content .coll_right_half, .collection-search__post .collection-search__content-container {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
   .col-md-8, .media-kit-post__content-container {
@@ -783,7 +783,7 @@ html {
   .col-lg-3 {
     flex: 0 0 25%;
     max-width: 25%; }
-  .col-lg-4 {
+  .col-lg-4, .collection-search__post .post-type-search__thumbnail-container {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
   .col-lg-5 {
@@ -795,7 +795,7 @@ html {
   .col-lg-7 {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
-  .col-lg-8 {
+  .col-lg-8, .collection-search__post .collection-search__content-container {
     flex: 0 0 66.66667%;
     max-width: 66.66667%; }
   .col-lg-9 {
@@ -1070,25 +1070,25 @@ html {
       padding-right: 0;
       padding-left: 0; } }
 
-.row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+.row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
   display: flex;
   flex-wrap: wrap;
   margin-right: 0;
   margin-left: 0; }
   @media (min-width: 24rem) {
-    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
       margin-right: 0;
       margin-left: 0; } }
   @media (min-width: 48rem) {
-    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
       margin-right: 0;
       margin-left: 0; } }
   @media (min-width: 72rem) {
-    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
       margin-right: 0;
       margin-left: 0; } }
   @media (min-width: 96rem) {
-    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
       margin-right: 0;
       margin-left: 0; } }
 
@@ -1100,26 +1100,26 @@ html {
     padding-right: 0;
     padding-left: 0; }
 
-.col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+.col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
   position: relative;
   width: 100%;
   min-height: 1px;
   padding-right: 0;
   padding-left: 0; }
   @media (min-width: 24rem) {
-    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 0;
       padding-left: 0; } }
   @media (min-width: 48rem) {
-    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 0;
       padding-left: 0; } }
   @media (min-width: 72rem) {
-    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 0;
       padding-left: 0; } }
   @media (min-width: 96rem) {
-    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 0;
       padding-left: 0; } }
 
@@ -1176,7 +1176,7 @@ html {
   flex: 0 0 91.66667%;
   max-width: 91.66667%; }
 
-.col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td {
+.col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post {
   flex: 0 0 100%;
   max-width: 100%; }
 
@@ -1432,13 +1432,13 @@ html {
   .col-md-4, .media-kit-post__thumbnail-container, .collection-container #resultstable tr td:nth-of-type(3) {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
-  .col-md-5, .two-level-header__site-name, .collection-container #searchtable .content .coll_left_half {
+  .col-md-5, .two-level-header__site-name, .collection-container #searchtable .content .coll_left_half, .collection-search__post .post-type-search__thumbnail-container {
     flex: 0 0 41.66667%;
     max-width: 41.66667%; }
   .col-md-6, .collection-container #resultstable tr td:nth-of-type(2) {
     flex: 0 0 50%;
     max-width: 50%; }
-  .col-md-7, .two-level-header__site-menu, .collection-container #searchtable .content .coll_right_half {
+  .col-md-7, .two-level-header__site-menu, .collection-container #searchtable .content .coll_right_half, .collection-search__post .collection-search__content-container {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
   .col-md-8, .media-kit-post__content-container {
@@ -1550,7 +1550,7 @@ html {
   .col-lg-3 {
     flex: 0 0 25%;
     max-width: 25%; }
-  .col-lg-4 {
+  .col-lg-4, .collection-search__post .post-type-search__thumbnail-container {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
   .col-lg-5 {
@@ -1562,7 +1562,7 @@ html {
   .col-lg-7 {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
-  .col-lg-8 {
+  .col-lg-8, .collection-search__post .collection-search__content-container {
     flex: 0 0 66.66667%;
     max-width: 66.66667%; }
   .col-lg-9 {
@@ -2429,25 +2429,25 @@ pre {
       padding-right: 0;
       padding-left: 0; } }
 
-.row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+.row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
   display: flex;
   flex-wrap: wrap;
   margin-right: 0;
   margin-left: 0; }
   @media (min-width: 24rem) {
-    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
       margin-right: 0;
       margin-left: 0; } }
   @media (min-width: 48rem) {
-    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
       margin-right: 0;
       margin-left: 0; } }
   @media (min-width: 72rem) {
-    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
       margin-right: 0;
       margin-left: 0; } }
   @media (min-width: 96rem) {
-    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post {
+    .row, .two-level-header, .two-level-header__top-row, .two-level-header__bottom-row, .three-column-header, .media-kit-post, .collection-search {
       margin-right: 0;
       margin-left: 0; } }
 
@@ -2459,26 +2459,26 @@ pre {
     padding-right: 0;
     padding-left: 0; }
 
-.col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+.col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
   position: relative;
   width: 100%;
   min-height: 1px;
   padding-right: 0;
   padding-left: 0; }
   @media (min-width: 24rem) {
-    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 0;
       padding-left: 0; } }
   @media (min-width: 48rem) {
-    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 0;
       padding-left: 0; } }
   @media (min-width: 72rem) {
-    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 0;
       padding-left: 0; } }
   @media (min-width: 96rem) {
-    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .col-md-6, .col-md-7, .two-level-header__site-menu, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
+    .col-1, .col-2, .col-3, .collection-container #resultstable tr td:first-of-type, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .collection-container #resultstable tr td:nth-of-type(2), .col-10, .col-11, .col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .three_column-header__left, .col-sm-5, .col-sm-6, .two-level-header__logo-container, .two-level-header__top-right, .col-sm-7, .col-sm-8, .three-column-header__collapsible-columns, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .three_column-header__right, .col-md-4, .col-md-5, .two-level-header__site-name, .collection-search__post .post-type-search__thumbnail-container, .col-md-6, .col-md-7, .two-level-header__site-menu, .collection-search__post .collection-search__content-container, .col-md-8, .col-md-9, .three_column-header__middle, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {
       padding-right: 0;
       padding-left: 0; } }
 
@@ -2535,7 +2535,7 @@ pre {
   flex: 0 0 91.66667%;
   max-width: 91.66667%; }
 
-.col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td {
+.col-12, .media-kit-post__thumbnail-container, .media-kit-post__content-container, .collection-container #searchtable .content .coll_left_half, .collection-container #searchtable .content .coll_right_half, .collection-container #resultstable tr td:nth-of-type(3), #resultstable2 > tbody > tr > td, .collection-search .collection-search__input-container, .collection-search__post {
   flex: 0 0 100%;
   max-width: 100%; }
 
@@ -2791,13 +2791,13 @@ pre {
   .col-md-4, .media-kit-post__thumbnail-container, .collection-container #resultstable tr td:nth-of-type(3) {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
-  .col-md-5, .two-level-header__site-name, .collection-container #searchtable .content .coll_left_half {
+  .col-md-5, .two-level-header__site-name, .collection-container #searchtable .content .coll_left_half, .collection-search__post .post-type-search__thumbnail-container {
     flex: 0 0 41.66667%;
     max-width: 41.66667%; }
   .col-md-6, .collection-container #resultstable tr td:nth-of-type(2) {
     flex: 0 0 50%;
     max-width: 50%; }
-  .col-md-7, .two-level-header__site-menu, .collection-container #searchtable .content .coll_right_half {
+  .col-md-7, .two-level-header__site-menu, .collection-container #searchtable .content .coll_right_half, .collection-search__post .collection-search__content-container {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
   .col-md-8, .media-kit-post__content-container {
@@ -2909,7 +2909,7 @@ pre {
   .col-lg-3 {
     flex: 0 0 25%;
     max-width: 25%; }
-  .col-lg-4 {
+  .col-lg-4, .collection-search__post .post-type-search__thumbnail-container {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
   .col-lg-5 {
@@ -2921,7 +2921,7 @@ pre {
   .col-lg-7 {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
-  .col-lg-8 {
+  .col-lg-8, .collection-search__post .collection-search__content-container {
     flex: 0 0 66.66667%;
     max-width: 66.66667%; }
   .col-lg-9 {
@@ -5367,6 +5367,52 @@ body.vex-open {
   font-size: 1.8rem;
   color: #fff;
   font-family: "Open Sans",Helvetica,sans-serif; }
+
+.collection-search {
+  display: flex;
+  flex-wrap: wrap; }
+  .collection-search .collection-search__input-container {
+    padding: 1.5em; }
+    .collection-search .collection-search__input-container input {
+      width: 100%; }
+
+.collection-search__post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em; }
+  @media screen and (min-width: 48rem) {
+    .collection-search__post {
+      flex-direction: row; }
+      .collection-search__post .collection-search__content-container {
+        padding-right: 1.5em; }
+        @supports (order: 2) {
+          .collection-search__post .collection-search__content-container {
+            order: 2;
+            padding-left: 1.5em;
+            padding-right: 0; } }
+      .collection-search__post .post-type-search__thumbnail-container {
+        padding-left: 0.75em; }
+        @supports (order: 2) {
+          .collection-search__post .post-type-search__thumbnail-container {
+            padding-left: 0;
+            padding-right: 0.75em; } }
+        .collection-search__post .post-type-search__thumbnail-container img {
+          width: 100%;
+          height: auto; } }
+
+.collection-search__nav {
+  width: 100%;
+  padding: 1.5em;
+  font-size: 0.944em;
+  display: flex;
+  justify-content: space-between; }
+  .collection-search__nav div {
+    display: inline-block;
+    padding-right: 1.5em; }
+    .collection-search__nav div:last-of-type {
+      padding-right: 0; }
 
 body {
   position: relative;

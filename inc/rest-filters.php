@@ -32,3 +32,16 @@ add_filter( 'rest_prepare_post', function( $response, $the_post ) {
 
 	return $response;
 }, 10, 2 );
+
+add_filter( 'rest_collection_query', function( $prepared_args ) {
+	$prepared_args['orderby'] = 'title';
+	$prepared_args['order'] = 'ASC';
+
+	return $prepared_args;
+} );
+
+add_filter( 'rest_prepare_collection', function( $response, $the_post ) {
+	$response->data['img_url'] = get_post_meta( $the_post->ID, 'image_url', true );
+
+	return $response;
+}, 10, 2 );

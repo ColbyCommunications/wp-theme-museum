@@ -10,7 +10,8 @@
 					"inc/rest-filters.php",
           "inc/shortcodes/lunder-logo-svg.php",
 					"inc/shortcodes/media-kit.php",
-					"inc/shortcodes/embark-search.php"
+					"inc/shortcodes/embark-search.php",
+					"inc/shortcodes/collection-search.php"
         ]
     }
 }

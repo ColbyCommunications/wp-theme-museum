@@ -15,6 +15,7 @@ import handleSplash from './handle-splash';
 import GalleryHandler from './gallery-handler';
 import handleMediaKit from './handle-media-kit';
 import HeaderSearch from './header-search';
+import CollectionSearch from './collection-search';
 
 const lazyload = new LazyLoad();
 
@@ -43,5 +44,18 @@ window.addEventListener('load', () => {
   const searchContainer = document.getElementById('header-search');
   if (searchContainer) {
     render(<HeaderSearch />, searchContainer);
+  }
+
+  const collectionSearchContainer = document.getElementById(
+    'collection-search'
+  );
+  if (collectionSearchContainer) {
+    render(
+      <CollectionSearch
+        postType="collection"
+        placeholder="Search the Collection"
+      />,
+      collectionSearchContainer
+    );
   }
 });
