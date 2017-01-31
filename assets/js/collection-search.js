@@ -33,7 +33,7 @@ export default class CollectionSearch extends PostTypeSearch {
       <div className={`${this.cssNamespace}-search__nav`}>
         <div className={`${this.cssNamespace}-search__nav-left`}>
           {
-            this.currentPage < 2 ? ' ' : <a
+            this.state.currentPage < 2 ? ' ' : <a
                 href="#"
                 onClick={event => {
                   event.preventDefault();
@@ -46,14 +46,14 @@ export default class CollectionSearch extends PostTypeSearch {
         </div>
         <div className={`${this.cssNamespace}-search__nav-middle`}>
           {
-            this.totalPages > 1
-              ? `Page ${this.currentPage} of ${this.totalPages}`
+            this.state.totalPages > 1
+              ? `Page ${this.state.currentPage} of ${this.state.totalPages}`
               : ''
           }
         </div>
         <div className={`${this.cssNamespace}-search__nav-right`}>
           {
-            this.currentPage >= this.totalPages ? ' ' : <a
+            this.state.currentPage >= this.state.totalPages ? ' ' : <a
                 href="#"
                 onClick={event => {
                   event.preventDefault();

@@ -10,81 +10,97 @@ export default class PostTypeSearch extends Component {
     this.postType = this.props.postType || 'posts';
     this.cssNamespace = this.postType;
 
-    const url = parse(window.location.href, true);
-    let parsedQuery = {};
-    console.log(url.query);
-    if (
-      url.query && url.query[`${this.postType}Search`] && url.query.currentPage
-    ) {
-      parsedQuery = url.query;
-    } else {
-      parsedQuery.currentPage = 1;
-      parsedQuery[`${this.postType}Search`] = '';
-    }
-
-    console.log(parsedQuery);
-    this.currentPage = Number(parsedQuery.currentPage);
-    this.totalPages = 0;
-
     this.baseUrl = `${wpData.bloginfoUrl}/wp-json/wp/v2/${this.postType}/`;
 
+    const parsedQuery = this.getURLQueryVars();
     this.state = {
       search: parsedQuery.collectionSearch,
       searching: false,
       posts: null,
+      currentPage: Number(parsedQuery.currentPage),
+      totalPages: 0,
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    /** Bind functions to class. */
+    this.handleSearchInputChange = this.handleSearchInputChange.bind(this);
     this.fetchPosts = this.fetchPosts.bind(this);
     this.drawPost = this.drawPost.bind(this);
     this.drawTopNav = this.drawTopNav.bind(this);
     this.drawBottomNav = this.drawBottomNav.bind(this);
     this.drawNav = this.drawNav.bind(this);
+    this.updateWindowHistory = this.updateWindowHistory.bind(this);
 
+    /** Debounce functions. */
     this.fetchPosts = debounce(this.fetchPosts, 200);
   }
 
-  handleChange(event) {
-    this.currentPage = 1;
+  /** Parse the URL for GET parameters. */
+  getURLQueryVars() {
+    const url = parse(window.location.href, true);
 
-    this.setState({ search: event.target.value });
+    if (
+      url.query && url.query[`${this.postType}Search`] && url.query.currentPage
+    ) {
+      return url.query;
+    }
+
+    const parsedQuery = {};
+    parsedQuery.currentPage = 1;
+    parsedQuery[`${this.postType}Search`] = '';
+
+    return parsedQuery;
+  }
+
+  /** Handle the search string from the input box. */
+  handleSearchInputChange(event) {
+    this.setState({ search: event.target.value, currentPage: 1 });
     this.fetchPosts({ search: event.target.value });
   }
 
-  fetchPosts(options) {
-    if (options && 'pageIncrementer' in options) {
-      this.currentPage += options.pageIncrementer;
-    }
-
-    const pageParameter = `page=${this.currentPage}`;
-
-    let searchParameter = '';
-    if (this.state.search) {
-      searchParameter = `&search=${this.state.search}`;
-    }
-
+  /** Set URL parameters according to current app state. */
+  updateWindowHistory() {
     window.history.replaceState(
       {},
       document.title,
       `${window.location.origin}${window.location.pathname}` +
-        `?${this.postType}Search=${this.state.search}&currentPage=${this.currentPage}`
+        `?${this.postType}Search=${this.state.search}&currentPage=${this.state.currentPage}`
     );
+  }
+
+  fetchPosts(options) {
+    if (options && 'pageIncrementer' in options) {
+      this.setState({
+        currentPage: this.state.currentPage += options.pageIncrementer,
+      });
+    }
+
+    const pageParameter = `page=${this.state.currentPage}`;
+
+    let searchParameter = this.state.search
+      ? `&search=${this.state.search}`
+      : '';
+
+    this.updateWindowHistory();
 
     const url = `${this.baseUrl}?${pageParameter}${searchParameter}`;
 
+    /** Restore from cache if this URL has been requested already. */
     if (url in this.cache) {
-      return this.setState({ posts: this.cache[url] });
+      return this.setState({
+        posts: this.cache[url].posts,
+        totalPages: this.cache[url].totalPages,
+      });
     }
 
-    this.setState({ searching: false });
+    this.setState({ searching: true });
 
     fetch(url)
       .then(data => {
-        this.totalPages = data.headers.get('X-WP-TotalPages');
+        this.setState({ totalPages: data.headers.get('X-WP-TotalPages') });
         return data.json();
       })
       .then(posts => {
-        this.cache[url] = posts;
+        this.cache[url] = { posts, totalPages: this.state.totalPages };
         this.setState({ posts, searching: false });
       });
   }
@@ -138,7 +154,7 @@ export default class PostTypeSearch extends Component {
           <input
             value={this.state.search}
             placeholder={this.props.placeholder || 'Search posts'}
-            onChange={this.handleChange}
+            onChange={this.handleSearchInputChange}
           />
         </div>
         {this.drawTopNav()}
