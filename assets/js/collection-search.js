@@ -13,7 +13,11 @@ export default class CollectionSearch extends PostTypeSearch {
   }
 
   drawLoading() {
-    if (this.state.search && this.state.posts.length === 0) {
+    if (
+      this.state.search &&
+        this.state.posts !== null &&
+        this.state.posts.length === 0
+    ) {
       return <div>No results</div>;
     }
 

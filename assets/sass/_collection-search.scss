@@ -20,6 +20,13 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 1.5em;
+	color: $black;
+
+	&:hover {
+		color: $black;
+		text-decoration: none;
+		opacity: 0.8;
+	}
 	@media screen and (min-width: map-get($grid-breakpoints, 'md')) {
 		flex-direction: row;
 

@@ -1,21 +1,38 @@
 import React, { Component } from 'react';
 import debounce from 'lodash/debounce';
+import parse from 'url-parse';
 
 export default class PostTypeSearch extends Component {
   constructor(props) {
     super(props);
 
     this.cache = {};
-
-    this.currentPage = 1;
-    this.totalPages = 0;
-
     this.postType = this.props.postType || 'posts';
     this.cssNamespace = this.postType;
 
+    const url = parse(window.location.href, true);
+    let parsedQuery = {};
+    console.log(url.query);
+    if (
+      url.query && url.query[`${this.postType}Search`] && url.query.currentPage
+    ) {
+      parsedQuery = url.query;
+    } else {
+      parsedQuery.currentPage = 1;
+      parsedQuery[`${this.postType}Search`] = '';
+    }
+
+    console.log(parsedQuery);
+    this.currentPage = Number(parsedQuery.currentPage);
+    this.totalPages = 0;
+
     this.baseUrl = `${wpData.bloginfoUrl}/wp-json/wp/v2/${this.postType}/`;
 
-    this.state = { search: '', searching: false, posts: [] };
+    this.state = {
+      search: parsedQuery.collectionSearch,
+      searching: false,
+      posts: null,
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.fetchPosts = this.fetchPosts.bind(this);
@@ -29,6 +46,7 @@ export default class PostTypeSearch extends Component {
 
   handleChange(event) {
     this.currentPage = 1;
+
     this.setState({ search: event.target.value });
     this.fetchPosts({ search: event.target.value });
   }
@@ -44,6 +62,13 @@ export default class PostTypeSearch extends Component {
     if (this.state.search) {
       searchParameter = `&search=${this.state.search}`;
     }
+
+    window.history.replaceState(
+      {},
+      document.title,
+      `${window.location.origin}${window.location.pathname}` +
+        `?${this.postType}Search=${this.state.search}&currentPage=${this.currentPage}`
+    );
 
     const url = `${this.baseUrl}?${pageParameter}${searchParameter}`;
 
@@ -70,7 +95,11 @@ export default class PostTypeSearch extends Component {
 
   drawPost(post, key) {
     return (
-      <div key={key} className={`${this.cssNamespace}-search__post`}>
+      <a
+        href={post.link}
+        key={key}
+        className={`${this.cssNamespace}-search__post`}
+      >
         <div className={`${this.cssNamespace}-search__content-container`}>
           <h1
             className={`${this.cssNamespace}-search__title`}
@@ -82,7 +111,7 @@ export default class PostTypeSearch extends Component {
           />
         </div>
         {this.drawThumbnail(post)}
-      </div>
+      </a>
     );
   }
 
@@ -114,7 +143,7 @@ export default class PostTypeSearch extends Component {
         </div>
         {this.drawTopNav()}
         {
-          this.state.posts.length
+          this.state.posts !== null && this.state.posts.length
             ? this.state.posts.map(this.drawPost)
             : this.drawLoading()
         }

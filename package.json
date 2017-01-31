@@ -34,6 +34,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "smooth-scroll": "github:cferdinandi/smooth-scroll",
+    "url-parse": "^1.1.7",
     "vanilla-lazyload": "^3.0.0",
     "vex": "0.0.4",
     "vex-js": "^3.0.0",
