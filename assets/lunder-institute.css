@@ -5354,6 +5354,19 @@ body.vex-open {
     padding-right: 1.5em; }
     .collection-search__nav div:last-of-type {
       padding-right: 0; }
+  .collection-search__nav .collection-search__nav-middle {
+    position: relative; }
+  .collection-search__nav .collection-search__loading {
+    position: absolute;
+    top: 1.625rem;
+    left: 0;
+    white-space: nowrap;
+    width: 100%;
+    font-size: 0.891em;
+    opacity: 0.7;
+    text-align: center; }
+  .collection-search__nav:last-of-type .collection-search__loading {
+    display: none; }
 
 body {
   position: relative;

@@ -15,7 +15,7 @@ export default class PostTypeSearch extends Component {
     const parsedQuery = this.getURLQueryVars();
     this.state = {
       search: parsedQuery.collectionSearch,
-      searching: false,
+      loading: false,
       posts: null,
       currentPage: Number(parsedQuery.currentPage),
       totalPages: 0,
@@ -92,7 +92,7 @@ export default class PostTypeSearch extends Component {
       });
     }
 
-    this.setState({ searching: true });
+    this.setState({ loading: true });
 
     fetch(url)
       .then(data => {
@@ -101,7 +101,7 @@ export default class PostTypeSearch extends Component {
       })
       .then(posts => {
         this.cache[url] = { posts, totalPages: this.state.totalPages };
-        this.setState({ posts, searching: false });
+        this.setState({ posts, loading: false });
       });
   }
 
@@ -136,11 +136,11 @@ export default class PostTypeSearch extends Component {
   }
 
   drawTopNav() {
-    return this.drawNav();
+    return this.drawNav({ location: 'top' });
   }
 
   drawBottomNav() {
-    return this.drawNav();
+    return this.drawNav({ location: 'bottom' });
   }
 
   drawNav() {
@@ -152,6 +152,8 @@ export default class PostTypeSearch extends Component {
       <div className={`${this.cssNamespace}-search`}>
         <div className={`${this.cssNamespace}-search__input-container`}>
           <input
+            ref={'search-input'}
+            id={`${this.cssNamespace}-search__input`}
             value={this.state.search}
             placeholder={this.props.placeholder || 'Search posts'}
             onChange={this.handleSearchInputChange}
