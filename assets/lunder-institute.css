@@ -5152,6 +5152,24 @@ body.vex-open {
 .length-24 {
   flex: 24; }
 
+.post-gallery {
+  margin-bottom: .75em;
+  counter-reset: caption; }
+
+.post-gallery__images {
+  display: flex; }
+
+.post-gallery__image-container {
+  height: 100%; }
+
+.post-gallery__caption {
+  padding-right: 1.5em; }
+  .post-gallery__caption:before {
+    content: counter(caption);
+    counter-increment: caption;
+    color: #353535;
+    margin-right: .375em; }
+
 .main--index > article {
   padding-top: 6em;
   margin-left: auto;
@@ -5430,7 +5448,7 @@ p {
   color: #000;
   font-weight: 200; }
 
-.caption, .page-has-thumbnail__footer-caption, .page-has-thumbnail__footer-caption p,
+.caption, .post-gallery__caption, .page-has-thumbnail__footer-caption, .page-has-thumbnail__footer-caption p,
 .wp-caption-text {
   color: #898989;
   font-size: 0.8rem;

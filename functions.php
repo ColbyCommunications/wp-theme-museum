@@ -36,3 +36,43 @@ register_post_type( 'collection', [
 	'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail' ],
 	'show_in_rest' => true,
 ] );
+
+/** Modify the content of the [gallery] shortcode only on this page. */
+add_filter( 'post_gallery', function( $output, $atts ) {
+	if ( ! is_single() || is_home() || is_front_page() ) {
+		return '';
+	}
+	
+	if ( empty( $gallery_posts = get_posts( [
+		'post__in' => explode( ',', $atts['include'] ),
+		'orderby' => 'post__in',
+		'post_type' => 'attachment',
+	] ) ) ) {
+		return '';
+	}
+
+	$images = '';
+	$captions = '';
+	foreach ( $gallery_posts as $key => $gallery_post ) {
+		$attachment_image = wp_get_attachment_image(
+			$gallery_post->ID,
+			'medium',
+			false,
+			0 === $key ? [ 'class' => 'front-page-gallery__active-image' ] : []
+		);
+
+		$images .= "<div class=post-gallery__image-container>$attachment_image</div>";
+		$captions .= "<span class=post-gallery__caption>$gallery_post->post_excerpt</span>";
+	}
+
+	return "
+        <div class='post-gallery pre-load'>
+            <div class=post-gallery__images>
+                $images
+            </div>
+            <div class=post-gallery__captions>
+                $captions
+            </div>
+        </div>
+    ";
+}, 1, 2 );
