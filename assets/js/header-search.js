@@ -74,6 +74,7 @@ export default class HeaderSearch extends Component {
   }
 
   closeSearch() {
+    this.refs['search-input'].value = '';
     return this.setState({
       search: '',
       results: [],
@@ -131,6 +132,7 @@ export default class HeaderSearch extends Component {
           Search
         </a>
         <input
+          ref="search-input"
           style={{ cursor: 'pointer' }}
           defaultValue={this.state.search}
           onInput={event => {
