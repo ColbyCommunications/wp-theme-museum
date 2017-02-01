@@ -5490,5 +5490,5 @@ li {
 [data-original] {
   min-height: 150px; }
 
-input[type=text]::-ms-clear {
+::-ms-clear {
   display: none; }
