@@ -56,7 +56,7 @@ add_filter( 'post_gallery', function( $output, $atts ) {
 	foreach ( $gallery_posts as $key => $gallery_post ) {
 		$attachment_image = wp_get_attachment_image(
 			$gallery_post->ID,
-			'medium',
+			'large',
 			false,
 			0 === $key ? [ 'class' => 'front-page-gallery__active-image' ] : []
 		);
