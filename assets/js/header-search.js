@@ -132,8 +132,8 @@ export default class HeaderSearch extends Component {
         </a>
         <input
           style={{ cursor: 'pointer' }}
-          value={this.state.search}
-          onChange={event => {
+          defaultValue={this.state.search}
+          onInput={event => {
             this.setState({ search: event.target.value });
             if (event.target.value == '') {
               this.closeSearch();
