@@ -3999,6 +3999,7 @@ input[type="button"].btn-block {
   justify-content: space-between; }
   @media screen and (max-width: 767px) {
     .three-column-header__collapsible-columns.mobile-active {
+      border: 1px solid #9E9E9E;
       position: absolute;
       top: 5em;
       right: 1em;
@@ -4090,8 +4091,8 @@ input[type="button"].btn-block {
       display: none;
       top: 1.5em; } }
   .menu-icon-container svg {
-    height: 40px;
-    width: 40px; }
+    height: 30px;
+    width: 30px; }
   .menu-icon-container path {
     transition: transform .2s; }
 

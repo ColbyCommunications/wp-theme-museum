@@ -35,6 +35,7 @@
 
   @media screen and (max-width: 767px) {
     &.mobile-active {
+			border: 1px solid $gray-lighter;
       position: absolute;
       top: 5em;
       right: 1em;
