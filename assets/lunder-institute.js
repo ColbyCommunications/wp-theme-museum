@@ -735,7 +735,9 @@ var PostTypeSearch = function (_Component) {
         { className: this.cssNamespace + '-search__content-container' },
         _react2.default.createElement('h1', {
           className: this.cssNamespace + '-search__title',
-          dangerouslySetInnerHTML: { __html: post.title.rendered }
+          dangerouslySetInnerHTML: {
+            __html: post.title.rendered.replace(' ,', '').replace(' &nbsp;&nbsp;,', '')
+          }
         }),
         _react2.default.createElement('div', {
           className: this.cssNamespace + '-search__content',

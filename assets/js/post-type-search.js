@@ -111,7 +111,11 @@ export default class PostTypeSearch extends Component {
       <div className={`${this.cssNamespace}-search__content-container`}>
         <h1
           className={`${this.cssNamespace}-search__title`}
-          dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+          dangerouslySetInnerHTML={{
+            __html: post.title.rendered
+              .replace(' ,', '')
+              .replace(' &nbsp;&nbsp;,', ''),
+          }}
         />
         <div
           className={`${this.cssNamespace}-search__content`}
