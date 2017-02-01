@@ -5157,17 +5157,20 @@ body.vex-open {
   counter-reset: caption; }
 
 .post-gallery__images {
-  display: flex; }
+  display: flex;
+  margin: 0 auto; }
 
 .post-gallery__image-container {
   height: 100%; }
+
+.post-gallery__captions {
+  padding-top: .25em; }
 
 .post-gallery__caption {
   padding-right: 1.5em; }
   .post-gallery__caption:before {
     content: counter(caption);
     counter-increment: caption;
-    color: #353535;
     margin-right: .375em; }
 
 .main--index > article {

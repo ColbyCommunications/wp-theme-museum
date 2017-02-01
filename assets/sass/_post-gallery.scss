@@ -5,10 +5,15 @@
 
 .post-gallery__images {
 	display: flex;
+	margin: 0 auto;
 }
 
 .post-gallery__image-container {
 	height: 100%;
+}
+
+.post-gallery__captions {
+	padding-top: .25em;
 }
 
 .post-gallery__caption {
@@ -18,7 +23,6 @@
 	&:before {
 		content: counter(caption);
 		counter-increment: caption;
-		color: $black;
 		margin-right: .375em;
 	}
 }
