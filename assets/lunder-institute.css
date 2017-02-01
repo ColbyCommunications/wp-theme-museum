@@ -5190,8 +5190,8 @@ body.vex-open {
       padding-top: 3em; } }
 
 .archive section, .blog section {
-  padding-bottom: 0.75em;
-  padding-top: .25em; }
+  padding-bottom: 0.375em;
+  padding-top: .375em; }
   .archive section:last-of-type, .blog section:last-of-type {
     margin-bottom: 3em;
     border-bottom: none; }
@@ -5199,6 +5199,10 @@ body.vex-open {
     margin-bottom: 0.25em; }
   .archive section h1 a, .blog section h1 a {
     color: #ba0c2f; }
+  .archive section > header, .blog section > header {
+    padding-top: 1.5em; }
+  .archive section:not(:first-of-type) > header, .blog section:not(:first-of-type) > header {
+    border-top: 1px solid #f5f5f5; }
 
 .archive__footer {
   position: relative;
