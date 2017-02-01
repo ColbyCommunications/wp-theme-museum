@@ -187,7 +187,8 @@ exports.default = function () {
 
       var closeOnEnter = function closeOnEnter(event) {
         if (event.which == 13 || event.keyCode == 13) {
-          return;
+          event.preventDefault();
+          _vexJs2.default.closeAll();
         }
       };
 
@@ -196,6 +197,9 @@ exports.default = function () {
         unsafeContent: imageHTML,
         afterOpen: function afterOpen() {
           return window.addEventListener('keydown', closeOnEnter);
+        },
+        afterClose: function afterClose() {
+          return window.removeEventListener('keydown', closeOnEnter);
         }
       });
       document.querySelector('.vex').classList.add('active');
@@ -775,7 +779,7 @@ var PostTypeSearch = function (_Component) {
       return _react2.default.createElement(
         'a',
         {
-          href: post.link,
+          href: post.link + '?source=collection',
           key: key,
           className: this.cssNamespace + '-search__post'
         },

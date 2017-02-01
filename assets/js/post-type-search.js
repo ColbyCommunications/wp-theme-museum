@@ -132,7 +132,7 @@ export default class PostTypeSearch extends Component {
   drawPost(post, key) {
     return (
       <a
-        href={post.link}
+        href={`${post.link}?source=collection`}
         key={key}
         className={`${this.cssNamespace}-search__post`}
       >

@@ -4217,6 +4217,9 @@ input[type="button"].btn-block {
     .collection__nav div:last-of-type {
       padding-right: 0; }
 
+.collection__back-button {
+  padding-left: 1.5em !important; }
+
 @keyframes vex-fadein {
   0% {
     opacity: 0; }

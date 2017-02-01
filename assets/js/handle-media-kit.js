@@ -17,7 +17,8 @@ export default function() {
 
       const closeOnEnter = event => {
         if (event.which == 13 || event.keyCode == 13) {
-          return;
+          event.preventDefault();
+          vex.closeAll();
         }
       };
 
@@ -25,6 +26,7 @@ export default function() {
       const modal = vex.open({
         unsafeContent: imageHTML,
         afterOpen: () => window.addEventListener('keydown', closeOnEnter),
+        afterClose: () => window.removeEventListener('keydown', closeOnEnter),
       });
       document.querySelector('.vex').classList.add('active');
     });
