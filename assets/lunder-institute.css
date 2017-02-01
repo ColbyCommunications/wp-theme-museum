@@ -5283,8 +5283,13 @@ body.vex-open {
 .page-has-thumbnail__footer-caption {
   border-top: 1px solid #9E9E9E; }
 
-.page-has-thumbnail__footer-caption, .page-has-thumbnail__footer-caption p {
+.page-has-thumbnail__footer-caption {
   padding-top: .75em; }
+  .page-has-thumbnail__footer-caption .banner_caption_header {
+    display: block;
+    margin-top: .5em; }
+  .page-has-thumbnail__footer-caption p {
+    margin-bottom: .25em; }
 
 .page-no-thumbnail > * {
   max-width: 970px;
@@ -5418,7 +5423,7 @@ p {
   color: #000;
   font-weight: 200; }
 
-.caption, .page-has-thumbnail__footer-caption, .page-has-thumbnail__footer-caption p,
+.caption, .page-has-thumbnail__footer-caption,
 .wp-caption-text {
   color: #898989;
   font-size: 0.8rem;

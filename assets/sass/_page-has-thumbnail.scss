@@ -73,7 +73,16 @@
 	border-top: 1px solid $gray-lighter;
 }
 
-.page-has-thumbnail__footer-caption, .page-has-thumbnail__footer-caption p {
+.page-has-thumbnail__footer-caption {
   @extend .caption;
   padding-top: .75em;
+
+	.banner_caption_header {
+		display: block;
+		margin-top: .5em;
+	}
+
+	p {
+		margin-bottom: .25em;
+	}
 }
