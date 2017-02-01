@@ -12,7 +12,7 @@ $image_url = get_post_meta( $post->ID, 'image_url', true );
 <main id=main class=main--single-collection>
 	<?php if ( isset( $_GET['source'] ) && 'collection' === $_GET['source'] ) : ?>
 	<nav class=collection__back-button>
-		<a href=# onclick=window.history.back()>« Back</a>
+		<a href="javascript:history.go(-1)">« Back</a>
 	</nav>
 	<?php endif; ?>
 	<article <?php post_class(); ?>>
