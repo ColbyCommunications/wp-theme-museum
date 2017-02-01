@@ -23,9 +23,10 @@
 	}
 }
 
-.archive {
+.archive, .blog {
 	section {
 		padding-bottom: 0.75em;
+		padding-top: .25em;
 
 		&:last-of-type {
 			margin-bottom: 3em;

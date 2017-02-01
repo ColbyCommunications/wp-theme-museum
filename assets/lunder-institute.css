@@ -5189,14 +5189,15 @@ body.vex-open {
     .main--archive > article {
       padding-top: 3em; } }
 
-.archive section {
-  padding-bottom: 0.75em; }
-  .archive section:last-of-type {
+.archive section, .blog section {
+  padding-bottom: 0.75em;
+  padding-top: .25em; }
+  .archive section:last-of-type, .blog section:last-of-type {
     margin-bottom: 3em;
     border-bottom: none; }
-  .archive section h1 {
+  .archive section h1, .blog section h1 {
     margin-bottom: 0.25em; }
-  .archive section h1 a {
+  .archive section h1 a, .blog section h1 a {
     color: #ba0c2f; }
 
 .archive__footer {
