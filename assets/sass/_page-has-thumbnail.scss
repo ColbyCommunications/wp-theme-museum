@@ -70,7 +70,10 @@
 }
 
 .page-has-thumbnail__footer-caption {
+	border-top: 1px solid $gray-lighter;
+}
+
+.page-has-thumbnail__footer-caption, .page-has-thumbnail__footer-caption p {
   @extend .caption;
   padding-top: .75em;
-  border-top: 1px solid $gray-lighter;
 }

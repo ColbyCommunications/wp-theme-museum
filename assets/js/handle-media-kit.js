@@ -14,7 +14,18 @@ export default function() {
       event.preventDefault();
 
       const imageHTML = post.getAttribute('data-image');
-      vex.open({ unsafeContent: imageHTML });
+
+      const closeOnEnter = event => {
+        if (event.which == 13 || event.keyCode == 13) {
+          return;
+        }
+      };
+
+      let closeListener;
+      const modal = vex.open({
+        unsafeContent: imageHTML,
+        afterOpen: () => window.addEventListener('keydown', closeOnEnter),
+      });
       document.querySelector('.vex').classList.add('active');
     });
   });

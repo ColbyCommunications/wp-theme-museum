@@ -184,7 +184,20 @@ exports.default = function () {
       event.preventDefault();
 
       var imageHTML = post.getAttribute('data-image');
-      _vexJs2.default.open({ unsafeContent: imageHTML });
+
+      var closeOnEnter = function closeOnEnter(event) {
+        if (event.which == 13 || event.keyCode == 13) {
+          return;
+        }
+      };
+
+      var closeListener = void 0;
+      var modal = _vexJs2.default.open({
+        unsafeContent: imageHTML,
+        afterOpen: function afterOpen() {
+          return window.addEventListener('keydown', closeOnEnter);
+        }
+      });
       document.querySelector('.vex').classList.add('active');
     });
   });

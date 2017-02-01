@@ -25,6 +25,10 @@ add_filter( 'page_has_thumbnail_article_footer', function( $content ) {
 	?>
 	<div class=page-has-thumbnail__footer-caption>
 		Banner image: <?php echo wp_kses_post( $caption ); ?>
+		<?php if ( ! empty( $front_page_captions = get_post_meta( $post->ID, 'after_banner_caption', true ) ) ) :
+
+			echo apply_filters( 'the_content', $front_page_captions );
+		endif; ?>
 	</div>
 
 	<?php

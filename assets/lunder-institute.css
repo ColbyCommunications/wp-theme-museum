@@ -4836,13 +4836,13 @@ body.vex-open {
     font-size: 4em;
     font-weight: normal;
     line-height: 1;
-    height: 4em;
-    width: 4em;
+    height: 1em;
+    width: 1em;
     text-align: center;
     color: white;
     background: transparent;
-    top: -44px;
-    right: 6px;
+    top: -40px;
+    right: 0px;
     border: none;
     outline: none;
     border-radius: 0; }
@@ -4868,7 +4868,8 @@ body.vex-open {
     left: -.25em;
     background: transparent;
     border: 0;
-    padding: 0.25em; }
+    padding: 0.25em;
+    color: #ba0c2f; }
 
 @media screen and (max-width: 767px) {
   .header-search-container > a {
@@ -5280,8 +5281,10 @@ body.vex-open {
   padding-top: .75em; }
 
 .page-has-thumbnail__footer-caption {
-  padding-top: .75em;
   border-top: 1px solid #9E9E9E; }
+
+.page-has-thumbnail__footer-caption, .page-has-thumbnail__footer-caption p {
+  padding-top: .75em; }
 
 .page-no-thumbnail > * {
   max-width: 970px;
@@ -5415,7 +5418,7 @@ p {
   color: #000;
   font-weight: 200; }
 
-.caption, .page-has-thumbnail__footer-caption,
+.caption, .page-has-thumbnail__footer-caption, .page-has-thumbnail__footer-caption p,
 .wp-caption-text {
   color: #898989;
   font-size: 0.8rem;
