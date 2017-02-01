@@ -75,14 +75,14 @@
 
 .page-has-thumbnail__footer-caption {
   @extend .caption;
-  padding-top: .75em;
 
 	.banner_caption_header {
 		display: block;
-		margin-top: .5em;
+		padding-top: .5em;
 	}
 
 	p {
+		@extend .caption;
 		margin-bottom: .25em;
 	}
 }
