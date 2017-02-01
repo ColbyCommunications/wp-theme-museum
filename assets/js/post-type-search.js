@@ -210,9 +210,9 @@ export default class PostTypeSearch extends Component {
           <input
             ref={'search-input'}
             id={`${this.cssNamespace}-search__input`}
-            value={this.state.search}
+            defaultValue={this.state.search}
             placeholder={this.props.placeholder || 'Search posts'}
-            onChange={this.handleSearchInputChange}
+            onInput={this.handleSearchInputChange}
           />
         </div>
         {this.drawNav({ location: 'top' })}

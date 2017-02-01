@@ -20,7 +20,7 @@ $image_url = get_post_meta( $post->ID, 'image_url', true );
 			<h1 class=collection__title><?php the_title(); ?></h1>
 			<div class=collection__content><?php the_content(); ?></div>
 		</div>
-		<?php if ( $image_url ) : ?>
+		<?php if ( $image_url && strpos( $image_url, 'noimage' ) === false ) : ?>
 		<div class=collection__thumbnail-container>
 			<img src=<?php echo $image_url; ?> alt=<?php echo esc_attr( get_the_title() ); ?>>
 		</div>

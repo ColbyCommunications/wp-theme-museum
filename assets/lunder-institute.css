@@ -4193,14 +4193,13 @@ input[type="button"].btn-block {
         @supports (order: 2) {
           .collection .collection__content-container {
             order: 2;
-            padding-left: 1.5em;
             padding-right: 0; } }
       .collection .post-type-search__thumbnail-container {
         padding-left: 0.75em; }
         @supports (order: 2) {
           .collection .post-type-search__thumbnail-container {
             padding-left: 0;
-            padding-right: 0.75em; } }
+            padding-right: 1.5em; } }
         .collection .post-type-search__thumbnail-container img {
           width: 100%;
           height: auto; } }
