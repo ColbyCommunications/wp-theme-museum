@@ -6,10 +6,11 @@
 .post-gallery__images {
 	display: flex;
 	margin: 0 auto;
-}
 
-.post-gallery__image-container {
-	height: 100%;
+	img {
+		width: 100%;
+		height: auto;
+	}
 }
 
 .post-gallery__captions {
@@ -21,7 +22,7 @@
 	padding-right: 1.5em;
 
 	&:before {
-		content: counter(caption);
+		content: counter(caption) ".";
 		counter-increment: caption;
 		margin-right: .375em;
 	}

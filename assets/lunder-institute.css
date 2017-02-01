@@ -5159,9 +5159,9 @@ body.vex-open {
 .post-gallery__images {
   display: flex;
   margin: 0 auto; }
-
-.post-gallery__image-container {
-  height: 100%; }
+  .post-gallery__images img {
+    width: 100%;
+    height: auto; }
 
 .post-gallery__captions {
   padding-top: .25em; }
@@ -5169,7 +5169,7 @@ body.vex-open {
 .post-gallery__caption {
   padding-right: 1.5em; }
   .post-gallery__caption:before {
-    content: counter(caption);
+    content: counter(caption) ".";
     counter-increment: caption;
     margin-right: .375em; }
 

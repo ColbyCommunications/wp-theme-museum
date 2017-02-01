@@ -42,7 +42,7 @@ add_filter( 'post_gallery', function( $output, $atts ) {
 	if ( ! is_single() || is_home() || is_front_page() ) {
 		return '';
 	}
-	
+
 	if ( empty( $gallery_posts = get_posts( [
 		'post__in' => explode( ',', $atts['include'] ),
 		'orderby' => 'post__in',
@@ -61,7 +61,10 @@ add_filter( 'post_gallery', function( $output, $atts ) {
 			0 === $key ? [ 'class' => 'front-page-gallery__active-image' ] : []
 		);
 
-		$images .= "<div class=post-gallery__image-container>$attachment_image</div>";
+		$images .= "
+			<div class='post-gallery__image-container gallery-image-$gallery_post->ID'>
+				$attachment_image
+			</div>";
 		$captions .= "<span class=post-gallery__caption>$gallery_post->post_excerpt</span>";
 	}
 
