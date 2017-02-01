@@ -5025,6 +5025,7 @@ body.vex-open {
     opacity: 0;
     transition: opacity 1s;
     width: 100%;
+    margin-top: -10px;
     height: auto;
     min-width: 950px; }
   .front-page-gallery__image-container .front-page-gallery__active-image {
