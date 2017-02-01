@@ -25,6 +25,11 @@ p {
 	}
 }
 
+:focus {
+	outline-color: $brand-primary;
+	text-decoration: none;
+}
+
 .aligncenter {
 	margin: 0 auto;
 	display: block;
@@ -140,4 +145,8 @@ html[lang="en"] {
 
 [data-original] {
 	min-height: 150px;
+}
+
+input[type=text]::-ms-clear {
+	display: none;
 }

@@ -456,6 +456,7 @@ var HeaderSearch = function (_Component) {
               dangerouslySetInnerHTML: {
                 __html: this.state.currentPage > 1 ? '&laquo;' : ''
               },
+              style: this.state.currentPage < 2 ? { pointerEvents: 'none' } : {},
               onClick: function onClick(event) {
                 event.preventDefault();
                 _this4.setState({ currentPage: _this4.state.currentPage - 1 });
@@ -470,6 +471,7 @@ var HeaderSearch = function (_Component) {
             ),
             _react2.default.createElement('a', {
               href: '#',
+              style: this.state.currentPage >= this.totalPages ? { pointerEvents: 'none' } : {},
               dangerouslySetInnerHTML: {
                 __html: this.state.currentPage < this.totalPages ? '&raquo;' : ''
               },

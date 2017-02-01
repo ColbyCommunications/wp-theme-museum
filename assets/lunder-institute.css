@@ -5389,6 +5389,10 @@ p {
     p {
       font-size: 0.9rem; } }
 
+:focus {
+  outline-color: #ba0c2f;
+  text-decoration: none; }
+
 .aligncenter {
   margin: 0 auto;
   display: block; }
@@ -5485,3 +5489,6 @@ li {
 
 [data-original] {
   min-height: 150px; }
+
+input[type=text]::-ms-clear {
+  display: none; }

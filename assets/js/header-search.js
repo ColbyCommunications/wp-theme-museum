@@ -172,6 +172,9 @@ export default class HeaderSearch extends Component {
               dangerouslySetInnerHTML={{
                 __html: this.state.currentPage > 1 ? '&laquo;' : '',
               }}
+              style={
+                this.state.currentPage < 2 ? { pointerEvents: 'none' } : {}
+              }
               onClick={event => {
                 event.preventDefault();
                 this.setState({ currentPage: this.state.currentPage - 1 });
@@ -184,6 +187,11 @@ export default class HeaderSearch extends Component {
             </div>
             <a
               href="#"
+              style={
+                this.state.currentPage >= this.totalPages
+                  ? { pointerEvents: 'none' }
+                  : {}
+              }
               dangerouslySetInnerHTML={{
                 __html: this.state.currentPage < this.totalPages
                   ? '&raquo;'
