@@ -39,7 +39,9 @@ register_post_type( 'collection', [
 
 /** Modify the content of the [gallery] shortcode only on this page. */
 add_filter( 'post_gallery', function( $output, $atts ) {
-	if ( ! is_single() || is_home() || is_front_page() ) {
+	global $post;
+
+	if ( '1' !== get_post_meta( $post->ID, 'do_special_gallery' ) ) {
 		return '';
 	}
 
