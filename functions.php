@@ -41,7 +41,7 @@ register_post_type( 'collection', [
 add_filter( 'post_gallery', function( $output, $atts ) {
 	global $post;
 
-	if ( '1' !== get_post_meta( $post->ID, 'do_special_gallery' ) ) {
+	if ( '1' !== get_post_meta( $post->ID, 'do_special_gallery', true ) ) {
 		return '';
 	}
 
