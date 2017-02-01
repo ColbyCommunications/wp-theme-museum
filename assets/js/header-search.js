@@ -135,6 +135,10 @@ export default class HeaderSearch extends Component {
           value={this.state.search}
           onChange={event => {
             this.setState({ search: event.target.value });
+            if (event.target.value == '') {
+              this.closeSearch();
+            }
+
             this.handleSearch(event.target.value);
           }}
 

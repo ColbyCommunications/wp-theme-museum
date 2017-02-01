@@ -416,6 +416,10 @@ var HeaderSearch = function (_Component) {
           value: this.state.search,
           onChange: function onChange(event) {
             _this4.setState({ search: event.target.value });
+            if (event.target.value == '') {
+              _this4.closeSearch();
+            }
+
             _this4.handleSearch(event.target.value);
           }
 
