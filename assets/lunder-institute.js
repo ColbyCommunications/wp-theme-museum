@@ -667,8 +667,6 @@ var PostTypeSearch = function (_Component) {
         return url.query;
       }
 
-      console.log(url.query);
-
       var parsedQuery = {};
       parsedQuery.currentPage = 1;
       parsedQuery[this.postType + 'Search'] = '';

@@ -40,16 +40,19 @@
 
 .liaa-logo-container {
 	width: 80%;
-	padding: 12em 5vw 1.5em;
+	padding: 6em 5vw 1.5em;
+	padding: 8vw 5vw 1.5em;
 	margin: 0 auto;
 	@media screen and (min-width: map-get($grid-breakpoints, 'md')) {
 		padding: 6em 5vw 1.5em;
+		padding: 10vw 5vw 1.5em;
 	}
 
 	svg {
 		max-width: 100%;
 		width: 994px;
-		height: auto;
+		height: 350px;
+		max-height: 100%;
 		color: white;
 		margin: 0 auto;
 		display: block;

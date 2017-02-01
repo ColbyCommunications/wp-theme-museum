@@ -45,8 +45,6 @@ export default class PostTypeSearch extends Component {
       return url.query;
     }
 
-    console.log(url.query);
-
     const parsedQuery = {};
     parsedQuery.currentPage = 1;
     parsedQuery[`${this.postType}Search`] = '';

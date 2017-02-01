@@ -4978,15 +4978,18 @@ body.vex-open {
 
 .liaa-logo-container {
   width: 80%;
-  padding: 12em 5vw 1.5em;
+  padding: 6em 5vw 1.5em;
+  padding: 8vw 5vw 1.5em;
   margin: 0 auto; }
   @media screen and (min-width: 48rem) {
     .liaa-logo-container {
-      padding: 6em 5vw 1.5em; } }
+      padding: 6em 5vw 1.5em;
+      padding: 10vw 5vw 1.5em; } }
   .liaa-logo-container svg {
     max-width: 100%;
     width: 994px;
-    height: auto;
+    height: 350px;
+    max-height: 100%;
     color: white;
     margin: 0 auto;
     display: block; }
@@ -5035,7 +5038,7 @@ body.vex-open {
   width: 100%;
   min-height: 300px;
   margin: 105px auto 0;
-  padding: 8em 1.5em 0;
+  padding: 4em 1.5em 0;
   max-width: 900px;
   padding-bottom: 4.5em;
   padding-bottom: 6vw;
@@ -5048,7 +5051,7 @@ body.vex-open {
   .front-page-gallery__titles > span {
     color: white;
     font-size: 3em;
-    font-size: 5vw;
+    font-size: 5.5vw;
     line-height: 1.4;
     text-transform: uppercase;
     padding: 0 0.0625em;
