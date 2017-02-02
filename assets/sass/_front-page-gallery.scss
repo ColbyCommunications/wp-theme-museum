@@ -103,8 +103,10 @@
 		//margin-left: .75em;
 	}
 }
-@for $i from 1 through 24 {
-	.length-#{$i} {
-		flex: #{$i};
+@supports (flex: 1) and (display: flex) {
+	@for $i from 1 through 24 {
+		.length-#{$i} {
+			flex: #{$i};
+		}
 	}
 }
