@@ -57,12 +57,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColbyCommunications/wp-components.git",
-                "reference": "5dbbfb7105a31e1592ef4f69e0a55d0520dca814"
+                "reference": "97b6d30d17cb74a5afd9f9c9a63f9f5beaac870a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ColbyCommunications/wp-components/zipball/5dbbfb7105a31e1592ef4f69e0a55d0520dca814",
-                "reference": "5dbbfb7105a31e1592ef4f69e0a55d0520dca814",
+                "url": "https://api.github.com/repos/ColbyCommunications/wp-components/zipball/97b6d30d17cb74a5afd9f9c9a63f9f5beaac870a",
+                "reference": "97b6d30d17cb74a5afd9f9c9a63f9f5beaac870a",
                 "shasum": ""
             },
             "require": {
@@ -83,7 +83,7 @@
                 }
             ],
             "description": "A collection of commonly used WordPress parts.",
-            "time": "2017-02-02 20:10:16"
+            "time": "2017-02-02 22:15:48"
         },
         {
             "name": "jwatkins/wp-development",

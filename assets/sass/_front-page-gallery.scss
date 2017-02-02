@@ -73,7 +73,7 @@
 		letter-spacing: .03125em;
 
 		span {
-			padding: 0 .015625em 0 0;
+			padding: 0 .008em 0 0;
 		}
 
 		@media screen and (max-width: 767px) {
@@ -96,18 +96,14 @@
 			font-size: 3em;
 		}
 
-		&.front-page-gallery__active-title {
+		&[style*=font-weight]{
 			opacity: 1;
 			font-weight: 900;
-			letter-spacing: 0;
 
 			span {
 				padding: 0;
+				margin-left: -.025em;
 			}
 		}
-	}
-
-	.new-word:not(:first-of-type) {
-		//margin-left: .75em;
 	}
 }

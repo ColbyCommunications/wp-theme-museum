@@ -5079,7 +5079,7 @@ body.vex-open {
     opacity: 0.5;
     letter-spacing: .03125em; }
     .front-page-gallery__titles > span span {
-      padding: 0 .015625em 0 0; }
+      padding: 0 .008em 0 0; }
     @media screen and (max-width: 767px) {
       .front-page-gallery__titles > span {
         flex: none !important; } }
@@ -5095,12 +5095,12 @@ body.vex-open {
     @media screen and (min-width: 72rem) {
       .front-page-gallery__titles > span {
         font-size: 3em; } }
-    .front-page-gallery__titles > span.front-page-gallery__active-title {
+    .front-page-gallery__titles > span[style*=font-weight] {
       opacity: 1;
-      font-weight: 900;
-      letter-spacing: 0; }
-      .front-page-gallery__titles > span.front-page-gallery__active-title span {
-        padding: 0; }
+      font-weight: 900; }
+      .front-page-gallery__titles > span[style*=font-weight] span {
+        padding: 0;
+        margin-left: -.025em; }
 
 .post-gallery {
   margin-bottom: .75em;
