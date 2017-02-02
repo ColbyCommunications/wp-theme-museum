@@ -29,29 +29,30 @@
 
 .front-page-splash__text {
 	min-height: 400px;
-	padding: 4em 1.5em 3em;
+	padding: 2em 1.5em 3em;
 	width: 100%;
 	margin: 0 auto;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 }
 
 .liaa-logo-container {
 	width: 80%;
-	padding: 6em 5vw 1.5em;
-	padding: 8vw 5vw 1.5em;
+	padding: 2em 3em 1.5em;
+	padding: 3vw 5vw 1.5em;
 	margin: 0 auto;
 	@media screen and (min-width: map-get($grid-breakpoints, 'md')) {
-		padding: 6em 5vw 1.5em;
-		padding: 10vw 5vw 1.5em;
+		padding: 2em 2vw 1.5em;
+		padding: 3vw 5vw 1.5em;
 	}
 
 	svg {
-		max-width: 100%;
-		width: 994px;
-		height: 350px;
+		max-width: 90%;
+		width: 90%;
+		height: 56vw;
+		min-height: 500px;
 		max-height: 100%;
 		color: white;
 		margin: 0 auto;
