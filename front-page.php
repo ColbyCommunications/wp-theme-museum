@@ -45,7 +45,7 @@ add_filter( 'post_gallery', function( $output, $atts ) {
 			$split_word = str_split( $word );
 
 			if ( count( $words ) - 1 === $word_key ) {
-				$split_word = array_merge( $split_word, [ '&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;' ] );
+				$split_word = array_merge( $split_word, [ '&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;' ] );
 			} else {
 				$split_word = array_merge( $split_word, [ '&nbsp;' ] );
 			}

@@ -50,7 +50,7 @@
 	min-height: 300px;
 	margin: 105px auto 0;
 	padding: 4em 1.5em 0;
-	max-width: 921px;
+	max-width: 900px;
 	padding-bottom: 4.5em;
 	padding-bottom: 6vw;
 	display: flex;
@@ -66,11 +66,15 @@
 		font-size: 7vw;
 		line-height: 1.4;
 		text-transform: uppercase;
-		padding: 0 0.0625em;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		opacity: 0.5;
+		letter-spacing: .03125em;
+
+		span {
+			padding: 0 .015625em 0 0;
+		}
 
 		@media screen and (max-width: 767px) {
 			flex: none !important;
@@ -96,17 +100,14 @@
 			opacity: 1;
 			font-weight: 900;
 			letter-spacing: 0;
+
+			span {
+				padding: 0;
+			}
 		}
 	}
 
 	.new-word:not(:first-of-type) {
 		//margin-left: .75em;
-	}
-}
-@supports (flex: 1) and (display: flex) {
-	@for $i from 1 through 24 {
-		.length-#{$i} {
-			flex: #{$i} #{$i} 2%;
-		}
 	}
 }
