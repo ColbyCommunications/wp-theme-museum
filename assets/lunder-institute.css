@@ -5066,7 +5066,7 @@ body.vex-open {
   .front-page-gallery__titles > span {
     color: white;
     font-size: 3em;
-    font-size: 5.5vw;
+    font-size: 7vw;
     line-height: 1.4;
     text-transform: uppercase;
     padding: 0 0.0625em;
@@ -5077,6 +5077,9 @@ body.vex-open {
     .front-page-gallery__titles > span:last-of-type {
       margin-right: auto;
       flex-grow: 0; }
+    @media screen and (min-width: 24rem) {
+      .front-page-gallery__titles > span {
+        font-size: 5vw; } }
     @media screen and (min-width: 48rem) {
       .front-page-gallery__titles > span {
         font-size: 2.5em; } }
@@ -5358,7 +5361,7 @@ body.vex-open {
   display: flex;
   flex-wrap: wrap; }
   .collection-search .collection-search__input-container {
-    padding: 1.5em; }
+    padding: 1.5em 0; }
     .collection-search .collection-search__input-container input {
       width: 100%; }
 
@@ -5367,7 +5370,7 @@ body.vex-open {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5em;
+  padding: 1.5em 0;
   color: #353535; }
   .collection-search__post:hover {
     color: #353535;
@@ -5394,7 +5397,7 @@ body.vex-open {
 
 .collection-search__nav {
   width: 100%;
-  padding: 1.5em;
+  padding: 1.5em 0;
   font-size: 0.944em;
   display: flex;
   justify-content: space-between; }
