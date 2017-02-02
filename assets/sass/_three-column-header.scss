@@ -12,9 +12,6 @@
 
 	@media screen and (max-width: 767px) {
 		height: 75px;
-	}
-
-  @media screen and (max-width: 767px) {
 		position: fixed;
 		top: 0;
 		right: 0;
@@ -40,17 +37,23 @@
       top: 5em;
       right: 1em;
       background: white;
-      display: flex;
-      flex-direction: column;
-      padding: 1.5em;
+      display: block;
+      padding: 1.5em .75em;
       max-width: 300px;
+			max-height: 440px;
+			overflow: auto;
 
       .three_column-header__middle {
         padding-bottom: 1.5em;
+				padding-left: .75em;
+				padding-right: .75em;
+				overflow: auto;
       }
 
       .three_column-header__right {
         justify-content: flex-start;
+				padding-left: .75em;
+				padding-right: .75em;
       }
 
       li {
