@@ -106,7 +106,7 @@
 @supports (flex: 1) and (display: flex) {
 	@for $i from 1 through 24 {
 		.length-#{$i} {
-			flex: #{$i};
+			flex: #{$i} #{$i} 2%;
 		}
 	}
 }
