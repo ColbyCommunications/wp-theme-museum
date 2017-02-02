@@ -4182,7 +4182,7 @@ input[type="button"].btn-block {
         padding-right: 3rem; } }
   @media screen and (max-width: 767px) {
     .main--single-collection {
-      padding-top: 3em; } }
+      padding-top: 6em; } }
 
 .collection {
   display: flex;
@@ -4736,7 +4736,7 @@ body.vex-open {
       height: 20px;
       width: 20px;
       text-align: center;
-      top: 3px;
+      top: -3px;
       right: 3px;
       color: #bbb;
       background: transparent; }
@@ -4878,6 +4878,8 @@ body.vex-open {
     border: 0;
     padding: 0.25em;
     color: #ba0c2f; }
+    #header-search input:focus {
+      background: rgba(255, 255, 255, 0.3); }
 
 @media screen and (max-width: 767px) {
   .header-search-container > a {
@@ -5409,14 +5411,12 @@ body.vex-open {
   .collection-search__nav .collection-search__nav-middle {
     position: relative; }
   .collection-search__nav .collection-search__loading {
-    position: absolute;
-    top: 1.625rem;
-    left: 0;
+    height: 0;
+    overflow: visible;
     white-space: nowrap;
     width: 100%;
     font-size: 0.891em;
-    opacity: 0.7;
-    text-align: center; }
+    opacity: 0.7; }
   .collection-search__nav:last-of-type .collection-search__loading {
     display: none; }
 

@@ -82,14 +82,12 @@
 	}
 
 	.collection-search__loading {
-		position: absolute;
-		top: 1.625rem;
-		left: 0;
+		height: 0;
+		overflow: visible;
 		white-space: nowrap;
 		width: 100%;
 		font-size: 0.891em;
 		opacity: 0.7;
-		text-align: center;
 	}
 
 	&:last-of-type .collection-search__loading {
