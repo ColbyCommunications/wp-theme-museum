@@ -66,7 +66,9 @@ export default class HeaderSearch extends Component {
         <a
           href={result.link}
           dangerouslySetInnerHTML={{
-            __html: `${resultItemImage}${result.title.rendered}`,
+            __html: result.title.rendered
+              .replace(' ,', '')
+              .replace(' &nbsp;&nbsp;,', ''),
           }}
         />
       </li>
@@ -178,6 +180,7 @@ export default class HeaderSearch extends Component {
               dangerouslySetInnerHTML={{
                 __html: this.state.currentPage > 1 ? '&laquo;' : '',
               }}
+              tabIndex={this.state.currentPage > 1 ? 0 : -1}
               style={
                 this.state.currentPage < 2 ? { pointerEvents: 'none' } : {}
               }
@@ -198,6 +201,7 @@ export default class HeaderSearch extends Component {
                   ? { pointerEvents: 'none' }
                   : {}
               }
+              tabIndex={this.state.currentPage <= this.totalPages ? 0 : -1}
               dangerouslySetInnerHTML={{
                 __html: this.state.currentPage < this.totalPages
                   ? '&raquo;'
