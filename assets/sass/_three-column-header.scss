@@ -41,7 +41,8 @@
       padding: 1.5em .75em;
       max-width: 300px;
 			max-height: 440px;
-			overflow: auto;
+			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
 
       .three_column-header__middle {
         padding-bottom: 1.5em;
