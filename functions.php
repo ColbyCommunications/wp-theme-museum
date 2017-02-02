@@ -81,3 +81,25 @@ add_filter( 'post_gallery', function( $output, $atts ) {
         </div>
     ";
 }, 1, 2 );
+
+/** Add banner image caption to article footer. */
+add_filter( 'page_has_thumbnail_article_footer', function( $content ) {
+	$caption = get_the_post_thumbnail_caption( get_queried_object_id() );
+
+	if ( ! $caption ) {
+		return '';
+	}
+
+	ob_start();
+	?>
+	<div class=page-has-thumbnail__footer-caption>
+		Banner image: <?php echo wp_kses_post( $caption ); ?>
+		<?php if ( ! empty( $front_page_captions = get_post_meta( $post->ID, 'after_banner_caption', true ) ) ) :
+
+			echo apply_filters( 'the_content', $front_page_captions );
+		endif; ?>
+	</div>
+
+	<?php
+	return ob_get_clean();
+} );
