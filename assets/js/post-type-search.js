@@ -171,9 +171,9 @@ export default class PostTypeSearch extends Component {
         </div>
         <div className={`${this.cssNamespace}-search__nav-middle`}>
           {
-            this.state.totalPages > 1
-              ? `Page ${this.state.currentPage} of ${this.state.totalPages}`
-              : ''
+            this.state.totalPages > 1 ? <div>
+                {`Page ${this.state.currentPage} of ${this.state.totalPages}`}
+              </div> : ''
           }
           <div className={`${this.cssNamespace}-search__loading`}>
             {this.state.loading == true ? 'Loading ...' : ''}

@@ -5404,17 +5404,23 @@ body.vex-open {
   display: flex;
   justify-content: space-between; }
   .collection-search__nav div {
-    display: inline-block;
-    padding-right: 1.5em; }
+    padding-right: 1.5em;
+    padding-left: 1.5em; }
     .collection-search__nav div:last-of-type {
       padding-right: 0; }
+    .collection-search__nav div:first-of-type {
+      padding-left: 0; }
   .collection-search__nav .collection-search__nav-middle {
-    position: relative; }
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
   .collection-search__nav .collection-search__loading {
     height: 0;
+    width: 100%;
+    text-align: center;
     overflow: visible;
     white-space: nowrap;
-    width: 100%;
     font-size: 0.891em;
     opacity: 0.7; }
   .collection-search__nav:last-of-type .collection-search__loading {
