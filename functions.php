@@ -103,3 +103,11 @@ add_filter( 'page_has_thumbnail_article_footer', function( $content ) {
 	<?php
 	return ob_get_clean();
 } );
+
+add_action( 'wp_head', function() {
+	if ( '1' === get_post_meta( get_queried_object_id(), 'noindex', true ) ) {
+		?>
+		<meta name="robots" content="noindex, nofollow">
+		<?php
+	}
+} );
