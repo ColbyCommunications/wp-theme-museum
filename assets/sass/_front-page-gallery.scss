@@ -72,6 +72,11 @@
 		justify-content: space-between;
 		opacity: 0.5;
 
+		@media screen and (max-width: 767px) {
+			flex: none !important;
+		}
+
+
 		&:last-of-type {
 			margin-right: auto;
 			flex-grow: 0;

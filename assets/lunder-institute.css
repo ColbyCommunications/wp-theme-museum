@@ -4016,7 +4016,8 @@ input[type="button"].btn-block {
       .three-column-header__collapsible-columns.mobile-active .three_column-header__right {
         justify-content: flex-start;
         padding-left: .75em;
-        padding-right: .75em; }
+        padding-right: .75em;
+        padding: .75em; }
       .three-column-header__collapsible-columns.mobile-active li {
         display: block; } }
   @media screen and (min-width: 768px) {
@@ -5077,6 +5078,9 @@ body.vex-open {
     align-items: center;
     justify-content: space-between;
     opacity: 0.5; }
+    @media screen and (max-width: 767px) {
+      .front-page-gallery__titles > span {
+        flex: none !important; } }
     .front-page-gallery__titles > span:last-of-type {
       margin-right: auto;
       flex-grow: 0; }
