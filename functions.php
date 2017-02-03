@@ -111,3 +111,13 @@ add_action( 'wp_head', function() {
 		<?php
 	}
 } );
+
+add_filter( 'unwanted_scripts', function( $unwanted_scripts ) {
+	return array_filter( $unwanted_scripts, function( $handle ) {
+		return $handle != 'jquery';
+	} );
+} );
+
+add_action( 'wp_enqueue_scripts', function() {
+	wp_enqueue_script( 'jquery' );
+} );
