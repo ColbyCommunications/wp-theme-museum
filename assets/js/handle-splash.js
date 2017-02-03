@@ -1,4 +1,4 @@
-const splashTimeout = 3000;
+const splashTimeout = 4000;
 let start = null;
 let splashAnimationFrame;
 let splash;

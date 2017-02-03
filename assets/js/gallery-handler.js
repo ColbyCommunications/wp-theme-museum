@@ -1,5 +1,5 @@
-const splashTimeout = 3000;
-const galleryInterval = 5000;
+const splashTimeout = 4000;
+const galleryInterval = 6000;
 
 export default class GalleryHandler {
   constructor() {
