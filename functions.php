@@ -121,3 +121,7 @@ add_filter( 'unwanted_scripts', function( $unwanted_scripts ) {
 add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_script( 'jquery' );
 } );
+
+add_filter( 'load_spinner', function( $content ) {
+	return '';
+} );

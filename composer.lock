@@ -8,6 +8,48 @@
     "content-hash": "34c9242306ba6417766604f1a5943c9f",
     "packages": [
         {
+            "name": "erusev/parsedown",
+            "version": "1.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown.git",
+                "reference": "20ff8bbb57205368b4b42d094642a3e52dac85fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/20ff8bbb57205368b4b42d094642a3e52dac85fb",
+                "reference": "20ff8bbb57205368b4b42d094642a3e52dac85fb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Parsedown": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "Parser for Markdown.",
+            "homepage": "http://parsedown.org",
+            "keywords": [
+                "markdown",
+                "parser"
+            ],
+            "time": "2016-11-02 15:56:58"
+        },
+        {
             "name": "frozzare/wp-autoload",
             "version": "v2.0.4",
             "source": {
@@ -57,22 +99,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColbyCommunications/wp-components.git",
-                "reference": "97b6d30d17cb74a5afd9f9c9a63f9f5beaac870a"
+                "reference": "8307e7b9b38bad14a4b361b45f253a217eafebb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ColbyCommunications/wp-components/zipball/97b6d30d17cb74a5afd9f9c9a63f9f5beaac870a",
-                "reference": "97b6d30d17cb74a5afd9f9c9a63f9f5beaac870a",
+                "url": "https://api.github.com/repos/ColbyCommunications/wp-components/zipball/8307e7b9b38bad14a4b361b45f253a217eafebb7",
+                "reference": "8307e7b9b38bad14a4b361b45f253a217eafebb7",
                 "shasum": ""
             },
             "require": {
+                "erusev/parsedown": "^1.6",
                 "frozzare/wp-autoload": "^2.0"
             },
             "type": "library",
             "autoload": {
                 "files": [
-                    "autoload.php",
-                    "src/features/acf-options-page.php"
+                    "autoload.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -83,7 +125,7 @@
                 }
             ],
             "description": "A collection of commonly used WordPress parts.",
-            "time": "2017-02-02 22:15:48"
+            "time": "2017-02-11 01:59:21"
         },
         {
             "name": "jwatkins/wp-development",
