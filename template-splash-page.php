@@ -1,6 +1,6 @@
 <?php
 /**
- * Front-page.php
+ * Template Name: Splash page
  *
  * The template for the site front page.
  *
