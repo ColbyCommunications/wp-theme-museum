@@ -1,0 +1,17 @@
+language: php
+cache:
+  - yarn
+before_install:
+  - nvm install node
+install:
+  - yarn install
+  - rm -rf composer.lock
+  - composer install
+php:
+  - '7.1'
+before_script:
+  - yarn run lint
+  - yarn run stylelint
+  - composer phpcbf
+  - composer lint
+script: composer test

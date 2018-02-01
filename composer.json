@@ -25,6 +25,7 @@
   },
   "scripts": {
     "phpcbf": "phpcbf --extensions=php",
-    "lint": "phpcs --extensions=php -s"
+    "lint": "phpcs --extensions=php -s",
+    "test": "composer lint"
   }
 }
