@@ -11,6 +11,12 @@
   font-size: 89.1%;
 }
 
+@media screen and (min-width: 1400px) {
+  .blanco {
+    max-width: 90%;
+  }
+}
+
 .blanco__inner {
   width: 140px;
   padding: 1.5rem;
@@ -74,5 +80,14 @@
 
 .blanco__links {
   padding-top: 1.5rem;
-  line-height: 1.6;
+  line-height: 1.333;
+}
+
+.blanco__links br {
+  display: none;
+}
+
+.blanco__links a {
+  display: block;
+  margin-bottom: 0.25rem;
 }
