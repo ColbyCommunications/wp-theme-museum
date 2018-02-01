@@ -1,0 +1,31 @@
+.simple-footer {
+  padding: 3em .75em;
+  text-align: center;
+  clear: both;
+
+  .contact {
+    font-size: .841em;
+    color: $mediumText;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+      flex-direction: row;
+    }
+
+    span {
+      white-space: nowrap;
+
+      &:not(:last-of-type):after {
+        content: '';
+
+        @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+          content: '|';
+          margin: 0 .375em;
+        }
+      }
+    }
+  }
+}

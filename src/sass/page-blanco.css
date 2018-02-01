@@ -1,0 +1,77 @@
+.main--blanco {
+  background-position: 25% 50%;
+  background-size: cover;
+}
+
+.blanco {
+  display: flex;
+  align-items: center;
+  padding: 6rem 1rem 1.5rem;
+  font-size: 89.1%;
+}
+
+.blanco__inner {
+  width: 140px;
+  padding: 1.5rem;
+  font-size: 89.1%;
+  background-color: #ba0c2f;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.blanco__inner * {
+  color: white;
+}
+
+.blanco__inner h1 {
+  font-size: 250%;
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: none;
+}
+
+@media screen and (min-width: 768px) {
+  .blanco {
+    padding: 18rem 3rem;
+  }
+
+  .blanco__inner {
+    width: 200px;
+    font-size: 100%;
+  }
+
+  .blanco__inner h1 {
+    font-size: 333%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .blanco {
+    justify-content: flex-end;
+  }
+}
+
+.blanco__inner h2 {
+  margin-bottom: 0.5rem;
+  font-weight: 200;
+}
+
+.blanco__inner svg {
+  max-width: 100%;
+  height: auto;
+  transform: scale(1.06);
+}
+
+.blanco__inner a {
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+
+.blanco__inner a:hover {
+  opacity: 0.9;
+}
+
+.blanco__links {
+  padding-top: 1.5rem;
+  line-height: 1.6;
+}

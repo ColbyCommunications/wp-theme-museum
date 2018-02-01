@@ -1,14 +1,14 @@
 // Third-party node packages.
 import 'whatwg-fetch';
 import LazyLoad from 'vanilla-lazyload';
-import smoothScroll from 'smooth-scroll';
+import smoothscrollPolyfill from 'smoothscroll-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 
 // Colby Bootstrap node packages.
-import MenuHandler from 'colby-bootstrap/js/menu-handler';
-import fitParentToChild from 'colby-bootstrap/js/fit-parent-to-child';
-import handleThreeColumnMenu from 'colby-bootstrap/js/handle-three-column-menu';
+import MenuHandler from './menu-handler';
+import fitParentToChild from './fit-parent-to-child';
+import handleThreeColumnMenu from './handle-three-column-menu';
 
 // Imports from this project.
 import handleSplash from './handle-splash';
@@ -18,11 +18,13 @@ import HeaderSearch from './header-search';
 import CollectionSearch from './collection-search';
 
 const lazyload = new LazyLoad();
+smoothscrollPolyfill.polyfill();
 
 // Import babel-polyfill if Array.from is not defined (a sign of an old browser).
 if (typeof Array.from === 'undefined') {
   let script = document.createElement('script');
-  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js';
+  script.src =
+    'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js';
   document.head.appendChild(script);
 }
 

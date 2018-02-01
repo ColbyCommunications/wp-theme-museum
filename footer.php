@@ -4,23 +4,30 @@
  *
  * The sitewide footer.
  *
- * @package lunder-institute
+ * @package colbycomms/wp-theme-museum
  */
 
-/** Add the Google Analytics script. */
-add_action( 'wp_footer', function() {
-	if ( strpos( get_bloginfo( 'url' ), 'colby.edu' ) && false === strpos( get_bloginfo( 'url' ), 'author' ) ) : ?>
+?>
 
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-26881270-1', 'auto');
-	ga('send', 'pageview');
-</script>
+<footer class=simple-footer>
+	<div class=contact>
+		<span class=contact__name>
+			Colby College Museum of Art
+		</span>
+		<span class=contact__address>
+			5600 Mayflower Hill Waterville, ME 04901
+		</span>
+		<span class=contact__phone>
+			207-859-5600
+		</span>
+		<span class=contact__web>
+			<a href="mailto:museum@colby.edu">
+				Colby College Museum of Art
+			</a>
+		</span>
+	</div>
+</footer>
 
-	<?php endif;
-} );
+<?php
 
-Colby_College\Wp_Components\Wp_Parts::load( 'simple-footer.php' );
+wp_footer();

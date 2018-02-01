@@ -4,7 +4,7 @@
  *
  * The template that displays when no posts are found.
  *
- * @package lunder-institute
+ * @package colbycomms/wp-theme-museum
  */
 
 get_header(); ?>

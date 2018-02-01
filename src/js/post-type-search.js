@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import debounce from 'lodash/debounce';
+import debounce from 'debounce';
 import parse from 'url-parse';
-import smoothScroll from 'smooth-scroll';
 
 export default class PostTypeSearch extends Component {
   constructor(props) {
@@ -39,8 +38,8 @@ export default class PostTypeSearch extends Component {
 
     if (
       url.query &&
-        [`${this.postType}Search`] in url.query &&
-        url.query.currentPage
+      [`${this.postType}Search`] in url.query &&
+      url.query.currentPage
     ) {
       return url.query;
     }
@@ -64,14 +63,16 @@ export default class PostTypeSearch extends Component {
       {},
       document.title,
       `${window.location.origin}${window.location.pathname}` +
-        `?${this.postType}Search=${this.state.search}&currentPage=${this.state.currentPage}`
+        `?${this.postType}Search=${this.state.search}&currentPage=${
+          this.state.currentPage
+        }`
     );
   }
 
   fetchPosts(options) {
     if (options && 'pageIncrementer' in options) {
       this.setState({
-        currentPage: this.state.currentPage += options.pageIncrementer,
+        currentPage: (this.state.currentPage += options.pageIncrementer),
       });
     }
 
@@ -150,54 +151,68 @@ export default class PostTypeSearch extends Component {
     return (
       <div className={`${this.cssNamespace}-search__nav`}>
         <div className={`${this.cssNamespace}-search__nav-left`}>
-          {
-            this.state.currentPage < 2 ? ' ' : <a
-                href="#"
-                onClick={event => {
-                  event.preventDefault();
+          {this.state.currentPage < 2 ? (
+            ' '
+          ) : (
+            <a
+              href="#"
+              onClick={event => {
+                event.preventDefault();
 
-                  if (
-                    options && options.location && options.location == 'bottom'
-                  ) {
-                    smoothScroll.animateScroll(this.refs['search-input']);
-                  }
+                if (
+                  options &&
+                  options.location &&
+                  options.location == 'bottom'
+                ) {
+                  this.refs['search-input'].scrollIntoView({
+                    behavior: 'smooth',
+                  });
+                }
 
-                  this.fetchPosts({ pageIncrementer: -1 });
-                }}
-              >
-                Previous
-              </a>
-          }
+                this.fetchPosts({ pageIncrementer: -1 });
+              }}
+            >
+              Previous
+            </a>
+          )}
         </div>
         <div className={`${this.cssNamespace}-search__nav-middle`}>
-          {
-            this.state.totalPages > 1 ? <div>
-                {`Page ${this.state.currentPage} of ${this.state.totalPages}`}
-              </div> : ''
-          }
+          {this.state.totalPages > 1 ? (
+            <div>
+              {`Page ${this.state.currentPage} of ${this.state.totalPages}`}
+            </div>
+          ) : (
+            ''
+          )}
           <div className={`${this.cssNamespace}-search__loading`}>
             {this.state.loading == true ? 'Loading ...' : ''}
           </div>
         </div>
         <div className={`${this.cssNamespace}-search__nav-right`}>
-          {
-            this.state.currentPage >= this.state.totalPages ? ' ' : <a
-                href="#"
-                onClick={event => {
-                  event.preventDefault();
+          {this.state.currentPage >= this.state.totalPages ? (
+            ' '
+          ) : (
+            <a
+              href="#"
+              onClick={event => {
+                event.preventDefault();
 
-                  if (
-                    options && options.location && options.location == 'bottom'
-                  ) {
-                    smoothScroll.animateScroll(this.refs['search-input']);
-                  }
+                if (
+                  options &&
+                  options.location &&
+                  options.location == 'bottom'
+                ) {
+                  this.refs['search-input'].scrollIntoView({
+                    behavior: 'smooth',
+                  });
+                }
 
-                  this.fetchPosts({ pageIncrementer: 1 });
-                }}
-              >
-                Next
-              </a>
-          }
+                this.fetchPosts({ pageIncrementer: 1 });
+              }}
+            >
+              Next
+            </a>
+          )}
         </div>
       </div>
     );
@@ -216,11 +231,9 @@ export default class PostTypeSearch extends Component {
           />
         </div>
         {this.drawNav({ location: 'top' })}
-        {
-          this.state.posts !== null && this.state.posts.length
-            ? this.state.posts.map(this.drawPost)
-            : this.drawLoading()
-        }
+        {this.state.posts !== null && this.state.posts.length
+          ? this.state.posts.map(this.drawPost)
+          : this.drawLoading()}
         {this.drawNav({ location: 'bottom' })}
       </div>
     );

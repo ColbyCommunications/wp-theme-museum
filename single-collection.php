@@ -1,4 +1,9 @@
 <?php
+/**
+ * Template for a single collection page.
+ *
+ * @package colbycomms/wp-theme-museum
+ */
 
 global $post;
 
@@ -10,7 +15,7 @@ $image_url = get_post_meta( $post->ID, 'image_url', true );
 
 ?>
 <main id=main class=main--single-collection>
-	<?php if ( isset( $_GET['source'] ) && 'collection' === $_GET['source'] ) : ?>
+	<?php if ( get_query_var( 'source' ) === 'collection' ) : ?>
 	<nav class=collection__back-button>
 		<a href="javascript:history.go(-1)">« Back</a>
 	</nav>

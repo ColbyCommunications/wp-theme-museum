@@ -1,17 +1,30 @@
 {
+  "name": "colbycomms/wp-theme-museum",
+  "description": "A WordPress theme made for Colby Museum products.",
+  "type": "wordpress-theme",
   "require": {
-    "frozzare/wp-autoload": "^2.0",
-    "jwatkins/wp-development": "dev-master",
-    "jwatkins/wp-components": "dev-master"
+    "colbycomms/colby-svg": "^1.0",
+    "htmlburger/carbon-fields": "^2.1"
   },
-  "minimum-stability": "dev",
-	"autoload": {
-      "files": [
-					"inc/rest-filters.php",
-          "inc/shortcodes/lunder-logo-svg.php",
-					"inc/shortcodes/media-kit.php",
-					"inc/shortcodes/embark-search.php",
-					"inc/shortcodes/collection-search.php"
-        ]
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.2",
+    "wp-coding-standards/wpcs": "^0.14.0"
+  },
+  "authors": [
+    {
+      "name": "John Watkins",
+      "email": "john.watkins@colby.edu"
     }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "ColbyComms\\MuseumTheme\\": "museum-theme"
+    },
+    "files": ["museum-theme/index.php"]
+  },
+  "scripts": {
+    "phpcbf": "phpcbf --extensions=php",
+    "lint": "phpcs --extensions=php -s"
+  }
 }

@@ -4,75 +4,34 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bdb7c1cd20b8f84333cc056fe1deed37",
-    "content-hash": "34c9242306ba6417766604f1a5943c9f",
+    "content-hash": "1973d2680baabaa0e75b27454becf570",
     "packages": [
         {
-            "name": "erusev/parsedown",
-            "version": "1.6.1",
+            "name": "colbycomms/colby-svg",
+            "version": "v1.0.11",
             "source": {
                 "type": "git",
-                "url": "https://github.com/erusev/parsedown.git",
-                "reference": "20ff8bbb57205368b4b42d094642a3e52dac85fb"
+                "url": "https://github.com/ColbyCommunications/colby-svg.git",
+                "reference": "dde64ff7d7237f959a8271b64435b0de8d2d6fde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/20ff8bbb57205368b4b42d094642a3e52dac85fb",
-                "reference": "20ff8bbb57205368b4b42d094642a3e52dac85fb",
+                "url": "https://api.github.com/repos/ColbyCommunications/colby-svg/zipball/dde64ff7d7237f959a8271b64435b0de8d2d6fde",
+                "reference": "dde64ff7d7237f959a8271b64435b0de8d2d6fde",
                 "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Parsedown": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Emanuil Rusev",
-                    "email": "hello@erusev.com",
-                    "homepage": "http://erusev.com"
-                }
-            ],
-            "description": "Parser for Markdown.",
-            "homepage": "http://parsedown.org",
-            "keywords": [
-                "markdown",
-                "parser"
-            ],
-            "time": "2016-11-02 15:56:58"
-        },
-        {
-            "name": "frozzare/wp-autoload",
-            "version": "v2.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/frozzare/wp-autoload.git",
-                "reference": "081d479868d3da9376d0ede7bb94f51d7a915c4d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/frozzare/wp-autoload/zipball/081d479868d3da9376d0ede7bb94f51d7a915c4d",
-                "reference": "081d479868d3da9376d0ede7bb94f51d7a915c4d",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.4 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "5.6.*",
+                "squizlabs/php_codesniffer": "*",
+                "wp-coding-standards/wpcs": "dev-master"
             },
             "type": "library",
             "autoload": {
+                "psr-4": {
+                    "ColbyComms\\SVG\\": "wp/classes/"
+                },
                 "files": [
-                    "src/autoload.php"
+                    "wp/index.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -81,90 +40,233 @@
             ],
             "authors": [
                 {
-                    "name": "Fredrik Forsmo",
-                    "email": "fredrik.forsmo@gmail.com"
+                    "name": "John Watkins",
+                    "email": "jwatkins@colby.edu"
                 }
             ],
-            "description": "Simple autoloader that will autoload classes or traits with namespace prefix",
-            "keywords": [
-                "autoload",
-                "namespace",
-                "wordpress"
-            ],
-            "time": "2016-05-01 15:41:07"
+            "description": "A library of SVGs used across projects, with a PHP class for loading and echoing them, plus a shortcode for use in WordPress.",
+            "time": "2018-01-31T18:17:26+00:00"
         },
         {
-            "name": "jwatkins/wp-components",
-            "version": "dev-master",
+            "name": "htmlburger/carbon-fields",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ColbyCommunications/wp-components.git",
-                "reference": "8307e7b9b38bad14a4b361b45f253a217eafebb7"
+                "url": "https://github.com/htmlburger/carbon-fields.git",
+                "reference": "bcfb81e12d0e3162609e938efbdd4ae01bd4abde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ColbyCommunications/wp-components/zipball/8307e7b9b38bad14a4b361b45f253a217eafebb7",
-                "reference": "8307e7b9b38bad14a4b361b45f253a217eafebb7",
+                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/bcfb81e12d0e3162609e938efbdd4ae01bd4abde",
+                "reference": "bcfb81e12d0e3162609e938efbdd4ae01bd4abde",
                 "shasum": ""
             },
             "require": {
-                "erusev/parsedown": "^1.6",
-                "frozzare/wp-autoload": "^2.0"
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.7",
+                "phpunit/phpunit": "~4.8"
             },
             "type": "library",
             "autoload": {
-                "files": [
-                    "autoload.php"
-                ]
+                "psr-4": {
+                    "Carbon_Fields\\": "core/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
             "authors": [
                 {
-                    "name": "johnwatkins0",
-                    "email": "johnwatkins0@gmail.com"
+                    "name": "htmlBurger",
+                    "email": "wordpress@htmlburger.com",
+                    "homepage": "https://htmlburger.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Marin Atanasov",
+                    "email": "contact@marinatanasov.com",
+                    "homepage": "http://marinatanasov.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Siyan Panayotov",
+                    "homepage": "http://siyanpanayotov.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Georgi Stoyanov",
+                    "email": "stoyanov.gs@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Stanimir Panchev",
+                    "email": "Stan4omir@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Peter Petrov",
+                    "email": "peter.petrov89@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Plamen Kostadinov",
+                    "email": "pkostadinov.2create@gmail.com",
+                    "homepage": "http://plasmen.info/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Stanimir Stoyanov",
+                    "email": "stanimir.k.stoyanov@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Georgi Popov",
+                    "homepage": "http://magadanski.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "German Velchev",
+                    "email": "germozy@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Rashko Petrov",
+                    "email": "brutalenemy666@gmail.com",
+                    "homepage": "http://errorfactory.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Miroslav Mitev",
+                    "email": "mmitev.2create@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Kaloyan Ivanov",
+                    "email": "kaloyanxivanov@gmail.com",
+                    "homepage": "http://vilepixels.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Atanas Angelov",
+                    "email": "atanas.angelov.dev@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Alexander Panayotov",
+                    "email": "alexander.panayotov@gmail.com",
+                    "homepage": "http://alexanderpanayotov.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Viktor Vasilev",
+                    "email": "liberalcho@gmail.com",
+                    "role": "Developer"
                 }
             ],
-            "description": "A collection of commonly used WordPress parts.",
-            "time": "2017-02-11 01:59:21"
-        },
+            "description": "WordPress developer-friendly custom fields for post types, taxonomy terms, users, comments, widgets, options and more.",
+            "homepage": "http://carbonfields.net/",
+            "time": "2017-11-16T15:36:25+00:00"
+        }
+    ],
+    "packages-dev": [
         {
-            "name": "jwatkins/wp-development",
-            "version": "dev-master",
+            "name": "squizlabs/php_codesniffer",
+            "version": "3.2.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ColbyCommunications/wp-development.git",
-                "reference": "69c4e834c6dc1c2fa0a0b568394c8af728167bb1"
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "d7c00c3000ac0ce79c96fcbfef86b49a71158cd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ColbyCommunications/wp-development/zipball/69c4e834c6dc1c2fa0a0b568394c8af728167bb1",
-                "reference": "69c4e834c6dc1c2fa0a0b568394c8af728167bb1",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d7c00c3000ac0ce79c96fcbfef86b49a71158cd1",
+                "reference": "d7c00c3000ac0ce79c96fcbfef86b49a71158cd1",
                 "shasum": ""
             },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0"
+            },
+            "bin": [
+                "bin/phpcs",
+                "bin/phpcbf"
+            ],
             "type": "library",
-            "autoload": {
-                "files": [
-                    "development.php"
-                ]
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
             "authors": [
                 {
-                    "name": "johnwatkins0",
-                    "email": "johnwatkins0@gmail.com"
+                    "name": "Greg Sherwood",
+                    "role": "lead"
                 }
             ],
-            "description": "Development functions for WordPress.",
-            "time": "2017-01-12 01:06:57"
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "time": "2017-12-19T21:44:46+00:00"
+        },
+        {
+            "name": "wp-coding-standards/wpcs",
+            "version": "0.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
+                "reference": "8cadf48fa1c70b2381988e0a79e029e011a8f41c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/8cadf48fa1c70b2381988e0a79e029e011a8f41c",
+                "reference": "8cadf48fa1c70b2381988e0a79e029e011a8f41c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "squizlabs/php_codesniffer": "^2.9.0 || ^3.0.2"
+            },
+            "suggest": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3"
+            },
+            "type": "phpcodesniffer-standard",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/graphs/contributors"
+                }
+            ],
+            "description": "PHP_CodeSniffer rules (sniffs) to enforce WordPress coding conventions",
+            "keywords": [
+                "phpcs",
+                "standards",
+                "wordpress"
+            ],
+            "time": "2017-11-01T15:10:46+00:00"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "jwatkins/wp-development": 20,
-        "jwatkins/wp-components": 20
-    },
+    "minimum-stability": "stable",
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
