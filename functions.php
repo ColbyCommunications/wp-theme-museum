@@ -35,6 +35,11 @@ if ( isset( $_GET['debug'] ) ) {
 	});
 }
 
+// Fix path to carbon fields assets URL failing to resolve.
+// TO-DO: See config.php and core/Carbon_Fields.php in that library for debugging.
+define( 'Carbon_Fields\\URL', get_template_directory_uri() . '/vendor/htmlburger/carbon-fields/' );
+
+
 if ( file_exists( __DIR__ ) . '/vendor/autoload.php' ) {
 	require_once 'vendor/autoload.php';
 }

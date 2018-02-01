@@ -181,3 +181,26 @@ html[lang="en"] {
 ::-ms-clear {
   display: none;
 }
+
+.next-prev-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 970px;
+  padding: 3rem;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.main-footer {
+  width: 100%;
+  max-width: 970px;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}

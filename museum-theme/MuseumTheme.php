@@ -20,7 +20,7 @@ class MuseumTheme {
 	 *
 	 * @var string
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.0.1';
 
 	/**
 	 * Text domain.
@@ -96,6 +96,27 @@ class MuseumTheme {
 		add_action( 'init', [ __CLASS__, 'register_post_types' ] );
 		add_action( 'wp_head', [ __CLASS__, 'maybe_noindex' ] );
 		add_action( 'wp_head', [ __CLASS__, 'do_analytics' ] );
+		add_action( 'wp_head', [ __CLASS__, 'do_extra_css' ] );
+		add_action( 'acf__settings__remove_wp_meta_box', '__return_false' );
+	}
+
+	/**
+	 * Put extra css in head.
+	 *
+	 * @return void
+	 */
+	public static function do_extra_css() {
+		$extra_css = get_post_meta( get_the_id(), 'extra_css', true );
+
+		if ( ! $extra_css ) {
+			return;
+		}
+
+		?>
+<style>
+<?php echo $extra_css; ?>
+</style>
+		<?php
 	}
 
 	/**
