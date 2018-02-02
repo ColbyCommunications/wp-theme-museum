@@ -92,7 +92,7 @@ class MuseumTheme {
 		add_action( 'pre_get_posts', [ __CLASS__, 'exclude_media_kit_from_posts' ] );
 		add_action( 'user_can_richedit', [ __CLASS__, 'maybe_turn_off_visual_editor' ] );
 		add_filter( 'query_vars', [ __CLASS__, 'add_query_var' ] );
-		add_action( 'init', [ __CLASS__, 'maybe_refresh_embark_data' ] );
+		add_action( 'pre_get_posts', [ __CLASS__, 'maybe_refresh_embark_data' ] );
 		add_action( 'init', [ __CLASS__, 'register_post_types' ] );
 		add_action( 'wp_head', [ __CLASS__, 'maybe_noindex' ] );
 		add_action( 'wp_head', [ __CLASS__, 'do_analytics' ] );
@@ -112,11 +112,9 @@ class MuseumTheme {
 			return;
 		}
 
-		?>
-<style>
-<?php echo $extra_css; ?>
-</style>
-		<?php
+		echo "<style>
+$extra_css
+</style>";
 	}
 
 	/**
@@ -159,7 +157,7 @@ class MuseumTheme {
 	 */
 	public static function maybe_refresh_embark_data() : void {
 		if ( current_user_can( 'edit_others_posts' && get_query_var( 'refresh_embark' ) ) ) {
-			//new Embark_Refresher();
+			new EmbarkRefresher();
 		}
 	}
 

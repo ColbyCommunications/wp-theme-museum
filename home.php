@@ -61,7 +61,7 @@ endif;
 			</div>
 
 		</nav>
-		<?php 
+		<?php
 		$caption = get_the_post_thumbnail_caption( $page_id );
 		if ( $caption ) :
 		?>

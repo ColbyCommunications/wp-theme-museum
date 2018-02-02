@@ -29,10 +29,12 @@ if ( ! function_exists( 'pp' ) ) {
 	}
 }
 
-if ( isset( $_GET['debug'] ) ) {
-	register_shutdown_function(function() {
-		print_r( error_get_last() );
-	});
+if ( isset( $_GET['debug'] ) ) { // phpcs:ignore
+	register_shutdown_function(
+		function() {
+			print_r( error_get_last() ); // phpcs:ignore
+		}
+	);
 }
 
 // Fix path to carbon fields assets URL failing to resolve.
