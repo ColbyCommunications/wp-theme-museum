@@ -22,8 +22,7 @@ export default function() {
         }
       };
 
-      let closeListener;
-      const modal = vex.open({
+      vex.open({
         unsafeContent: imageHTML,
         afterOpen: () => window.addEventListener('keydown', closeOnEnter),
         afterClose: () => window.removeEventListener('keydown', closeOnEnter),

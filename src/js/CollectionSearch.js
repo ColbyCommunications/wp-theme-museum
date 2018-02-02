@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import debounce from 'lodash/debounce';
+import React from 'react';
 
 import PostTypeSearch from './post-type-search';
 
@@ -15,13 +14,14 @@ export default class CollectionSearch extends PostTypeSearch {
   drawLoading() {
     if (
       this.state.search &&
-        this.state.posts !== null &&
-        this.state.posts.length === 0
+      this.state.posts !== null &&
+      this.state.posts.length === 0
     ) {
       return <div>No results</div>;
     }
 
     this.drawArchive();
+    return null;
   }
 
   drawArchive() {

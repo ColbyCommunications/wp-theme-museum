@@ -40,8 +40,11 @@ body {
   position: relative;
   margin: 0 auto;
   overflow-x: hidden;
-  opacity: 0;
-  transition: opacity 0.5s;
+
+  @supports (transition: opacity 0.5s) {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
 }
 
 a {

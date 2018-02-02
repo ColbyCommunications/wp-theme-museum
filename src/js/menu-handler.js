@@ -4,7 +4,7 @@ export default class MenuHandler {
     this.handleParentHover = this.handleParentHover.bind(this);
 
     const parents = document.querySelectorAll(settings.parentSelector);
-    [ ...parents ].forEach(this.handleParentHover);
+    [...parents].forEach(this.handleParentHover);
   }
 
   handleParentHover(parent) {
@@ -23,7 +23,6 @@ export default class MenuHandler {
       child.style['width'] = `${parent.clientWidth + 24}px`;
       child.style['min-width'] = '200px';
     };
-    const childLinks = child.querySelectorAll('a');
 
     parent.addEventListener('mouseenter', toggle);
     parent.addEventListener('mouseleave', toggle);

@@ -69,7 +69,7 @@ export default class PostTypeSearch extends Component {
     );
   }
 
-  fetchPosts(options) {
+  async fetchPosts(options) {
     if (options && 'pageIncrementer' in options) {
       this.setState({
         currentPage: (this.state.currentPage += options.pageIncrementer),
@@ -88,154 +88,133 @@ export default class PostTypeSearch extends Component {
 
     /** Restore from cache if this URL has been requested already. */
     if (url in this.cache) {
-      return this.setState({
+      this.setState({
         posts: this.cache[url].posts,
         totalPages: this.cache[url].totalPages,
       });
+
+      return;
     }
 
     this.setState({ loading: true });
 
-    fetch(url)
-      .then(data => {
-        this.setState({ totalPages: data.headers.get('X-WP-TotalPages') });
-        return data.json();
-      })
-      .then(posts => {
-        this.cache[url] = { posts, totalPages: this.state.totalPages };
-        this.setState({ posts, loading: false });
-      });
+    const data = await fetch(url);
+    this.setState({ totalPages: data.headers.get('X-WP-TotalPages') });
+    const posts = await data.json();
+
+    this.cache[url] = { posts, totalPages: this.state.totalPages };
+    this.setState({ posts, loading: false });
   }
 
-  drawContent(post) {
-    return (
-      <div className={`${this.cssNamespace}-search__content-container`}>
-        <h1
-          className={`${this.cssNamespace}-search__title`}
-          dangerouslySetInnerHTML={{
-            __html: post.title.rendered
-              .replace(' ,', '')
-              .replace(' &nbsp;&nbsp;,', ''),
-          }}
-        />
-        <div
-          className={`${this.cssNamespace}-search__content`}
-          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-        />
+  drawContent = post => (
+    <div className={`${this.cssNamespace}-search__content-container`}>
+      <h1
+        className={`${this.cssNamespace}-search__title`}
+        dangerouslySetInnerHTML={{
+          __html: post.title.rendered
+            .replace(' ,', '')
+            .replace(' &nbsp;&nbsp;,', ''),
+        }}
+      />
+      <div
+        className={`${this.cssNamespace}-search__content`}
+        dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+      />
+    </div>
+  );
+
+  drawThumbnail = () => null;
+
+  drawPost = (post, key) => (
+    <a
+      href={`${post.link}?source=collection`}
+      key={key}
+      className={`${this.cssNamespace}-search__post`}
+    >
+      {this.drawContent(post)}
+      {this.drawThumbnail(post)}
+    </a>
+  );
+
+  drawLoading = () => <div>Loading</div>;
+
+  drawNav = options => (
+    <div className={`${this.cssNamespace}-search__nav`}>
+      <div className={`${this.cssNamespace}-search__nav-left`}>
+        {this.state.currentPage < 2 ? (
+          ' '
+        ) : (
+          <a
+            href="#"
+            onClick={event => {
+              event.preventDefault();
+
+              if (options && options.location && options.location == 'bottom') {
+                this.refs['search-input'].scrollIntoView({
+                  behavior: 'smooth',
+                });
+              }
+
+              this.fetchPosts({ pageIncrementer: -1 });
+            }}
+          >
+            Previous
+          </a>
+        )}
       </div>
-    );
-  }
-
-  drawThumbnail(post) {
-    return null;
-  }
-
-  drawPost(post, key) {
-    return (
-      <a
-        href={`${post.link}?source=collection`}
-        key={key}
-        className={`${this.cssNamespace}-search__post`}
-      >
-        {this.drawContent(post)}
-        {this.drawThumbnail(post)}
-      </a>
-    );
-  }
-
-  drawLoading() {
-    return <div>Loading</div>;
-  }
-
-  drawNav(options) {
-    return (
-      <div className={`${this.cssNamespace}-search__nav`}>
-        <div className={`${this.cssNamespace}-search__nav-left`}>
-          {this.state.currentPage < 2 ? (
-            ' '
-          ) : (
-            <a
-              href="#"
-              onClick={event => {
-                event.preventDefault();
-
-                if (
-                  options &&
-                  options.location &&
-                  options.location == 'bottom'
-                ) {
-                  this.refs['search-input'].scrollIntoView({
-                    behavior: 'smooth',
-                  });
-                }
-
-                this.fetchPosts({ pageIncrementer: -1 });
-              }}
-            >
-              Previous
-            </a>
-          )}
-        </div>
-        <div className={`${this.cssNamespace}-search__nav-middle`}>
-          {this.state.totalPages > 1 ? (
-            <div>
-              {`Page ${this.state.currentPage} of ${this.state.totalPages}`}
-            </div>
-          ) : (
-            ''
-          )}
-          <div className={`${this.cssNamespace}-search__loading`}>
-            {this.state.loading == true ? 'Loading ...' : ''}
+      <div className={`${this.cssNamespace}-search__nav-middle`}>
+        {this.state.totalPages > 1 ? (
+          <div>
+            {`Page ${this.state.currentPage} of ${this.state.totalPages}`}
           </div>
-        </div>
-        <div className={`${this.cssNamespace}-search__nav-right`}>
-          {this.state.currentPage >= this.state.totalPages ? (
-            ' '
-          ) : (
-            <a
-              href="#"
-              onClick={event => {
-                event.preventDefault();
-
-                if (
-                  options &&
-                  options.location &&
-                  options.location == 'bottom'
-                ) {
-                  this.refs['search-input'].scrollIntoView({
-                    behavior: 'smooth',
-                  });
-                }
-
-                this.fetchPosts({ pageIncrementer: 1 });
-              }}
-            >
-              Next
-            </a>
-          )}
+        ) : (
+          ''
+        )}
+        <div className={`${this.cssNamespace}-search__loading`}>
+          {this.state.loading == true ? 'Loading ...' : ''}
         </div>
       </div>
-    );
-  }
+      <div className={`${this.cssNamespace}-search__nav-right`}>
+        {this.state.currentPage >= this.state.totalPages ? (
+          ' '
+        ) : (
+          <a
+            href="#"
+            onClick={event => {
+              event.preventDefault();
 
-  render() {
-    return (
-      <div className={`${this.cssNamespace}-search`}>
-        <div className={`${this.cssNamespace}-search__input-container`}>
-          <input
-            ref={'search-input'}
-            id={`${this.cssNamespace}-search__input`}
-            defaultValue={this.state.search}
-            placeholder={this.props.placeholder || 'Search posts'}
-            onInput={this.handleSearchInputChange}
-          />
-        </div>
-        {this.drawNav({ location: 'top' })}
-        {this.state.posts !== null && this.state.posts.length
-          ? this.state.posts.map(this.drawPost)
-          : this.drawLoading()}
-        {this.drawNav({ location: 'bottom' })}
+              if (options && options.location && options.location == 'bottom') {
+                this.refs['search-input'].scrollIntoView({
+                  behavior: 'smooth',
+                });
+              }
+
+              this.fetchPosts({ pageIncrementer: 1 });
+            }}
+          >
+            Next
+          </a>
+        )}
       </div>
-    );
-  }
+    </div>
+  );
+
+  render = ({ search, posts } = this.state) => (
+    <div className={`${this.cssNamespace}-search`}>
+      <div className={`${this.cssNamespace}-search__input-container`}>
+        <input
+          ref={'search-input'}
+          id={`${this.cssNamespace}-search__input`}
+          defaultValue={search}
+          placeholder={this.props.placeholder || 'Search posts'}
+          onInput={this.handleSearchInputChange}
+        />
+      </div>
+      {this.drawNav({ location: 'top' })}
+      {posts !== null && posts.length
+        ? posts.map(this.drawPost)
+        : this.drawLoading()}
+      {this.drawNav({ location: 'bottom' })}
+    </div>
+  );
 }

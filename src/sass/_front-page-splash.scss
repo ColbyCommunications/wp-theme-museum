@@ -1,61 +1,71 @@
 .front-page-splash {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: opacity 1.5s;
-	width: 100%;
-	position: absolute;
-	top: 0;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transition: opacity 1.5s;
+}
+
+.front-page-splash.unloading {
+  opacity: 0;
+}
+
+.front-page-splash.unloaded {
+  height: 0;
+  pointer-events: none;
 }
 
 .front-page-splash__background-container {
-	display: flex;
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	overflow: hidden;
-	justify-content: center;
-	align-items: flex-start;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .front-page-splash__background {
-	width: 100%;
-	height: auto;
-	z-index: -1;
-	transition: height 0.2s;
-	min-width: 950px;
+  z-index: -1;
+  width: 100%;
+  min-width: 950px;
+  height: auto;
+  transition: height 0.2s;
 }
 
 .front-page-splash__text {
-	min-height: 400px;
-	padding: 2em 1.5em 3em;
-	width: 100%;
-	margin: 0 auto;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 400px;
+  padding: 2em 1.5em 3em;
+  margin: 0 auto;
 }
 
 .liaa-logo-container {
-	width: 80%;
-	padding: 2em 3em 1.5em;
-	padding: 3vw 5vw 1.5em;
-	margin: 0 auto;
-	@media screen and (min-width: map-get($grid-breakpoints, 'md')) {
-		padding: 2em 2vw 1.5em;
-		padding: 3vw 5vw 1.5em;
-	}
+  width: 80%;
+  padding: 2em 3em 1.5em;
+  padding: 3vw 5vw 1.5em;
+  margin: 0 auto;
 
-	svg {
-		max-width: 90%;
-		width: 90%;
-		height: 56vw;
-		min-height: 500px;
-		max-height: 100%;
-		color: white;
-		margin: 0 auto;
-		display: block;
-	}
+  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+    padding: 2em 2vw 1.5em;
+    padding: 3vw 5vw 1.5em;
+  }
+
+  svg {
+    display: block;
+    width: 90%;
+    max-width: 90%;
+    height: 56vw;
+    min-height: 500px;
+    max-height: 100%;
+    margin: 0 auto;
+    color: white;
+  }
 }

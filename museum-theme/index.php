@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'PROD' ) ) {
-	define( 'PROD', true );
+	define( 'PROD', false );
 }
 
 require 'rest-filters.php';
