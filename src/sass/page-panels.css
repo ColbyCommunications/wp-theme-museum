@@ -1,0 +1,94 @@
+.panel__container {
+  background-position: 25% 50%;
+  background-size: cover;
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+  max-width: 1400px;
+  padding: 6rem 1rem 1.5rem;
+  font-size: 89.1%;
+}
+
+@media screen and (min-width: 1400px) {
+  .panel {
+    max-width: 90%;
+  }
+}
+
+.panel__inner {
+  width: 140px;
+  padding: 1.5rem;
+  font-size: 89.1%;
+  background-color: #ba0c2f;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.panel__inner * {
+  color: white;
+}
+
+.panel__inner h1 {
+  font-size: 250%;
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: none;
+}
+
+@media screen and (min-width: 768px) {
+  .panel {
+    padding: 18rem 3rem;
+  }
+
+  .panel__inner {
+    width: 200px;
+    font-size: 100%;
+  }
+
+  .panel__inner h1 {
+    font-size: 333%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .panel {
+    justify-content: flex-end;
+  }
+}
+
+
+.panel__inner h2 {
+  margin-bottom: 0.5rem;
+  font-weight: 200;
+}
+
+.panel__inner svg {
+  max-width: 100%;
+  height: auto;
+  transform: scale(1.06);
+}
+
+.panel__inner a {
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+
+.panel__inner a:hover {
+  opacity: 0.9;
+}
+
+.panel__links {
+  padding-top: 1.5rem;
+  line-height: 1.333;
+}
+
+.panel__links br {
+  display: none;
+}
+
+.panel__links a {
+  display: block;
+  margin-bottom: 0.25rem;
+}

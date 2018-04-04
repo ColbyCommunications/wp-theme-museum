@@ -2,7 +2,7 @@
 /**
  * ThemeOptions.php
  *
- * @package colbycomms/wp-theme-twentyeighteen
+ * @package colbycomms/wp-theme-museum
  */
 
 namespace ColbyComms\MuseumTheme;
@@ -22,7 +22,7 @@ class ThemeOptions {
 	public function __construct() {
 		add_action( 'after_setup_theme', [ 'Carbon_Fields\\Carbon_Fields', 'boot' ] );
 		add_action( 'carbon_fields_register_fields', [ $this, 'create_container' ] );
-		add_action( 'carbon_fields_register_fields', [ $this, 'add_plugin_options' ] );
+		add_action( 'carbon_fields_register_fields', [ $this, 'add_theme_options' ] );
 	}
 
 	/**
@@ -33,9 +33,9 @@ class ThemeOptions {
 	}
 
 	/**
-	 * Adds the plugin options.
+	 * Adds the theme options.
 	 */
-	public function add_plugin_options() {
+	public function add_theme_options() {
 		$this->container->add_fields(
 			[
 				Field::make( 'textarea', self::ANALYTICS_KEY, 'Google Analytics code' )

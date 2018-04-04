@@ -82,6 +82,7 @@ class MuseumTheme {
 		include 'shortcodes/media-kit.php';
 
 		new ThemeOptions();
+		new FrontPageFields();
 
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
