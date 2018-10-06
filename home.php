@@ -45,7 +45,7 @@ if ( have_posts() ) :
 
 	</article>
 
-<?php
+		<?php
 	endwhile;
 endif;
 
@@ -64,7 +64,7 @@ endif;
 		<?php
 		$caption = get_the_post_thumbnail_caption( $page_id );
 		if ( $caption ) :
-		?>
+			?>
 			<div class=page-has-thumbnail__footer-caption>
 				Banner image: <?php echo wp_kses_post( $caption ); ?>
 			</div>

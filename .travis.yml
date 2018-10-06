@@ -4,11 +4,11 @@ cache:
 before_install:
   - nvm install node
 install:
-  - yarn install
+  - yarn
   - rm -rf composer.lock
   - composer install
 php:
-  - '7.1'
+  - "7.1"
 before_script:
   - yarn run lint
   - yarn run stylelint

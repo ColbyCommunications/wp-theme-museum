@@ -15,12 +15,12 @@ add_filter(
 
 	<div class=lunder-logo-container>
 		<a href=<?php bloginfo( 'url' ); ?>>
-			<?php include 'lunder-institute.svg'; ?>
+			<?php locate_template( 'assets/lunder-institute-aa.svg', true, false ); ?>
 		</a>
 	</div>
 
-	<?php
-	return ob_get_clean();
+		<?php
+		return ob_get_clean();
 	}
 );
 
@@ -50,7 +50,7 @@ add_filter(
 add_filter(
 	'three_column_header_right_column', function( $content ) {
 		ob_start();
-	?>
+		?>
 
 	<span class=colby-museum-logo-container>
 		<a href=//colby.edu/museum/>
@@ -64,8 +64,8 @@ add_filter(
 		</a>
 	</span>
 
-	<?php
-	return ob_get_clean();
+		<?php
+		return ob_get_clean();
 	}
 );
 ?>

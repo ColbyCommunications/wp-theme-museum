@@ -132,7 +132,7 @@ $extra_css
 	 *
 	 * @return void
 	 */
-	public static function maybe_noindex() : void {
+	public static function maybe_noindex() {
 		if ( '1' === get_post_meta( get_queried_object_id(), 'noindex', true ) ) {
 			?>
 			<meta name="robots" content="noindex, nofollow">
@@ -156,7 +156,7 @@ $extra_css
 	 *
 	 * @return void
 	 */
-	public static function maybe_refresh_embark_data() : void {
+	public static function maybe_refresh_embark_data() {
 		if ( current_user_can( 'edit_others_posts' && get_query_var( 'refresh_embark' ) ) ) {
 			new EmbarkRefresher();
 		}
