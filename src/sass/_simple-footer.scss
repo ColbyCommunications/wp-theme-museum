@@ -1,17 +1,18 @@
 .simple-footer {
-  padding: 3em .75em;
-  text-align: center;
+  padding: 3em 0.75em;
   clear: both;
+  text-align: center;
 
   .contact {
-    font-size: .841em;
-    color: $mediumText;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    font-size: 0.841em;
+    color: $mediumText;
 
-    @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+    @media screen and (min-width: map-get($grid-breakpoints, "md")) {
       flex-direction: row;
     }
 
@@ -19,11 +20,11 @@
       white-space: nowrap;
 
       &:not(:last-of-type):after {
-        content: '';
+        content: "";
 
-        @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
-          content: '|';
-          margin: 0 .375em;
+        @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+          margin: 0 0.375em;
+          content: "|";
         }
       }
     }
