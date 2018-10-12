@@ -34,12 +34,12 @@ if ( ! function_exists( 'draw_page_no_thumbnail_header_text' ) ) :
 
 		$header_text = get_post_meta( get_the_id(), 'header_text', true );
 		if ( ! empty( $header_text ) ) :
-	?>
+			?>
 
 		<h2 class=page-no-thumbnail__header-text>
 			<?php echo $header_text; ?>
 		</h2>
-		<?php
+			<?php
 
 		endif;
 
