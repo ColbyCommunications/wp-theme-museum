@@ -15,7 +15,7 @@ add_filter(
 
 	<div class=lunder-logo-container>
 		<a href=<?php bloginfo( 'url' ); ?>>
-			<?php include 'lunder-institute.svg'; ?>
+			<?php locate_template( 'assets/lunder-institute-aa.svg', true, false ); ?>
 		</a>
 	</div>
 
