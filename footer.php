@@ -14,9 +14,6 @@
 		<span class=contact__name>
 			Lunder Institute for American Art
 		</span>
-		<span class=contact__name>
-			Colby College Museum of Art
-		</span>
 		<span class=contact__address>
 			5655 Mayflower Hill Waterville, ME 04901
 		</span>
