@@ -99,6 +99,23 @@ class MuseumTheme {
 		add_action( 'wp_head', [ __CLASS__, 'do_analytics' ] );
 		add_action( 'wp_head', [ __CLASS__, 'do_extra_css' ] );
 		add_action( 'acf__settings__remove_wp_meta_box', '__return_false' );
+		add_filter( 'the_permalink', [ __CLASS__, 'maybe_override_post_permalink' ] );
+	}
+
+	/**
+	 * Override the permalink with an ACF field if the field is set.
+	 *
+	 * @param string $link The permalink.
+	 * @return string The filtered link.
+	 */
+	public function maybe_override_post_permalink( $link ) {
+		if ( ! function_exists( 'get_field' ) ) {
+			return $link;
+		}
+
+		$redirect_url = get_field( 'redirect_url' );
+
+		return $redirect_url ?: $link;
 	}
 
 	/**
