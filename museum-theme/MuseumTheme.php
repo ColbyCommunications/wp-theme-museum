@@ -108,7 +108,7 @@ class MuseumTheme {
 	 * @param string $link The permalink.
 	 * @return string The filtered link.
 	 */
-	public function maybe_override_post_permalink( $link ) {
+	public static function maybe_override_post_permalink( $link ) {
 		if ( ! function_exists( 'get_field' ) ) {
 			return $link;
 		}
