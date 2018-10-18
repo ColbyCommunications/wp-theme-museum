@@ -98,7 +98,7 @@ class MuseumTheme {
 		add_action( 'wp_head', [ __CLASS__, 'maybe_noindex' ] );
 		add_action( 'wp_head', [ __CLASS__, 'do_analytics' ] );
 		add_action( 'wp_head', [ __CLASS__, 'do_extra_css' ] );
-		add_action( 'acf__settings__remove_wp_meta_box', '__return_false' );
+		add_action( 'acf__settings__remove_wp_meta_box', '__return_false', 20 );
 		add_filter( 'the_permalink', [ __CLASS__, 'maybe_override_post_permalink' ] );
 	}
 
